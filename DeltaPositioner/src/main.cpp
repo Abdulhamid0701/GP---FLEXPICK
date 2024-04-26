@@ -20,18 +20,24 @@ const int theta_max = 70;
 const int theta_min = -70;
 
 // End effector motion cycle
-float X_cycle[] = {0,      0,    0,    0,    0,    0,    0,   0, 180, 180, 0};
-float Y_cycle[] = {0,    -180,  180,   0,   0,    0,    0,   0, 0, 0, 0};
-float Z_cycle[] = {-300, -300, -300, -300, -300, -400, -300, -300, -400, -300, -300};
-float dur_arr[] = {0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1};
+const int X_cycle[] = {0,      0,    0,    0,    0,    0,    0,    0, 180, 180, 0};
+const int Y_cycle[] = {0,    -180, -180, -180,  180,  180,  180,   0, 0, 0, 0};
+const int Z_cycle[] = {-300, -300, -400, -300, -300, -400, -300, -300, -400, -300, -300};
+const float dur_arr[] = {0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1};
 int ind = 0;
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
 
+/*
 AccelStepper stepper1(AccelStepper::DRIVER, 50, 51);
 AccelStepper stepper2(AccelStepper::DRIVER, 47, 46);
 AccelStepper stepper3(AccelStepper::DRIVER, 42, 43);
+*/
+
+AccelStepper stepper1(AccelStepper::DRIVER, 6, 7);
+AccelStepper stepper2(AccelStepper::DRIVER, 11, 12);
+AccelStepper stepper3(AccelStepper::DRIVER, 3, 4);
 
 /// Function Prototypes
 void trapezoid_profile_setup()
@@ -47,9 +53,6 @@ void trapezoid_profile_setup()
     // Define max. speed in for each motor [rad/s]
     steppers[i].max_speed = steppers[i].alpha * duration * 0.5;
 
-    //
-    steppers[i].movement_done = false;
-
     steppers[i].currentSteps = 0;
 
     remaining_motors_byte |= (1 << i);
@@ -62,20 +65,18 @@ void trapezoid_profile_setup()
   stepper2.setAcceleration(steppers[1].alpha / STEP_ANGLE_RADS);
   stepper3.setAcceleration(steppers[2].alpha / STEP_ANGLE_RADS);
 
-  steppers[1].remainder = (steppers[1].meshwar / STEP_ANGLE_RADS) - round(steppers[1].meshwar / STEP_ANGLE_RADS);
+  stepper1.moveTo(-steppers[0].targetSteps);
+  stepper2.moveTo(-steppers[1].targetSteps);
+  stepper3.moveTo(-steppers[2].targetSteps);
 
-  stepper1.moveTo(round(-steppers[0].meshwar / STEP_ANGLE_RADS));
-  stepper2.moveTo(round(-steppers[1].meshwar / STEP_ANGLE_RADS));
-  stepper3.moveTo(round(-steppers[2].meshwar / STEP_ANGLE_RADS));
-
-  
+    /*
     Serial.print("Mot1. Steps: ");
     Serial.println(round(steppers[0].meshwar / STEP_ANGLE_RADS));
     Serial.print("Mot2. Steps: ");
     Serial.println(round(steppers[1].meshwar / STEP_ANGLE_RADS));
     Serial.print("Mot3. Steps: ");
     Serial.println(steppers[2].meshwar / STEP_ANGLE_RADS);
-  
+  */
 }
 
 void move_steppers()
@@ -84,13 +85,13 @@ void move_steppers()
   float *thetas_next = get_thetas(X_next, Y_next, Z_next);
   float *thetas_current = get_thetas(X_current, Y_current, Z_current);
 
-  steppers[0].current_angle = (thetas_current[1] * 180 / M_PI);
-  steppers[1].current_angle = (thetas_current[0] * 180 / M_PI);
-  steppers[2].current_angle = (thetas_current[2] * 180 / M_PI);
+  steppers[0].current_angle = (thetas_current[0] * 180 / M_PI);
+  steppers[1].current_angle = (thetas_current[2] * 180 / M_PI);
+  steppers[2].current_angle = (thetas_current[1] * 180 / M_PI);
 
-  steppers[0].next_angle = (thetas_next[1] * 180 / M_PI);
-  steppers[1].next_angle = (thetas_next[0] * 180 / M_PI);
-  steppers[2].next_angle = (thetas_next[2] * 180 / M_PI);
+  steppers[0].next_angle = (thetas_next[0] * 180 / M_PI);
+  steppers[1].next_angle = (thetas_next[2] * 180 / M_PI);
+  steppers[2].next_angle = (thetas_next[1] * 180 / M_PI);
 
   // Checking that the required posionts are not out of the workspace and/or violate any mechanical constraints (collisions)
   for (int i = 0; i < 3; i++)
@@ -104,17 +105,32 @@ void move_steppers()
       steppers[i].target_angle = 0;
     }
     // Update steps to be moved
-    steppers[i].targetSteps = steppers[i].target_angle / STEP_ANGLE_RADS;
+    steppers[i].targetSteps = round(steppers[i].target_angle / STEP_ANGLE_DEGS);
   }
 
   // Setup the speed profile parameters for the motors
   trapezoid_profile_setup();
 
-  while (stepper1.distanceToGo() != 0 && stepper2.distanceToGo() != 0 && stepper3.distanceToGo() != 0)
+  while (stepper1.distanceToGo() != 0 || stepper2.distanceToGo() != 0 || stepper3.distanceToGo() != 0 )
   {
     stepper1.run();
     stepper2.run();
     stepper3.run();
+
+    if (stepper1.distanceToGo() == 0)
+    {
+      remaining_motors_byte &= ~(1 << 0);
+    }
+
+    if (stepper2.distanceToGo() == 0)
+    {
+      remaining_motors_byte &= ~(1 << 1);
+    }
+
+    if (stepper3.distanceToGo() == 0)
+    {
+      remaining_motors_byte &= ~(1 << 2);
+    }
   }
 
   // Reset all steppers and update their current position
@@ -127,6 +143,18 @@ void move_steppers()
       steppers[i].current_angle = steppers[i].next_angle;
     }
   }
+  Serial.print("Mot1. Steps: ");
+  Serial.print(steppers[0].targetSteps);
+  Serial.print("   ");
+  Serial.println(stepper1.currentPosition());
+  Serial.print("Mot2. Steps: ");
+  Serial.print(steppers[1].targetSteps);
+  Serial.print("   ");
+  Serial.println(stepper2.currentPosition());
+  Serial.print("Mot3. Steps: ");
+  Serial.print(steppers[2].targetSteps);
+  Serial.print("   ");
+  Serial.println(stepper3.currentPosition());
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
@@ -177,12 +205,16 @@ void setup()
   steppers[0].current_angle = 0;
   steppers[1].current_angle = 0;
   steppers[2].current_angle = 0;
+
+  stepper1.setCurrentPosition(0);
+  stepper2.setCurrentPosition(0);
+  stepper3.setCurrentPosition(0);
 }
 void loop()
 {
   delay(2000);
 
-  while (ind < 4) // while en el cycle lessa makhelsetsh
+  while (ind < 8) // while en el cycle lessa makhelsetsh
   {
     // Next points on the main cycle
     X_next = X_cycle[ind];
@@ -203,9 +235,9 @@ void loop()
     Serial.print(Y_current);
     Serial.print("   ");
     Serial.println(Z_current);
-    delay(2000);
+    //delay(1);
   }
-  // ind = 0;
+  ind = 0;
 
   // move_circular();
 }
