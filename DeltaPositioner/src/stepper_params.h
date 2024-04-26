@@ -1,4 +1,4 @@
-///////////////////// Stepper Motors Physical Parameters and Connection
+///////////////////// Stepper Motors Variables, Parameters & Constants
 
 #include <math.h>
 
