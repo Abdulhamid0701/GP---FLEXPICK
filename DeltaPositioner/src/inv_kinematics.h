@@ -1,0 +1,1 @@
+float* get_thetas(float x, float y, float z);
