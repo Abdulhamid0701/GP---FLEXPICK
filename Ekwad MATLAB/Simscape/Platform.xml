@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="02/26/24||23:38:08" using="Simscape Multibody Link Version 7.4" from="SolidWorks 31.0.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Platform_Assembly 2.0" uid="Platform_Assembly 2.0" version="398">
+<AssemblyFile name="Platform_Assembly 2.0.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Bottom_Connecting_Rod_Jig-5" uid="Bottom_Connecting_Rod_Jig-5" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.039348166482458369 0.50000000000000222 -0.86513104313419853 -0.99896728127566403 -2.7755575615628914e-16 0.045435349021531013 0.022717674510765479 0.8660254037844376 0.49948364063783435</Rotation>
+<Translation>0.050321796769724488 0 -0.012310145104607033</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-3" uid="Bottom_Connecting_Rod_Jig-3" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.41940793679787997 -0.50000000000000244 0.75769187837203522 -0.874907219881777 0 -0.4842905704210439 0.24214528521052314 -0.86602540378443715 -0.43745360994089061</Rotation>
+<Translation>0.035821796769724405 0 -0.03742488181435568</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-6" uid="Bottom_Connecting_Rod_Jig-6" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>1.4253715094054815e-15 -1 -7.2140670665613914e-16 -0.38184931868659827 1.2246467991473515e-16 -0.92422459273630087 0.92422459273630053 1.5928320622107964e-15 -0.38184931868659794</Rotation>
+<Translation>-0.014499999999999916 0 0.04973502691896263</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-7" uid="Bottom_Connecting_Rod_Jig-7" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.85801423073915095 0.49999999999999845 -0.11752267802047643 0.13570349958201536 -1.2608841743833201e-16 -0.99074949417155578 -0.49537474708577645 -0.86602540378443948 -0.06785174979100736</Rotation>
+<Translation>-0.035821796769724565 0 -0.037424881814355597</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-1" uid="Bottom_Connecting_Rod_Jig-1" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-1.5793036796517242e-15 1 1.1268267927839708e-15 -0.63103883871691213 -1.2246467991414437e-16 -0.77575123849776195 -0.77575123849776195 -1.9362182562073966e-15 0.63103883871691213</Rotation>
+<Translation>0.0145000000000001 0 0.049735026918962574</Translation>
+</Transform>
+</Instance>
+<Instance name="Platform 1.0-1" uid="Platform 1.0-1" entityUid="Platform 1.0*:*Default">
+<Transform>
+<Rotation>-1 -1.224646799147353e-16 1.8503717077085948e-15 1.2246467991473532e-16 -1 0 1.8503717077085948e-15 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-2" uid="Bottom_Connecting_Rod_Jig-2" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.34151944813165291 -0.49999999999999906 -0.79584198591670974 -0.91895916960283675 0 0.39435269062460426 -0.19717634531230172 0.86602540378443926 -0.45947958480141748</Rotation>
+<Translation>-0.050321796769725466 0 -0.012310145104607668</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric6">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.027500000000000011 0 0.049735026918962595</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999993 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.0275 0.0050000000000000001 0.057735026918962602</Position>
+<Axis>-1 0 1.4139431517526195e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0.0025000000000000022 0.012999999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.027500000000000021 0 0.049735026918962602</Position>
+<Axis>1 0 -2.5753964549779855e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999993 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0.0024999999999999953 0.013000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.0275 0.0050000000000000001 0.057735026918962595</Position>
+<Axis>1 0 1.4139431517526214e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.056821796769724472 0 -0.0010518148554092381</Position>
+<Axis>0.50000000000000056 0 0.86602540378443837</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.0070000000000000027 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident8">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.063750000000000001 0.0050000000000000001 -0.0050518148554092399</Position>
+<Axis>0.50000000000000022 0 0.8660254037844386</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0.0025000000000000022 0.012999999999999998 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric9">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.0568217967697245 0 -0.0010518148554092693</Position>
+<Axis>-0.50000000000000067 0 0.86602540378443837</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.007000000000000001 0</Position>
+<Axis>1.0408340855860843e-16 1.0000000000000002 2.2204460492503131e-16</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident9">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.063750000000000001 0.0050000000000000001 -0.0050518148554092295</Position>
+<Axis>-0.49999999999999983 0 0.8660254037844386</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0.0025000000000000018 0.013000000000000003 0</Position>
+<Axis>-1.0408340855860843e-16 -1.0000000000000002 -2.2204460492503131e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric10">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.029321796769724448 0 -0.048683212063553333</Position>
+<Axis>0.50000000000000089 0 -0.86602540378443804</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999923 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident10">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.015000000000000031 0.0050000000000000001 -0.040414518843273788</Position>
+<Axis>0.50000000000000067 0 -0.86602540378443826</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0.0024999999999999988 0.012999999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric11">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.0293217967697245 0 -0.048683212063553361</Position>
+<Axis>-0.5 0 -0.86602540378443871</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999993 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident11">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.036250000000000004 0.0050000000000000001 -0.052683212063553364</Position>
+<Axis>-0.50000000000000011 0 -0.8660254037844386</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0.0025000000000000022 0.012999999999999998 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Bottom_Connecting_Rod_Jig" uid="Bottom_Connecting_Rod_Jig*:*Default" version="232">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Bottom_Connecting_Rod_Jig.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0040537681820527072</Mass>
+<CenterOfMass>0 0.018289909729444866 0</CenterOfMass>
+<Inertia>1.7127863493714267e-07 1.9101898028207086e-08 1.7127863493714267e-07 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Bottom_Connecting_Rod_Jig_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.54352941176470582" g="0.52980392156862743" b="0.51607843137254905" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Platform 1.0" uid="Platform 1.0*:*Default" version="1137">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Platform 1.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.16133395332190492</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>0.00014317810027300069 0.0002837045628368171 0.00014317810027300097 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Platform 1.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

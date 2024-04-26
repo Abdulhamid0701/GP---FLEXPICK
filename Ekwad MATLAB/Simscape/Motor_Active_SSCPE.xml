@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="02/25/24||12:37:45" using="Simscape Multibody Link Version 7.4" from="SolidWorks 31.0.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Motor_Active_SSCPE" uid="Motor_Active_SSCPE" version="135">
+<AssemblyFile name="Motor_Active_SSCPE.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="motor_mount-1" uid="motor_mount-1" grounded="true" entityUid="motor_mount*:*Default">
+<Transform>
+<Rotation>-1 -1.1102230246251568e-16 0 0 1 0 0 0 -1</Rotation>
+<Translation>-0.0054624867638685091 -0.029530402749429793 0</Translation>
+</Transform>
+</Instance>
+<Instance name="NEMA344-1" uid="NEMA344-1" entityUid="NEMA344*:*Default">
+<Transform>
+<Rotation>1 0 2.120525977034049e-14 -2.1149748619109232e-14 0 1 0 -1 0</Rotation>
+<Translation>0.036537513236131379 0.058677550676405683 -0.0060000000000000001</Translation>
+</Transform>
+</Instance>
+<Instance name="Active Arm 5.0-1" uid="Active Arm 5.0-1" entityUid="Active Arm 5.0*:*Default">
+<Transform>
+<Rotation>-0.8907936947670354 0.45440795917687632 0 -0.45440795917687632 -0.8907936947670354 0 0 0 1</Rotation>
+<Translation>0.099019848009920336 0.086560072520908526 0.029000000000000005</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0.034999999999999989 0.081207953425837587 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.077000000000000013 0.01 -0.0069999999999995205</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.035000000000000003 0.081207953425835602 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.0069999999999999993 0.01 -0.0070000000000000062</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0.035000000000001946 0.01120795342583757 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.077000000000000263 0.01 -0.076999999999999527</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric4">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.03499999999999804 0.011207953425835599 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.0070000000000002456 0.01 -0.077000000000000013</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0 0 0.0060000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric5">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.042500000000000003 -0.040000000000000001 -0.042499999999999982</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>0.12549997999149537 0.014991498186703939 0.0049999999999999975</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.042500000000000003 -0.040000000000000001 -0.042499999999999982</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.12450002000850457 0.01499149818670388 0.0049999999999999975</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Active Arm 5.0" uid="Active Arm 5.0*:*Default" version="537">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Active Arm 5.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.10994831810938839</Mass>
+<CenterOfMass>0.023711141668869569 0.014781724835747377 -2.6424537784082737e-08</CenterOfMass>
+<Inertia>1.4014690910636188e-05 0.00086285098372246142 0.00087510096586879106 -3.3489821988086957e-11 -6.4527096550029741e-11 2.1647530807136355e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Active Arm 5.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="NEMA344" uid="NEMA344*:*Default" version="647">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="NEMA344.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.99907747918618306</Mass>
+<CenterOfMass>-0.042500566008832091 0.073430551981626041 -0.042498816205987111</CenterOfMass>
+<Inertia>0.002482063032879493 0.0010551102702441684 0.0024820723672565031 1.376964072121364e-07 2.8207391918137422e-10 -3.8696565491155478e-08</Inertia>
+</MassProperties>
+<GeometryFile name="NEMA344_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="motor_mount" uid="motor_mount*:*Default" version="240">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="motor_mount.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.085157397641516142</Mass>
+<CenterOfMass>0 0.014213178546630682 0.031791303365457366</CenterOfMass>
+<Inertia>0.00015885189155031619 0.00016920043526405409 0.00015893990875205985 4.1755377902665116e-05 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="motor_mount_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.20000000000000001" g="0.20000000000000001" b="0.20000000000000001" a="1"/>
+<Diffuse r="0.20000000000000001" g="0.20000000000000001" b="0.20000000000000001" a="1"/>
+<Specular r="0.1600000023841858" g="0.1600000023841858" b="0.1600000023841858" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.10000000149011612</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

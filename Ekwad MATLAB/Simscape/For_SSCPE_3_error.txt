@@ -1,0 +1,12 @@
+Constrained Instances: 'Bottom_Connecting_Rod_Jig-2', 'Bottom_Connecting_Rod_Jig-7', 'Platform_Assembly 2.0'
+Constraint Name: Symmetric1
+Error Details: Constraint is not supported. The constraint has been ignored.
+---------------------------------------------------------------------------------
+Constrained Instances: 'Bottom_Connecting_Rod_Jig-1', 'Bottom_Connecting_Rod_Jig-6', 'Platform_Assembly 2.0'
+Constraint Name: Symmetric2
+Error Details: Constraint is not supported. The constraint has been ignored.
+---------------------------------------------------------------------------------
+Constrained Instances: 'Bottom_Connecting_Rod_Jig-3', 'Bottom_Connecting_Rod_Jig-5', 'Platform_Assembly 2.0'
+Constraint Name: Symmetric3
+Error Details: Constraint is not supported. The constraint has been ignored.
+---------------------------------------------------------------------------------

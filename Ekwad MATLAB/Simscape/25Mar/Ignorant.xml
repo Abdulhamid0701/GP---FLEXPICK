@@ -1,0 +1,1743 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="03/25/24||03:43:18" using="Simscape Multibody Link Version 7.4" from="SolidWorks 31.0.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Funtivities" uid="Funtivities" version="1430">
+<AssemblyFile name="Funtivities.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="RodPlusTwoSpheres-1" uid="RodPlusTwoSpheres-1" entityUid="RodPlusTwoSpheres" rigid="true">
+<Transform>
+<Rotation>-0.064405646734430555 -0.86602540378441395 0.49583456179330881 0.99166912358653569 -1.2636023132858237e-14 0.12881129346882839 -0.11155385243832849 0.50000000000004274 0.85881065317456629</Rotation>
+<Translation>0.28554454678756042 0.50951282433429668 0.42594117520644659</Translation>
+</Transform>
+<Instance name="ROd-1" uid="ROd-1" grounded="true" entityUid="ROd*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.032146369721146928 0.0035107112290688747 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-2" uid="Sphere-2" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721146928 0.043510711229068882 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-1" uid="Sphere-1" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721146983 -0.036489288770931133 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="BasePlatform 3.0-1" uid="BasePlatform 3.0-1" entityUid="BasePlatform 3.0*:*Default">
+<Transform>
+<Rotation>-4.4034595789537586e-14 2.1483850236226854e-14 1 6.2547628837194331e-14 1 -2.14838502362241e-14 -1 6.2547628837193384e-14 -4.4034595789537586e-14</Rotation>
+<Translation>0.12700611958619665 0.44316152974164275 0.15836598679979158</Translation>
+</Transform>
+</Instance>
+<Instance name="Motor_Active_SSCPE-2" uid="Motor_Active_SSCPE-2" entityUid="Motor_Active_SSCPE">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.032468606350048654 0.48373397906524962 0.13436598679977094</Translation>
+</Transform>
+<Instance name="Active Arm 5.0-1" uid="Active Arm 5.0-1" entityUid="Active Arm 5.0*:*Default">
+<Transform>
+<Rotation>0.99563059197760573 -0.093379464114561911 1.9617357809002782e-14 0.093379464114561911 0.99563059197760573 9.944094701649954e-15 -2.0460215802758483e-14 -8.0687865349367781e-15 1</Rotation>
+<Translation>-0.1196013288799441 -0.0095362927121561691 0.023999999999968158</Translation>
+</Transform>
+</Instance>
+<Instance name="NEMA344-1" uid="NEMA344-1" entityUid="NEMA344*:*Default">
+<Transform>
+<Rotation>1 0 2.0441546949542391e-14 -2.0441546949542391e-14 0 1 0 -1 0</Rotation>
+<Translation>0.036537513236115052 0.05867755067641478 -0.0060000000000273723</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_mount-1" uid="motor_mount-1" grounded="true" entityUid="motor_mount*:*Default">
+<Transform>
+<Rotation>-1 -1.1102230246251568e-16 0 0 1 0 0 0 -1</Rotation>
+<Translation>-0.0054624867638685091 -0.029530402749429807 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Motor_Active_SSCPE-3" uid="Motor_Active_SSCPE-3" entityUid="Motor_Active_SSCPE">
+<Transform>
+<Rotation>-0.50000000000004219 2.1363889761866123e-14 0.8660254037844145 6.4769495002322679e-14 0.99999999999999989 1.2725790418524917e-14 -0.8660254037844145 6.2454923313019255e-14 -0.50000000000004197</Rotation>
+<Translation>0.15349026651344136 0.48373397906523052 0.25223787487289029</Translation>
+</Transform>
+<Instance name="Active Arm 5.0-1" uid="Active Arm 5.0-1" entityUid="Active Arm 5.0*:*Default">
+<Transform>
+<Rotation>0.99605898814698124 -0.088693247384520668 1.3976953539968723e-15 0.088693247384520682 0.99605898814698124 0 -1.3877787807814453e-15 1.7347234759768064e-16 1</Rotation>
+<Translation>-0.11972107343279736 -0.0090012526925037362 0.023999999999959498</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_mount-1" uid="motor_mount-1" grounded="true" entityUid="motor_mount*:*Default">
+<Transform>
+<Rotation>-1 0 -1.6653345369377341e-16 0 1 0 1.6653345369377341e-16 0 -1</Rotation>
+<Translation>-0.0054624867638685126 -0.029530402749429807 0</Translation>
+</Transform>
+</Instance>
+<Instance name="NEMA344-1" uid="NEMA344-1" entityUid="NEMA344*:*Default">
+<Transform>
+<Rotation>1 4.4408920985006262e-16 2.1157925286260611e-14 -2.1157925345354043e-14 0 0.99999999999999967 2.2204460492503131e-16 -1 0</Rotation>
+<Translation>0.03653751323837906 0.058677550676405565 -0.0060000000062485348</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Ta7t-1" uid="Ta7t-1" entityUid="Ta7t" rigid="true">
+<Transform>
+<Rotation>-0.86602540378445991 2.1483850236224655e-14 0.49999999999996309 4.98793744942714e-14 1 4.3425910401389205e-14 -0.49999999999996309 6.2547628837204744e-14 -0.86602540378445991</Rotation>
+<Translation>0.13905423476685408 0.17228226893571963 0.13192255580002618</Translation>
+</Transform>
+<Instance name="playe-1" uid="playe-1" grounded="true" entityUid="playe*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.0035516483318942249 -0.0095157284687275023 0.0083390018959576817</Translation>
+</Transform>
+</Instance>
+<Instance name="RodPlusTwoSpheres-1" uid="RodPlusTwoSpheres-1" entityUid="RodPlusTwoSpheres" rigid="true">
+<Transform>
+<Rotation>-0.056320275907403503 0.50000000000000022 0.86419212361703091 -0.99788311040369437 5.6621829287483818e-16 -0.065033052911947151 -0.032516526455974082 -0.86602540378443849 0.49894155520184741</Rotation>
+<Translation>-0.062787551389711371 -0.040645991101083606 -0.021807042533863827</Translation>
+</Transform>
+<Instance name="ROd-1" uid="ROd-1" grounded="true" entityUid="ROd*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.032146369721147067 0.0035107112290688608 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-2" uid="Sphere-2" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>0.99999999999999978 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721147039 0.043510711229068841 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-1" uid="Sphere-1" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>0.99999999999999978 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721147039 -0.036489288770931133 0.014578075774068056</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="RodPlusTwoSpheres-3" uid="RodPlusTwoSpheres-3" entityUid="RodPlusTwoSpheres" rigid="true">
+<Transform>
+<Rotation>0.75 -0.49999999999999994 -0.43301270189221924 0.5 0 0.86602540378443871 -0.4330127018922193 -0.8660254037844386 0.24999999999999994</Rotation>
+<Translation>0.071697773322543762 -0.0060675275667914641 -0.031052451806295789</Translation>
+</Transform>
+<Instance name="ROd-1" uid="ROd-1" grounded="true" entityUid="ROd*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.032146369721147039 0.0035107112290688608 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-2" uid="Sphere-2" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 -1.110223024647559e-16 0 0 0 1 1.110223024647559e-16 -1 0</Rotation>
+<Translation>-0.032146369721147032 0.043510711229068869 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-1" uid="Sphere-1" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 -1.110223024647559e-16 0 0 0 1 1.110223024647559e-16 -1 0</Rotation>
+<Translation>-0.032146369721147025 -0.036489288770931119 0.014578075774068083</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="RodPlusTwoSpheres-2" uid="RodPlusTwoSpheres-2" entityUid="RodPlusTwoSpheres" rigid="true">
+<Transform>
+<Rotation>-2.2204460492503131e-16 1 1.3877787807814457e-16 -0.53976718356547482 0 -0.84181434268239652 -0.84181434268239652 -2.2204460492503131e-16 0.53976718356547493</Rotation>
+<Translation>-0.0070623595609631273 -0.014595250639644175 0.023143986816114764</Translation>
+</Transform>
+<Instance name="ROd-1" uid="ROd-1" grounded="true" entityUid="ROd*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.032146369721147053 0.0035107112290689024 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-2" uid="Sphere-2" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721147053 0.043510711229068855 0.014578075774068139</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-1" uid="Sphere-1" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721147081 -0.036489288770931105 0.014578075774068139</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+<Instance name="PassivePlusRodFady-1" uid="PassivePlusRodFady-1" entityUid="PassivePlusRodFady" rigid="true">
+<Transform>
+<Rotation>-0.48389731177397832 0.27610494990185752 -0.83042726851760473 0.55334558128746492 0.83168526197603221 -0.045916148373925603 0.67797644452263583 -0.48173196037999355 -0.55523171651202852</Rotation>
+<Translation>0.32849953477157312 0.29868135901230464 0.08018001533761826</Translation>
+</Transform>
+<Instance name="phs-1" uid="phs-1" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>0.97515569232342203 0 0.22152059888242315 0 1.0000000000000002 0 -0.22152059888242295 0 0.97515569232342203</Rotation>
+<Translation>-9.1946563486558497e-05 0.26474288388214318 0.09523187746145817</Translation>
+</Transform>
+</Instance>
+<Instance name="phs-2" uid="phs-2" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.97515569232342192 0 0.22152059888242329 0 -1 0 0.22152059888242329 0 0.97515569232342192</Rotation>
+<Translation>-9.1946563486586252e-05 -0.14494725906296724 0.095231877461458198</Translation>
+</Transform>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" grounded="true" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-9.1946563486544619e-05 -0.1401021875904121 0.095231877461458281</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassivePlusRodFady-2" uid="PassivePlusRodFady-2" entityUid="PassivePlusRodFady" rigid="true">
+<Transform>
+<Rotation>-0.61393409913642694 0.27610494990183543 -0.73949373124946005 0.53824984442385893 0.83168526197605142 -0.13633315807065519 0.57738377782479777 -0.48173196037997268 -0.6592133884056306</Rotation>
+<Translation>0.25054577455481386 0.30729055259901417 0.050073136023646311</Translation>
+</Transform>
+<Instance name="phs-1" uid="phs-1" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>0.97515569232342214 0 0.22152059888242304 0 1 0 -0.22152059888242301 0 0.97515569232342192</Rotation>
+<Translation>-9.1946563486565436e-05 0.26474288388214301 0.095231877461458142</Translation>
+</Transform>
+</Instance>
+<Instance name="phs-2" uid="phs-2" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.97515569232342214 0 0.22152059888242348 0 -1 0 0.22152059888242348 0 0.97515569232342214</Rotation>
+<Translation>-9.1946563486579314e-05 -0.14494725906296718 0.09523187746145817</Translation>
+</Transform>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" grounded="true" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-9.1946563486558497e-05 -0.1401021875904121 0.09523187746145817</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="RodPlusTwoSpheres-3" uid="RodPlusTwoSpheres-3" entityUid="RodPlusTwoSpheres" rigid="true">
+<Transform>
+<Rotation>0.029944739850379209 -4.394518581471449e-14 0.99955155572651355 -0.99955155572651355 6.2509482518864648e-14 0.029944739850379209 -6.3797377656288642e-14 -1 -4.2053648655579354e-14</Rotation>
+<Translation>-0.21609784020957476 0.44586576244298448 0.16187669802887569</Translation>
+</Transform>
+<Instance name="ROd-1" uid="ROd-1" grounded="true" entityUid="ROd*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.032146369721147094 0.0035107112290688747 0.014578075774068111</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-2" uid="Sphere-2" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721147094 0.043510711229068869 0.014578075774068083</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-1" uid="Sphere-1" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>-0.032146369721147039 -0.036489288770931133 0.014578075774068083</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Motor_Active_SSCPE-1" uid="Motor_Active_SSCPE-1" entityUid="Motor_Active_SSCPE">
+<Transform>
+<Rotation>-0.4999999999999597 2.1401041952178966e-14 -0.86602540378446169 -4.3530075262936078e-14 0.99999999999999989 4.984389533495545e-14 0.8660254037844618 6.2620098673827956e-14 -0.49999999999995964</Rotation>
+<Translation>0.19505948589508715 0.48373397906523985 0.088494098726693837</Translation>
+</Transform>
+<Instance name="NEMA344-1" uid="NEMA344-1" entityUid="NEMA344*:*Default">
+<Transform>
+<Rotation>1 1.720845688168993e-15 2.1201190069326697e-14 -2.1201190069326697e-14 0 1 1.720845688168993e-15 -1 0</Rotation>
+<Translation>0.036537513230580826 0.058677550676405454 -0.0060000000005292486</Translation>
+</Transform>
+</Instance>
+<Instance name="Active Arm 5.0-1" uid="Active Arm 5.0-1" entityUid="Active Arm 5.0*:*Default">
+<Transform>
+<Rotation>0.99384961240371261 0.11073819542050632 -7.1500922930647914e-15 -0.11073819542050632 0.9938496124037125 0 7.1054273576010034e-15 7.9797279894933156e-16 1</Rotation>
+<Translation>-0.12245526286588951 0.014074863201879007 0.023999999999993776</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_mount-1" uid="motor_mount-1" grounded="true" entityUid="motor_mount*:*Default">
+<Transform>
+<Rotation>-1 0 0 0 1 0 0 0 -1</Rotation>
+<Translation>-0.0054624867638685126 -0.029530402749429807 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="RodPlusTwoSpheres-2" uid="RodPlusTwoSpheres-2" entityUid="RodPlusTwoSpheres" rigid="true">
+<Transform>
+<Rotation>0.36332874868320403 0.86602540378445847 0.34349995688538759 0.68699991377088498 -4.9923084606951174e-14 -0.72665749736639818 -0.62930385256972166 0.49999999999996592 -0.59495937772333674</Rotation>
+<Translation>0.29518059178851735 0.55805913597325152 -0.13994216604886084</Translation>
+</Transform>
+<Instance name="ROd-1" uid="ROd-1" grounded="true" entityUid="ROd*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.032146369721147039 0.0035107112290689024 0.014578075774068167</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-2" uid="Sphere-2" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 -1.6653345369377363e-16 -1.1102230246251564e-16 1.1102230246251563e-16 0 1 -1.6653345369377343e-16 -1 0</Rotation>
+<Translation>-0.032146369721147039 0.04351071122906891 0.014578075774068139</Translation>
+</Transform>
+</Instance>
+<Instance name="Sphere-1" uid="Sphere-1" entityUid="Sphere*:*145910-DEBearings">
+<Transform>
+<Rotation>1 -1.6653345369377363e-16 -1.1102230246251564e-16 1.1102230246251563e-16 0 1 -1.6653345369377343e-16 -1 0</Rotation>
+<Translation>-0.03214636972114715 -0.036489288770931133 0.014578075774068194</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassivePlusRodFady-3" uid="PassivePlusRodFady-3" entityUid="PassivePlusRodFady" rigid="true">
+<Transform>
+<Rotation>0.2352392100127185 0.276687698091305 -0.93172229328138712 -0.68586700326645811 0.72648060178027574 0.04257216305588496 0.68865736611386108 0.62902293516365793 0.36066768518293424</Rotation>
+<Translation>0.338304306052713 0.27350742272114881 0.21471455022420982</Translation>
+</Transform>
+<Instance name="phs-1" uid="phs-1" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>0.97515569232342203 0 0.22152059888242304 0 1 0 -0.22152059888242304 0 0.97515569232342203</Rotation>
+<Translation>-9.1946563486558497e-05 0.26474288388214307 0.095231877461458142</Translation>
+</Transform>
+</Instance>
+<Instance name="phs-2" uid="phs-2" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.97515569232342214 0 0.22152059888242337 0 -1 0 0.22152059888242345 0 0.97515569232342214</Rotation>
+<Translation>-9.1946563486558497e-05 -0.14494725906296729 0.095231877461458225</Translation>
+</Transform>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" grounded="true" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-9.1946563486530741e-05 -0.14010218759041215 0.095231877461458253</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassivePlusRodFady-4" uid="PassivePlusRodFady-4" entityUid="PassivePlusRodFady" rigid="true">
+<Transform>
+<Rotation>0.1477238914416055 0.2766876980911811 -0.94953755566715314 -0.67895256929394554 0.72648060178041607 0.10606292418142556 0.71916692119875703 0.62902293516355035 0.29517636506287742</Rotation>
+<Translation>0.27071080790156166 0.26746171409618225 0.26095421684534986</Translation>
+</Transform>
+<Instance name="phs-1" uid="phs-1" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>0.97515569232342214 0 0.22152059888242284 0 1 -1.3533003777646855e-16 -0.22152059888242284 1.3196785668006704e-16 0.97515569232342214</Rotation>
+<Translation>-9.1946563486489108e-05 0.26474288388214312 0.095231877461458281</Translation>
+</Transform>
+</Instance>
+<Instance name="phs-2" uid="phs-2" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.97515569232342203 0 0.22152059888242318 0 -1 -1.3533003777646852e-16 0.22152059888242318 -1.4426472014546801e-16 0.97515569232342203</Rotation>
+<Translation>-9.1946563486572375e-05 -0.14494725906296718 0.095231877461458184</Translation>
+</Transform>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" grounded="true" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-9.1946563486544619e-05 -0.1401021875904121 0.095231877461458198</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassivePlusRodFady-5" uid="PassivePlusRodFady-5" entityUid="PassivePlusRodFady" rigid="true">
+<Transform>
+<Rotation>0.72144304951891369 -0.6859023923056099 -0.095172656421323887 0.66342184474843602 0.72400851497305374 -0.18889977807582375 0.19847262332984969 0.073140812655824519 0.97737354134057319</Rotation>
+<Translation>-0.0027483372572623985 0.29528415039529632 0.084981446517539638</Translation>
+</Transform>
+<Instance name="phs-1" uid="phs-1" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>0.97515569232342225 0 0.22152059888242306 1.0148132334464322e-16 0.99999999999999989 0 -0.22152059888242312 0 0.97515569232342214</Rotation>
+<Translation>-9.1946563486516864e-05 0.26474288388214295 0.095231877461458198</Translation>
+</Transform>
+</Instance>
+<Instance name="phs-2" uid="phs-2" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.97515569232342203 0 0.2215205988824234 0 -0.99999999999999989 0 0.2215205988824234 0 0.97515569232342203</Rotation>
+<Translation>-9.1946563486572375e-05 -0.14494725906296718 0.095231877461458184</Translation>
+</Transform>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" grounded="true" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-9.1946563486516864e-05 -0.1401021875904121 0.095231877461458239</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassivePlusRodFady-6" uid="PassivePlusRodFady-6" entityUid="PassivePlusRodFady" rigid="true">
+<Transform>
+<Rotation>0.72020112334880215 -0.68590239230561045 -0.10415493342402901 0.66101652016632695 0.72400851497305341 -0.19715179510649608 0.21063594658633972 0.073140812655824256 0.9748245583333045</Rotation>
+<Translation>-0.001893052345262792 0.29606978430864694 0.0052253093307132008</Translation>
+</Transform>
+<Instance name="phs-1" uid="phs-1" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>0.97515569232342214 0 0.22152059888242312 0 1 0 -0.22152059888242306 0 0.97515569232342203</Rotation>
+<Translation>-9.1946563486544619e-05 0.26474288388214307 0.095231877461458211</Translation>
+</Transform>
+</Instance>
+<Instance name="phs-2" uid="phs-2" entityUid="phs*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.97515569232342203 0 0.2215205988824234 0 -1 0 0.22152059888242337 0 0.97515569232342192</Rotation>
+<Translation>-9.1946563486544619e-05 -0.14494725906296724 0.095231877461458211</Translation>
+</Transform>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" grounded="true" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-9.1946563486516864e-05 -0.14010218759041212 0.095231877461458211</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Frame_3-1" uid="Frame_3-1" grounded="true" entityUid="Frame_3" rigid="true">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+<Instance name="2020 corner-1" uid="2020 corner-1" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.47720611958619902 -0.041838470258400352 -0.19163401320023044</Translation>
+</Transform>
+</Instance>
+<Instance name="Frame_2020-2" uid="Frame_2020-2" entityUid="Frame_2020" rigid="true">
+<Transform>
+<Rotation>1 7.6531918057788768e-16 -2.2326897950373361e-14 7.6531918057788768e-16 -1 1.498801083243944e-15 -2.2326897950373355e-14 -1.4988010832439605e-15 -1</Rotation>
+<Translation>0.0016465860803543675 0.51391779099943335 0.22412102476532533</Translation>
+</Transform>
+<Instance name="2020 corner-3" uid="2020 corner-3" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>1.110221663522934e-14 2.2576915827050432e-14 -1 1.6545471808683794e-15 1 2.2576915827050384e-14 1 -1.6545471808686319e-15 1.1102216635229275e-14</Rotation>
+<Translation>0.47535953350582988 0.095756261257821162 0.41595503796555489</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-3" uid="2020-700mm-3" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.47535953350583027 0.075756261257823698 -0.28424496203444616</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-500mm-2" uid="2020-500mm-2" entityUid="2020-500mm*:*Default">
+<Transform>
+<Rotation>-1 -2.2326897950373348e-14 -2.2576915827050444e-14 2.25769158270504e-14 -1.4988010832439607e-15 -1 2.2326897950373326e-14 -1 1.4988010832439619e-15</Rotation>
+<Translation>0.49535953350585982 0.57575626125782065 0.43575503796553261</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-4" uid="2020 corner-4" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1 -1.1102230246166312e-16 2.0507060722827257e-14 0 1 5.4457768646805295e-14 -2.0507060722827244e-14 5.4457768646805295e-14 -1</Rotation>
+<Translation>0.49535953350581913 0.095756261257812281 0.41575503796557023</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-2" uid="2020-700mm-2" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1.1102216635229308e-14 2.2576915827050448e-14 -1 1.2390881971237312e-16 1 2.2576915827050384e-14 1 -1.2390881971262674e-16 1.1102216635229316e-14</Rotation>
+<Translation>0.47535953350582932 0.075756261257810986 0.41575503796555674</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-500mm-1" uid="2020-500mm-1" entityUid="2020-500mm*:*Default">
+<Transform>
+<Rotation>-1.1224681315144047e-14 1.0000000000000002 3.2398511977802043e-14 0 3.2343000826570855e-14 -1.0000000000000002 -1 -1.1224681315144054e-14 0</Rotation>
+<Translation>-0.24464046649419074 0.57575626125779966 0.43555503796556672</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-1" uid="2020 corner-1" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1 -3.0612767223119795e-15 0 -3.0612767223120465e-15 1 0 0 0 -1</Rotation>
+<Translation>-0.22484046649417255 0.095756261257807396 0.41555503796556648</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-2" uid="2020 corner-2" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.1102216635228795e-14 2.2576915827050697e-14 1 2.2576915827050672e-14 1 -2.2576915827050384e-14 -1 2.2576915827050416e-14 -1.1102216635229316e-14</Rotation>
+<Translation>-0.22464046649416994 0.09575626125782627 0.4355550379655645</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-1" uid="2020-700mm-1" grounded="true" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.24464046649417012 0.075756261257813651 -0.28444496203443348</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="2020 corner-8" uid="2020 corner-8" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>0 -3.2307490016592055e-14 -1 1.2390881971262928e-16 1 -3.2140956562898282e-14 0.99999999999999989 -1.2390881971262925e-16 0</Rotation>
+<Translation>0.47700611958620004 -0.041838470258386232 -0.211434013200231</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-6" uid="2020 corner-6" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.1224681315144048e-14 1 3.2343000826570811e-14 0 3.2343000826570811e-14 -1 -1 -1.1224681315144045e-14 0</Rotation>
+<Translation>-0.22299388041384371 0.41816152974162124 0.52816598679976989</Translation>
+</Transform>
+</Instance>
+<Instance name="Frame_2020-1" uid="Frame_2020-1" grounded="true" entityUid="Frame_2020" rigid="true">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.0016465860803693 -0.13759473151621837 0.092610948834215723</Translation>
+</Transform>
+<Instance name="2020 corner-3" uid="2020 corner-3" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>1.1102216635229345e-14 2.2576915827050397e-14 -1 1.6545471808683798e-15 1 2.2576915827050416e-14 1 -1.6545471808686313e-15 1.1102216635229269e-14</Rotation>
+<Translation>0.47535953350582993 0.095756261257821149 0.41595503796555477</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-3" uid="2020-700mm-3" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.47535953350583027 0.075756261257823657 -0.28424496203444616</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-500mm-2" uid="2020-500mm-2" entityUid="2020-500mm*:*Default">
+<Transform>
+<Rotation>-1 -2.2326897950373355e-14 -2.257691582705041e-14 2.2576915827050435e-14 -1.4988010832439613e-15 -1 2.232689795037332e-14 -1 1.4988010832439613e-15</Rotation>
+<Translation>0.49535953350585982 0.57575626125782065 0.43575503796553261</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-4" uid="2020 corner-4" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1 -1.1102230246169659e-16 2.0507060722827254e-14 0 1 5.4457768646805295e-14 -2.0507060722827251e-14 5.4457768646805301e-14 -1</Rotation>
+<Translation>0.49535953350581918 0.095756261257812267 0.41575503796557012</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-2" uid="2020-700mm-2" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1.1102216635229313e-14 2.2576915827050413e-14 -1 1.2390881971237371e-16 1 2.2576915827050416e-14 1 -1.2390881971262615e-16 1.110221663522931e-14</Rotation>
+<Translation>0.47535953350582938 0.075756261257810945 0.4157550379655568</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-500mm-1" uid="2020-500mm-1" entityUid="2020-500mm*:*Default">
+<Transform>
+<Rotation>-1.1224681315144051e-14 1.0000000000000002 3.2398511977802075e-14 0 3.2343000826570817e-14 -1.0000000000000002 -1 -1.1224681315144048e-14 0</Rotation>
+<Translation>-0.24464046649419074 0.57575626125779966 0.43555503796556672</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-1" uid="2020 corner-1" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1 -3.061276722312013e-15 0 -3.061276722312013e-15 1 0 0 0 -1</Rotation>
+<Translation>-0.22484046649417258 0.09575626125780741 0.41555503796556648</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-2" uid="2020 corner-2" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.11022166352288e-14 2.2576915827050665e-14 1 2.2576915827050668e-14 1 -2.2576915827050416e-14 -1 2.2576915827050416e-14 -1.110221663522931e-14</Rotation>
+<Translation>-0.22464046649416997 0.09575626125782627 0.4355550379655645</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-1" uid="2020-700mm-1" grounded="true" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.24464046649417012 0.075756261257813665 -0.28444496203443348</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="2020 corner-5" uid="2020 corner-5" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>2.2326897950373355e-14 -1 -2.2609161275193162e-14 1.4988010832439755e-15 2.2609161275193436e-14 -1 1 2.232689795037333e-14 1.4988010832444938e-15</Rotation>
+<Translation>0.47700611958622774 0.41816152974161924 0.50836598679973533</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-7" uid="2020 corner-7" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.2632854996385319e-14 3.1577681645992955e-14 1 1.4988010832436332e-15 1 -3.1577681645992942e-14 -1 1.4988010832432356e-15 -1.2632854996385366e-14</Rotation>
+<Translation>-0.22299388041384469 -0.041838470258367684 -0.19143401320023848</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-3" uid="2020 corner-3" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1 -1.3800824659077895e-15 7.6531918057787506e-16 -7.6531918057786875e-16 1.4988010832418079e-15 -1.0000000000000002 1.3800824659086103e-15 -1.0000000000000002 -1.4988010832428845e-15</Rotation>
+<Translation>-0.22319388041381996 0.41816152974161896 0.50816598679854752</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-17" uid="2020 corner-17" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>2.2965493885669113e-14 1 -1.9054836120072302e-16 1 -2.2965493885669079e-14 -5.6311573051583718e-14 -5.6311573051583769e-14 -1.9054836119944034e-16 -1</Rotation>
+<Translation>-0.22299388041380108 0.41836152974164637 0.27856598679973477</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-1" uid="2020-700mm-1" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>-4.29101199017623e-14 3.2352513886373407e-14 -1 -3.1633192797225576e-14 -1 -3.2352513886372056e-14 -1 3.1633192797224187e-14 4.2799097599299785e-14</Rotation>
+<Translation>0.47700611958620415 0.43816152974166128 0.52836598679972213</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-14" uid="2020 corner-14" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.1224681315143411e-14 -1 3.3961382176077987e-14 1 -1.1224681315144132e-14 -2.118256355655643e-14 2.1182563556556815e-14 3.396138217607747e-14 1</Rotation>
+<Translation>0.47700611958617617 0.41836152974161711 0.17836598679321422</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-18" uid="2020 corner-18" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>2.2708607867663159e-14 1 -4.3187675657909988e-14 0.99999999999999989 -2.2653096716431646e-14 -4.3128899144844604e-14 -4.3128899144845595e-14 -4.3465231414057031e-14 -1</Rotation>
+<Translation>0.14700611958621138 0.4183615298443405 0.50836598679973666</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-12" uid="2020 corner-12" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>3.2352513886374789e-14 -4.2910119901761246e-14 1.0000000000000002 -1 -6.403170477502767e-14 3.2352513886372044e-14 6.4031704775026281e-14 -1 -4.2965631052992504e-14</Rotation>
+<Translation>0.14700611958618748 0.43816152974164835 0.5083659867997361</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-2" uid="2020 corner-2" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.24279388041380129 -0.04183847025840217 -0.19183401320021776</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-10" uid="2020 corner-10" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.1348590134855594e-14 -1 3.3801597142194805e-14 1 -1.134859013485752e-14 -3.300808506075565e-14 3.3008085060756035e-14 3.3801597142194433e-14 1</Rotation>
+<Translation>0.10700611958616864 0.41836152974161583 -0.19163401320023943</Translation>
+</Transform>
+</Instance>
+<Instance name="2020-700mm-2" uid="2020-700mm-2" entityUid="2020-700mm*:*Default">
+<Transform>
+<Rotation>1.2823075934420558e-14 3.1595327455461397e-14 -1 3.3039493192727599e-14 1 3.159532745546182e-14 1 -3.303949319272799e-14 1.2490009027033011e-14</Rotation>
+<Translation>0.47700611958615435 -0.061838470258397366 -0.21123401320024532</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-4" uid="2020 corner-4" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-0.99999999999999989 -1.0935696792557792e-14 -7.6531918057810994e-16 7.6531918057809357e-16 1.4988010832439296e-15 -0.99999999999999989 1.0935696792557792e-14 -1 -1.4988010832439211e-15</Rotation>
+<Translation>0.49680611958622312 0.41816152974160947 0.50836598679974865</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-9" uid="2020 corner-9" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>1.1224681315143275e-14 1 3.380159714219471e-14 -1 1.122468131514407e-14 -2.3951808090581601e-14 -2.3951808090581993e-14 -3.3579552537269439e-14 1</Rotation>
+<Translation>0.14700611958616849 0.43816152974162831 -0.19163401320021553</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-11" uid="2020 corner-11" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-3.2352513886374827e-14 -4.29101199017623e-14 -1 1 -6.4155613594740288e-14 -3.2352513886371987e-14 -6.4155613594738824e-14 -0.99999999999999967 4.2965631052993558e-14</Rotation>
+<Translation>0.10700611958618812 0.41836152974164753 0.50836598679973932</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-16" uid="2020 corner-16" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>1.1157741397484043e-14 -1 -3.3917511701817175e-14 -1 -1.1268763699945358e-14 -4.2574523314190237e-16 4.257452331415174e-16 3.3917511701817187e-14 -1</Rotation>
+<Translation>0.47700611958618916 0.43816152974160461 0.13836598679320516</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-28" uid="2020 corner-28" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>3.2352513886371634e-14 -1 -3.441221980573842e-14 -1 -3.2352513886372492e-14 2.3951808090581671e-14 -2.3951808090582699e-14 3.4134664049578458e-14 -0.99999999999999989</Rotation>
+<Translation>0.10700611958616563 0.43816152974165878 -0.0014340132002349905</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-19" uid="2020 corner-19" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-2.2841585065956517e-14 1 1.0232156296715482e-15 -1 -2.2841585065956539e-14 2.250997590938903e-14 2.2509975909389052e-14 -1.023215629671034e-15 1</Rotation>
+<Translation>-0.22299388041380039 0.43816152974163719 0.31856598679974862</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-21" uid="2020 corner-21" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-2.2582004343899193e-14 2.2326897950373333e-14 1 1 -6.3412160676463594e-16 2.2582004343899209e-14 6.341216067651345e-16 0.99999999999999978 -2.2548942555298355e-14</Rotation>
+<Translation>-0.22299388041381935 0.41836152974161989 0.038565986799763037</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-25" uid="2020 corner-25" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>3.6454703634867347e-14 -1 -9.6034291630076041e-15 1 3.6454703634867864e-14 -5.2958967563561535e-14 5.2958967563562015e-14 -9.8809849191638932e-15 1</Rotation>
+<Translation>0.10700611958619191 0.41836152974163476 0.31856598679978132</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-23" uid="2020 corner-23" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-2.2304448587741424e-14 1 -2.2382409101605323e-14 1 2.2637515495130808e-14 3.2254427886738708e-14 3.2087894433045446e-14 -2.2382409101604587e-14 -1</Rotation>
+<Translation>-0.22299388041382964 0.41836152974161511 -0.0014340132002234349</Translation>
+</Transform>
+</Instance>
+<Instance name="740mm V-slot-2" uid="740mm V-slot-2" entityUid="740mm V-slot*:*Default">
+<Transform>
+<Rotation>2.247512088528634e-14 -0.99999999999999967 4.4075854077618715e-14 1 2.247512088528356e-14 -6.254761986388298e-14 6.2547619863882008e-14 4.4408920985006262e-14 1</Rotation>
+<Translation>0.12700611958619634 0.42816152974164284 0.15836598679979064</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-29" uid="2020 corner-29" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>2.2475120885286331e-14 0.99999999999999989 -4.4519943287468171e-14 1 -2.2475120885283586e-14 6.2506743808708194e-14 6.2617766111173499e-14 -4.4408920985006274e-14 -0.99999999999999978</Rotation>
+<Translation>0.14700611958619542 0.41836152974164453 0.13836598679324122</Translation>
+</Transform>
+</Instance>
+<Instance name="340mm V-slot-2" uid="340mm V-slot-2" entityUid="340mm V-slot*:*Default">
+<Transform>
+<Rotation>-1.0688710273097563e-14 -4.5352610555937645e-14 -1.0000000000000002 1 -2.1518705351688491e-14 -1.0688710273096563e-14 -2.1518705351687993e-14 -1 4.496403249731884e-14</Rotation>
+<Translation>-0.057993880413811406 0.42816152974162613 0.2985659867997511</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-26" uid="2020 corner-26" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>3.2454308828136173e-14 -1 -4.3311270490437941e-14 -1 -3.2454308828138887e-14 6.2525920810553434e-14 -6.2803476566710581e-14 4.3033714734278371e-14 -0.99999999999999989</Rotation>
+<Translation>0.10700611958617764 0.43816152974164119 0.27856598679978106</Translation>
+</Transform>
+</Instance>
+<Instance name="340mm V-slot-1" uid="340mm V-slot-1" entityUid="340mm V-slot*:*Default">
+<Transform>
+<Rotation>1.2872568853666672e-14 -4.29101199017623e-14 -1 1 -6.4031704775027632e-14 1.2872568853669443e-14 -6.4031704775028149e-14 -1 4.3021142204224816e-14</Rotation>
+<Translation>0.31200611958620589 0.42816152974165805 0.15836598679318034</Translation>
+</Transform>
+</Instance>
+<Instance name="340mm V-slot-3" uid="340mm V-slot-3" entityUid="340mm V-slot*:*Default">
+<Transform>
+<Rotation>4.3756055642835372e-14 -2.298161660974074e-14 -1 1 0 4.3756055642835372e-14 0 -1 2.298161660974074e-14</Rotation>
+<Translation>-0.057993880413801074 0.42816152974162264 0.018565986799759057</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-30" uid="2020 corner-30" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>-1.293414176741378e-14 1 6.2547619863882437e-14 -1 -1.2934141767409867e-14 -6.2547619863883258e-14 -6.2547619863882437e-14 -6.2547619863883233e-14 1</Rotation>
+<Translation>0.14700611958621043 0.43816152974163874 0.17836598679323976</Translation>
+</Transform>
+</Instance>
+<Instance name="2020 corner-27" uid="2020 corner-27" entityUid="2020 corner*:*Default">
+<Transform>
+<Rotation>3.6454703634867347e-14 -1 -9.6034291630076041e-15 1 3.6454703634867864e-14 -5.2958967563561535e-14 5.2958967563562015e-14 -9.8809849191638932e-15 1</Rotation>
+<Translation>0.10700611958619466 0.41836152974164964 0.03856598679978137</Translation>
+</Transform>
+</Instance>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.0050000000000000044 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-3</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.049999999999999989 -0.0060420465741644058 0.0059999999999999915</Position>
+<Axis>-1.1102236155595354e-16 -0.99999999999999989 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.0050000000000000044 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-1</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.049999999999999989 -0.0060420465741643503 0.0059999999999999498</Position>
+<Axis>0 -0.99999999999999989 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.0050000000000000044 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-2</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.050000000000000003 -0.0060420465741644058 0.0060000000000000053</Position>
+<Axis>-1.1102230246251568e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Parallel name="Parallel1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>-0.17798843892006141 0.0050000000000000044 0.091214667739347444</Position>
+<Axis>0.50000000000000466 0 0.86602540378443593</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-3</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.6653345369377348e-16 0 -1</Axis>
+</ConstraintGeometry>
+</Parallel>
+<Coincident name="Coincident5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>-0.038301270189221776 0.00500000000000006 0.033660254037844645</Position>
+<Axis>-0.86602540378443627 0 0.500000000000004</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-3</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.049999999999999989 -0.0060420465741644058 0.0059999999999999915</Position>
+<Axis>-1.0000000000000002 -1.1102236155594722e-16 1.6653345369377348e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Parallel name="Parallel2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0.0099999999999999256 0.00500000000000006 -0.19974984355438191</Position>
+<Axis>-1 0 6.1395953441235967e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-2</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Parallel>
+<Coincident name="Coincident7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0.010000000000000037 0.00500000000000006 -0.050000000000000017</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-2</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.050000000000000003 -0.0060420465741644058 0.0060000000000000053</Position>
+<Axis>-1 -1.1102230246251568e-16 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Parallel name="Parallel3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0.16798843892006271 0.0050000000000000044 0.10853517581503427</Position>
+<Axis>0.49999999999999728 0 -0.86602540378444048</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-1</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1.1102230246251565e-16 0 -1</Axis>
+</ConstraintGeometry>
+</Parallel>
+<Coincident name="Coincident9">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0.048301270189222298 0.0050000000000000044 0.0163397459621549</Position>
+<Axis>0.86602540378443982 0 0.49999999999999784</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-1</Uid>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.049999999999999989 -0.0060420465741643503 0.0059999999999999498</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident10">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-2</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident11">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-0.50000000000000466 0 -0.86602540378443604</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-3</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident12">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-0.50000000000000411 0 0.86602540378443649</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-1</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-3</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.11445654743626338 0.01498995493556976 0.0049999999999999489</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-1</Uid>
+<Uid>ROd-1</Uid>
+</InstancePath>
+<Position>0 0.04450000000000004 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident27">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-3</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.11445654743626338 0.01498995493556976 0.0049999999999999489</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-1</Uid>
+<Uid>ROd-1</Uid>
+</InstancePath>
+<Position>0 -0.0049999999999999489 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-1</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.11445654743626327 0.014989954935569816 0.0050000000000000322</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-2</Uid>
+<Uid>ROd-1</Uid>
+</InstancePath>
+<Position>-1.1102230246251565e-16 0.04450000000000004 0</Position>
+<Axis>-1.1102230246251565e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident28">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-1</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.11445654743626327 0.014989954935569816 0.0050000000000000322</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-2</Uid>
+<Uid>ROd-1</Uid>
+</InstancePath>
+<Position>0 -0.0049999999999999489 0</Position>
+<Axis>-1.1102230246251565e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-2</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.11445654743626332 0.014989954935569705 0.0050000000000000044</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-3</Uid>
+<Uid>ROd-1</Uid>
+</InstancePath>
+<Position>0 0.044499999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident29">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Motor_Active_SSCPE-2</Uid>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.11445654743626332 0.014989954935569705 -0.0050000000000000044</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-3</Uid>
+<Uid>ROd-1</Uid>
+</InstancePath>
+<Position>0 0.0050000000000000044 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric5">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-2</Uid>
+<Uid>Sphere-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-1</Uid>
+<Uid>phs-1</Uid>
+</InstancePath>
+<Position>0 0.013154928527444931 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric6">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>RodPlusTwoSpheres-2</Uid>
+<Uid>Sphere-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-1</Uid>
+<Uid>phs-2</Uid>
+</InstancePath>
+<Position>0 0.013154928527444876 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-2</Uid>
+<Uid>Sphere-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-2</Uid>
+<Uid>phs-1</Uid>
+</InstancePath>
+<Position>0 0.01315492852744482 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>RodPlusTwoSpheres-2</Uid>
+<Uid>Sphere-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-2</Uid>
+<Uid>phs-2</Uid>
+</InstancePath>
+<Position>0 0.013154928527444876 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric9">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-1</Uid>
+<Uid>Sphere-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-3</Uid>
+<Uid>phs-1</Uid>
+</InstancePath>
+<Position>0 0.01315492852744482 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric10">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-1</Uid>
+<Uid>Sphere-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-4</Uid>
+<Uid>phs-1</Uid>
+</InstancePath>
+<Position>0 0.01315492852744482 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric11">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>RodPlusTwoSpheres-1</Uid>
+<Uid>Sphere-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-3</Uid>
+<Uid>phs-2</Uid>
+</InstancePath>
+<Position>0 0.013154928527444876 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric12">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>RodPlusTwoSpheres-1</Uid>
+<Uid>Sphere-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-4</Uid>
+<Uid>phs-2</Uid>
+</InstancePath>
+<Position>0 0.013154928527444931 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric13">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-3</Uid>
+<Uid>Sphere-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-5</Uid>
+<Uid>phs-1</Uid>
+</InstancePath>
+<Position>0 0.013154928527444931 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric14">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>RodPlusTwoSpheres-3</Uid>
+<Uid>Sphere-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-5</Uid>
+<Uid>phs-2</Uid>
+</InstancePath>
+<Position>0 0.013154928527444862 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric15">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>RodPlusTwoSpheres-3</Uid>
+<Uid>Sphere-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-6</Uid>
+<Uid>phs-2</Uid>
+</InstancePath>
+<Position>0 0.013154928527444876 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric16">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>RodPlusTwoSpheres-3</Uid>
+<Uid>Sphere-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>PassivePlusRodFady-6</Uid>
+<Uid>phs-1</Uid>
+</InstancePath>
+<Position>0 0.013154928527444876 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Parallel name="Parallel6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.0050000000000000044 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ta7t-1</Uid>
+<Uid>playe-1</Uid>
+</InstancePath>
+<Position>-0.057500000000000023 0.0050000000000000044 0.033197640478403498</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Parallel>
+<Coincident name="Coincident30">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Funtivities</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident31">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Funtivities</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident32">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Funtivities</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident33">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 -0.0050000000000000044 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+<Uid>740mm V-slot-2</Uid>
+</InstancePath>
+<Position>0.0099999999999999534 -0.0070000000000002005 -0.34999999999999998</Position>
+<Axis>1 9.912705577010226e-16 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric17">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 -0.010000000000000009 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+<Uid>740mm V-slot-2</Uid>
+</InstancePath>
+<Position>-0.010000000000000064 0 0</Position>
+<Axis>1 9.912705577010226e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric18">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0 -0.010000000000000009 0.1699999999999999</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+<Uid>340mm V-slot-1</Uid>
+</InstancePath>
+<Position>0.010000000000000009 0 0.015000000000000069</Position>
+<Axis>-1 1.2390881971266875e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric19">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>-0.18499999999999997 -0.0099999999999999534 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+<Uid>740mm V-slot-2</Uid>
+</InstancePath>
+<Position>-0.010000000000000009 0 0.18500000000000003</Position>
+<Axis>1 9.912705577010226e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric20">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>BasePlatform 3.0-1</Uid>
+</InstancePath>
+<Position>0.18500000000000005 -0.0099999999999999534 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Frame_3-1</Uid>
+<Uid>740mm V-slot-2</Uid>
+</InstancePath>
+<Position>-0.010000000000000009 0 -0.18500000000000003</Position>
+<Axis>1 9.912705577010226e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+<Assembly name="RodPlusTwoSpheres" uid="RodPlusTwoSpheres" version="122">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="RodPlusTwoSpheres.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+<Assembly name="Motor_Active_SSCPE" uid="Motor_Active_SSCPE" version="139">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Motor_Active_SSCPE.SLDASM" type="SolidWorks Assembly"/>
+<Constraints>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0.034999999999999989 0.081207953425837587 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.077000000000000013 0.01 -0.0069999999999995205</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.035000000000000003 0.081207953425835602 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.0069999999999999993 0.01 -0.0070000000000000062</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0.035000000000001946 0.01120795342583757 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.077000000000000263 0.01 -0.076999999999999527</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric4">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>-0.03499999999999804 0.011207953425835599 0.0060000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.0070000000000002456 0.01 -0.077000000000000013</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>motor_mount-1</Uid>
+</InstancePath>
+<Position>0 0 0.0060000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric5">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.042500000000000003 -0.035000000000000003 -0.042499999999999982</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>0.11554345256373667 0.01498995493556967 0.0049999999999999975</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.042500000000000003 -0.035000000000000003 -0.042499999999999982</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>-0.1144565474362633 0.014989954935569656 0.0049999999999999975</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</Assembly>
+<Assembly name="Ta7t" uid="Ta7t" version="127">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Ta7t.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+<Assembly name="PassivePlusRodFady" uid="PassivePlusRodFady" version="114">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="PassivePlusRodFady.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+<Assembly name="Frame_3" uid="Frame_3" version="684">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Frame_3.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+<Assembly name="Frame_2020" uid="Frame_2020" version="173">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Frame_2020.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+</Assemblies>
+<Parts>
+<Part name="2020 corner" uid="2020 corner*:*Default" version="366">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="2020 corner.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.021899447821623723</Mass>
+<CenterOfMass>0.0098999999999999991 0.009654629716680364 0.0096936510168434999</CenterOfMass>
+<Inertia>2.8254693297415764e-06 2.4577681592095778e-06 2.4581395440675607e-06 6.7032374633351935e-07 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="2020 corner_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="1" g="0.94901960784313721" b="0.89803921568627454" a="1"/>
+<Diffuse r="1" g="0.94901960784313721" b="0.89803921568627454" a="1"/>
+<Specular r="0.0099999997764825821" g="0.0094901958663089602" b="0.0089803919561353383" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>1</Shininess>
+</VisualProperties>
+</Part>
+<Part name="2020-500mm" uid="2020-500mm*:*Default" version="125">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="2020-500mm.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.23147356522215989</Mass>
+<CenterOfMass>0.0099999999999999881 0.0099999999999999534 0.24999999999999994</CenterOfMass>
+<Inertia>0.0048322229105547268 0.0048322229105547268 1.9713936852792327e-05 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="2020-500mm_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="2020-700mm" uid="2020-700mm*:*Default" version="164">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="2020-700mm.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.32332387735133922</Mass>
+<CenterOfMass>0.010000102889384511 0.010000000056269182 0.34999996376844522</CenterOfMass>
+<Inertia>0.013236639042296732 0.013236632892696514 2.7591469099489292e-05 -2.689567227680051e-11 -4.136508382447783e-09 2.3659664158006957e-11</Inertia>
+</MassProperties>
+<GeometryFile name="2020-700mm_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="340mm V-slot" uid="340mm V-slot*:*Default" version="294">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="340mm V-slot.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.28466732103889464</Mass>
+<CenterOfMass>6.7403496439628605e-13 1.4807884459932725e-10 0.00021073018932077822</CenterOfMass>
+<Inertia>0.0026379183806453424 0.0026044065348643989 5.7312515897660959e-05 3.6153303286266675e-12 3.0837040010872382e-13 -1.8942331870224732e-13</Inertia>
+</MassProperties>
+<GeometryFile name="340mm V-slot_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="740mm V-slot" uid="740mm V-slot*:*Default" version="307">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="740mm V-slot.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.60291384707081275</Mass>
+<CenterOfMass>-7.3336605496151863e-11 -1.5522756069790229e-09 -2.2395641483605953e-08</CenterOfMass>
+<Inertia>0.024816485160967679 0.024745683380773004 0.00012143627865731593 -3.3373071745405213e-11 5.7524863323737919e-13 7.0733003038044989e-11</Inertia>
+</MassProperties>
+<GeometryFile name="740mm V-slot_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Active Arm 5.0" uid="Active Arm 5.0*:*Default" version="658">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Active Arm 5.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.099464913745459849</Mass>
+<CenterOfMass>0.024651725804626774 0.014810701510408045 -2.6929550941522737e-08</CenterOfMass>
+<Inertia>1.2744090711430592e-05 0.00066687805393807122 0.00067802758037924325 -3.0939338206615265e-11 -6.2068834933165789e-11 1.5917382331647914e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Active Arm 5.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="BasePlatform 3.0" uid="BasePlatform 3.0*:*Default" version="1529">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="BasePlatform 3.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>2.6510591783701298</Mass>
+<CenterOfMass>0 0 1.1584290238899838e-05</CenterOfMass>
+<Inertia>0.024280450678444868 0.048456575725043617 0.02422030936623825 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="BasePlatform 3.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="NEMA344" uid="NEMA344*:*Default" version="798">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="NEMA344.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>5</Mass>
+<CenterOfMass>-0.042500568753262774 0.07383212082881907 -0.042499355534127273</CenterOfMass>
+<Inertia>0.012300895180686385 0.0052872903071187515 0.01230092524943874 3.8837772450480156e-07 1.420050448205198e-09 -1.9574246669563709e-07</Inertia>
+</MassProperties>
+<GeometryFile name="NEMA344_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.6470588235294118" g="0.61960784313725492" b="0.58823529411764708" a="1"/>
+<Diffuse r="0.6470588235294118" g="0.61960784313725492" b="0.58823529411764708" a="1"/>
+<Specular r="0.45294117647058824" g="0.43372549019607842" b="0.41176470588235292" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="PassiveArm 3.0" uid="PassiveArm 3.0*:*Default" version="325">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="PassiveArm 3.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.090477868423386065</Mass>
+<CenterOfMass>0 0.19999999999999998 0</CenterOfMass>
+<Inertia>0.0012065751541824332 4.0715040790523759e-07 0.0012065751541824332 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="PassiveArm 3.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.6470588235294118" g="0.61960784313725492" b="0.58823529411764708" a="1"/>
+<Diffuse r="0.6470588235294118" g="0.61960784313725492" b="0.58823529411764708" a="1"/>
+<Specular r="0.45294117647058824" g="0.43372549019607842" b="0.41176470588235292" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="ROd" uid="ROd*:*Default" version="323">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="ROd.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.018792667955346169</Mass>
+<CenterOfMass>0 -0.0007683110536663598 0</CenterOfMass>
+<Inertia>1.1290488262712754e-05 8.834866202830899e-08 1.1290488262712754e-05 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="ROd_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.54352941176470582" g="0.52980392156862743" b="0.51607843137254905" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Sphere" uid="Sphere*:*145910-DEBearings" version="111">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Sphere.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0054185656423743509</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>8.8212096580643256e-08 8.8212096580643256e-08 1.1936816206102959e-07 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Sphere_145910-DEBearings_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.89803921568627454" b="0.89803921568627454" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.89803921568627454" b="0.89803921568627454" a="1"/>
+<Specular r="0.62862745098039219" g="0.62862745098039219" b="0.62862745098039219" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="motor_mount" uid="motor_mount*:*Default" version="259">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="motor_mount.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.6046175232547647</Mass>
+<CenterOfMass>0 0.01421317854663068 0.031791303365457366</CenterOfMass>
+<Inertia>0.001127848430007245 0.0012013230903747841 0.001128473352139625 0.00029646318310892224 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="motor_mount_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.20000000000000001" g="0.20000000000000001" b="0.20000000000000001" a="1"/>
+<Diffuse r="0.20000000000000001" g="0.20000000000000001" b="0.20000000000000001" a="1"/>
+<Specular r="0.10000000000000001" g="0.10000000000000001" b="0.10000000000000001" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="phs" uid="phs*:*145910-DEBearings" version="177">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="phs.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.019971933752691493</Mass>
+<CenterOfMass>-1.7843464209907002e-06 0.00038736530037894413 -6.8316610283657898e-11</CenterOfMass>
+<Inertia>2.5929991009318575e-06 4.5399950797098492e-07 2.8071729176858484e-06 -1.258253471200816e-15 -1.3273941763400603e-11 -9.6744179647577544e-11</Inertia>
+</MassProperties>
+<GeometryFile name="phs_145910-DEBearings_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.52941176470588236" g="0.5490196078431373" b="0.5490196078431373" a="1"/>
+<Diffuse r="0.52941176470588236" g="0.5490196078431373" b="0.5490196078431373" a="1"/>
+<Specular r="0.37058823529411761" g="0.3843137254901961" b="0.3843137254901961" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="playe" uid="playe*:*Default" version="1185">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="playe.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.15198274845374132</Mass>
+<CenterOfMass>-2.7240384727027759e-09 0 4.7181730456556178e-09</CenterOfMass>
+<Inertia>0.00013498731194259238 0.00026731769779394138 0.00013498738327067338 0 2.0590640776428159e-11 0</Inertia>
+</MassProperties>
+<GeometryFile name="playe_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

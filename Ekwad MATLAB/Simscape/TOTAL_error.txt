@@ -1,0 +1,8 @@
+Constrained Instances: '350mm V-Slot-1', '350mm V-Slot-2', '350mm V-Slot-3'
+Constraint Name: Symmetric1
+Error Details: Constraint is not supported. The constraint has been ignored.
+---------------------------------------------------------------------------------
+Constrained Instances: 'Active Arm 5.0-1', 'MOTORPLUSMOUNT-1/NEMA344-1', 'Active Arm 5.0-1', 'MOTORPLUSMOUNT-1/NEMA344-1'
+Constraint Name: Hinge1
+Error Details: Constraint is not supported. The constraint has been ignored.
+---------------------------------------------------------------------------------

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="02/25/24||12:21:17" using="Simscape Multibody Link Version 7.4" from="SolidWorks 31.0.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Motor_Active_Arm" uid="Motor_Active_Arm" version="138">
+<AssemblyFile name="Motor_Active_Arm.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Active Arm 5.0-1" uid="Active Arm 5.0-1" entityUid="Active Arm 5.0*:*Default">
+<Transform>
+<Rotation>0.99956543422608191 -0.02947783405246289 0 0.02947783405246289 0.99956543422608191 0 0 0 0.99999999999999989</Rotation>
+<Translation>-0.25648419991751603 -0.11015576217768075 0.027774716864340004</Translation>
+</Transform>
+</Instance>
+<Instance name="MOTORPLUSMOUNT-1" uid="MOTORPLUSMOUNT-1" grounded="true" entityUid="MOTORPLUSMOUNT" rigid="true">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 -0.090154307640357464 0</Translation>
+</Transform>
+<Instance name="motor_mount-1" uid="motor_mount-1" grounded="true" entityUid="motor_mount*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.13098067481769249 -0.0480249569846911 0.056774716864340005</Translation>
+</Transform>
+</Instance>
+<Instance name="NEMA344-1" uid="NEMA344-1" entityUid="NEMA344*:*Default">
+<Transform>
+<Rotation>1.0000000000000002 0 2.2870594307278225e-14 2.2870594307278225e-14 0 -1.0000000000000002 0 1 0</Rotation>
+<Translation>-0.0889806748176903 -0.043817003558853221 0.062774716864340011</Translation>
+</Transform>
+</Instance>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Angle name="LimitAngle2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Active Arm 5.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>MOTORPLUSMOUNT-1</Uid>
+<Uid>NEMA344-1</Uid>
+</InstancePath>
+<Position>-0.045000000000000026 -0.014999999999999999 -0.04684480327285459</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Angle>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+<Assembly name="MOTORPLUSMOUNT" uid="MOTORPLUSMOUNT" version="121">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="MOTORPLUSMOUNT.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+</Assemblies>
+<Parts>
+<Part name="Active Arm 5.0" uid="Active Arm 5.0*:*Default" version="537">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Active Arm 5.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.10994831810938839</Mass>
+<CenterOfMass>0.023711141668869569 0.014781724835747377 -2.6424537784082737e-08</CenterOfMass>
+<Inertia>1.4014690910636188e-05 0.00086285098372246142 0.00087510096586879106 -3.3489821988086957e-11 -6.4527096550029741e-11 2.1647530807136355e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Active Arm 5.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="NEMA344" uid="NEMA344*:*Default" version="647">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="NEMA344.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.99907747918618306</Mass>
+<CenterOfMass>-0.042500566008832091 0.073430551981626041 -0.042498816205987111</CenterOfMass>
+<Inertia>0.002482063032879493 0.0010551102702441684 0.0024820723672565031 1.376964072121364e-07 2.8207391918137422e-10 -3.8696565491155478e-08</Inertia>
+</MassProperties>
+<GeometryFile name="NEMA344_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="motor_mount" uid="motor_mount*:*Default" version="240">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="motor_mount.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.085157397641516142</Mass>
+<CenterOfMass>0 0.014213178546630682 0.031791303365457366</CenterOfMass>
+<Inertia>0.00015885189155031619 0.00016920043526405409 0.00015893990875205985 4.1755377902665116e-05 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="motor_mount_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.20000000000000001" g="0.20000000000000001" b="0.20000000000000001" a="1"/>
+<Diffuse r="0.20000000000000001" g="0.20000000000000001" b="0.20000000000000001" a="1"/>
+<Specular r="0.1600000023841858" g="0.1600000023841858" b="0.1600000023841858" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.10000000149011612</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

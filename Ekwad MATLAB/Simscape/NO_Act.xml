@@ -1,0 +1,2414 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="02/25/24||16:38:32" using="Simscape Multibody Link Version 7.4" from="SolidWorks 31.0.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="DELTA_ALL_NO_GRIPPER_No_Active" uid="DELTA_ALL_NO_GRIPPER_No_Active" version="2933">
+<AssemblyFile name="DELTA_ALL_NO_GRIPPER_No_Active.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Passive Plus RodEnd-6" uid="Passive Plus RodEnd-6" entityUid="Passive Plus RodEnd">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.09635440137616158 -0.35000593060760798 -0.092893342138610169</Translation>
+</Transform>
+<Instance name="145910-DEBearings-1" uid="145910-DEBearings-1" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.45270998423098324 -0.73555263097356038 -0.50399999726731781 0.85092352651097425 0.52528460798086596 -0.0022874983093977 0.26642601638674557 -0.42782988171265168 0.86370062527824309</Rotation>
+<Translation>-0.29383264982234075 0.31999262671153589 -0.24633927587734811</Translation>
+</Transform>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524434 0.5056599003903488 0 -0.50565990039034892 -0.86273290486524423 -1.1102230246251565e-16 0 0 0.99999999999999989</Rotation>
+<Translation>0 0.013154928527444931 0</Translation>
+</Transform>
+</Instance>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.92660530824243037 0.29072247145368985 0.23850167154300836 0.28269702965656701 0.95679716261478187 -0.067982196460961875 -0.24796167478121417 0.0044310500066276001 -0.9687597089245269</Rotation>
+<Translation>-0.0038244343826229765 0.00056832944314055833 -5.8290348737305431e-05</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="145910-DEBearings-2" uid="145910-DEBearings-2" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>-0.29966207489873842 -0.8108233930622043 -0.50276044606798265 0.9381959034334445 -0.34610317087057801 -0.0010207321071221914 -0.17317935110193056 -0.47199366561048861 0.86442518009107538</Rotation>
+<Translation>-0.042406273999376298 0.0044716874299468579 -0.10272271331431604</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.33348983477496869 -0.932550645074257 -0.13832506813065892 0.86602935042508933 -0.36101199036401493 0.34592413476904155 -0.37252878318871097 -0.0044313863518991121 0.92801005841043471</Rotation>
+<Translation>0.012267630260381135 0.017904010415113025 5.8291479242578159e-05</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524423 0.50565990039034892 0 -0.50565990039034869 -0.86273290486524423 1.1102230246251565e-16 0 0 1</Rotation>
+<Translation>0 0.013154928527444903 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>0.65487496364366404 -0.5743949539931793 0.49113055170685838 0.18055107783780616 0.74996327710727129 0.63636183990095485 -0.73385290779850154 -0.32806328629960335 0.59483980187777308</Rotation>
+<Translation>-0.063411706694678771 0.013418054711583638 -0.11483689036036401</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="basic external retaining ring_am-6" uid="basic external retaining ring_am-6" entityUid="basic external retaining ring_am*:*B27.7M - 3AM1-6">
+<Transform>
+<Rotation>0.86491721762313556 0.0034685635510324762 0.50190255600658806 0.0034684744509490273 0.99991093887874749 -0.012887357976117548 -0.50190255662233574 0.012887333995591796 0.86482815650188516</Rotation>
+<Translation>0.32870937461221833 -0.0039433357468305818 -0.31480344477155692</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod-1" uid="Bottom_Connecting_Rod-1" entityUid="Bottom_Connecting_Rod*:*Default">
+<Transform>
+<Rotation>0.75020820585693004 -0.50190255600658806 -0.43044334370388376 0.50409722193317374 0.01288735797611755 0.8635507552215167 -0.42787105382834983 -0.86482815650188527 0.26267588586957935</Rotation>
+<Translation>0.33121888739225125 -0.00400777253671117 -0.31047930398904749</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-16" uid="circlip for shafts normal_din-16" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>0.81118214574097358 0.29659320488779406 -0.50399999726731837 -0.34464941173683267 0.93872868835512857 -0.0022874983093979198 0.47244079991097826 0.17555888036054285 0.86370062527824276</Rotation>
+<Translation>-0.20977519492370467 -0.023115112644826019 -0.3403694442935073</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-18" uid="circlip for shafts normal_din-18" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.00091677898974833118 0.0045121093676264538 0.99998940013649074 4.8358624705928284e-05 0.99998981940493259 -0.0045120669247905257 -0.99999957858877486 4.4221543954076961e-05 -0.00091698785579621142</Rotation>
+<Translation>0.085779450067050275 -0.0083582419689380207 0.17656121617177492</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-19" uid="circlip for shafts normal_din-19" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.79711996404192242 -0.33569865534413135 -0.50190255600658817 -0.39497395826292897 0.91860192047399358 0.012887357976117581 0.45672238309493696 0.2085112095347218 -0.86482815650188494</Rotation>
+<Translation>0.34868509634128053 -0.0044562525942800591 -0.28038328414278196</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-13" uid="circlip for shafts normal_din-13" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.4246516771072375 0.75292953654344952 -0.50276044606798265 -0.87072473271020279 -0.49176965944709472 -0.001020732107121627 -0.24801087269867136 0.43733249941864 0.86442518009107583</Rotation>
+<Translation>0.0053233913249789476 -0.35016427174647535 -0.13656099362145102</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-14" uid="circlip for shafts normal_din-14" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>0.0023354041941474561 0.0039680602202366742 -0.99998940013649062 0.32541748524711689 0.94555967635443738 0.0045120669247904902 0.94556755770420353 -0.32542457336621017 0.00091698785579632494</Rotation>
+<Translation>0.014780202657359454 -0.0080378852172778882 0.17662632230953645</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-15" uid="circlip for shafts normal_din-15" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>0.84325646847103242 -0.18682219123087393 -0.50399999726731881 0.2149995886386446 0.97661146022187251 -0.0022874983093978981 0.49263952872965461 -0.10643084434033522 0.86370062527824254</Rotation>
+<Translation>-0.24520639473159714 -0.023275923775976679 -0.27965129033644687</Translation>
+</Transform>
+</Instance>
+<Instance name="basic external retaining ring_am-2" uid="basic external retaining ring_am-2" entityUid="basic external retaining ring_am*:*B27.7M - 3AM1-6">
+<Transform>
+<Rotation>0.0039058583534977206 0.0024380084462278864 0.99998940013649062 0.93675908443355216 0.34994579435003803 -0.0045120669247905327 -0.34995308542965503 0.93676677840940581 -0.00091698785579621023</Rotation>
+<Translation>0.055679769122941918 -0.0082224287545018277 0.17658881750623437</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-12" uid="circlip for shafts normal_din-12" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>0.0083377265333137562 0.00024571634338657313 -0.99996521036470787 0.93600561130444049 -0.35190045283531696 0.0077179596331976609 -0.35188631391808411 -0.9360373982474085 -0.0031640416188891893</Rotation>
+<Translation>0.10080118160253873 -0.35114940306125236 -0.092400725592156521</Translation>
+</Transform>
+</Instance>
+<Instance name="Passive Plus RodEnd-5" uid="Passive Plus RodEnd-5" entityUid="Passive Plus RodEnd">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.033727427191137999 -0.3500596592471919 -0.096085090085399949</Translation>
+</Transform>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>0.79172976419560193 -0.57462239458021347 0.20729950345738368 0.40765625674989897 0.7497308429417161 0.52126772341529481 -0.45495093891477656 -0.32819623213681998 0.82783263791164807</Rotation>
+<Translation>-0.041009661401194823 0.013385945243284625 -0.042493522989550059</Translation>
+</Transform>
+</Instance>
+<Instance name="145910-DEBearings-1" uid="145910-DEBearings-1" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>-0.3533191790133281 -0.78813042099381725 -0.50399999726731781 0.91304381364261344 -0.40785507440810043 -0.0022874983093975568 -0.20375610938153615 -0.46098229660548906 0.86370062527824332</Rotation>
+<Translation>-0.27083402466006878 0.33213874495613344 -0.17361535336158246</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.28938563260401279 0.9544342081146272 -0.072878652724785511 -0.92905965703849847 0.29838851384663723 0.21866057822090953 0.23044328869785419 0.0044313863518999266 0.97307566689806668</Rotation>
+<Translation>-0.012555515139845 0.0092296493319968809 -5.8294756588597729e-05</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524434 0.50565990039034869 0 -0.50565990039034858 -0.86273290486524412 -1.1102230246251565e-16 -2.2204460492503131e-16 -1.6653345369377348e-16 1</Rotation>
+<Translation>0 0.013154928527444931 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="145910-DEBearings-2" uid="145910-DEBearings-2" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.68316451339198192 -0.5296396713912388 -0.50276044606798287 0.61223732375012929 0.79067339496991096 -0.0010207321071220049 0.39805992896695352 -0.30711138203481747 0.8644251800910755</Rotation>
+<Translation>-0.023699087225568682 -0.010510454522014601 -0.032545966736056031</Translation>
+</Transform>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524423 0.5056599003903488 0 -0.50565990039034869 -0.86273290486524434 0 0 0 1</Rotation>
+<Translation>0 0.013154928527444848 0</Translation>
+</Transform>
+</Instance>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.99422657070147868 0.064190192613566344 0.085983401208668181 0.063568279789130822 -0.99792784557204939 0.0099543375760901311 0.086444201169473073 -0.0044310500066272532 -0.99624683983439088</Rotation>
+<Translation>-0.00084441641977112125 0.02628259151462975 5.8287024682204813e-05</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+<Instance name="basic external retaining ring_am-3" uid="basic external retaining ring_am-3" entityUid="basic external retaining ring_am*:*B27.7M - 3AM1-6">
+<Transform>
+<Rotation>0.8637034329381803 -0.00061861566894028184 -0.50399999726731759 -0.00061859799235725575 0.99999719234006268 -0.002287498309397791 0.50399999728901379 0.002287493529124782 0.86370062527824309</Rotation>
+<Translation>-0.23003599481385079 -0.02320707007686381 -0.30564867915732197</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-17" uid="circlip for shafts normal_din-17" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>0.8556401861849563 0.12638708818319674 0.50190255600658817 -0.13871075933182567 0.99024908040855242 -0.012887357976117529 -0.49863734018920192 -0.058592343276140602 0.86482815650188516</Rotation>
+<Translation>0.31375267844322202 -0.0035592924791422774 -0.34057532383531297</Translation>
+</Transform>
+</Instance>
+<Instance name="basic external retaining ring_am-4" uid="basic external retaining ring_am-4" entityUid="basic external retaining ring_am*:*B27.7M - 3AM1-6">
+<Transform>
+<Rotation>0.8637034329381803 -0.00061861566893992655 -0.5039999972673177 -0.00061859799235766775 0.99999719234006268 -0.0022874983093977906 0.50399999728901401 0.0022874935291249889 0.86370062527824309</Rotation>
+<Translation>-0.22479439484227073 -0.023183280094446077 -0.31463116566021571</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod-2" uid="Bottom_Connecting_Rod-2" entityUid="Bottom_Connecting_Rod*:*Default">
+<Transform>
+<Rotation>0.0045145998903185292 -0.99998940013649085 0.00090443490191520297 0.99998594703810828 0.0045120669247905336 -0.0027833394266376372 0.0027792290528130133 0.00091698785579621045 0.99999571750040228</Rotation>
+<Translation>0.05027982636220487 -0.0081980635931079571 0.17659376924065567</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod-3" uid="Bottom_Connecting_Rod-3" entityUid="Bottom_Connecting_Rod*:*Default">
+<Transform>
+<Rotation>0.74861808154858189 -0.50399999726731759 0.43076092061962223 0.49757822415806624 -0.002287498309397693 -0.86741609288460242 0.43816307332113896 0.86370062527824321 0.24906696102001519</Rotation>
+<Translation>-0.2273143948286073 -0.02319471758599306 -0.3103126625338245</Translation>
+</Transform>
+</Instance>
+<Instance name="basic external retaining ring_am-1" uid="basic external retaining ring_am-1" entityUid="basic external retaining ring_am*:*B27.7M - 3AM1-6">
+<Transform>
+<Rotation>0.00093148060246423848 0.0045090973097394 -0.99998940013649074 0.0032109448553052926 0.99998466542502673 0.0045120669247904885 0.99999441107289377 -0.0032151137225455966 0.00091698785579632505</Rotation>
+<Translation>0.044879883601467822 -0.0081736984317140864 0.17659872097507692</Translation>
+</Transform>
+</Instance>
+<Instance name="basic external retaining ring_am-5" uid="basic external retaining ring_am-5" entityUid="basic external retaining ring_am*:*B27.7M - 3AM1-6">
+<Transform>
+<Rotation>0.86491721762313534 0.0034685635510325712 0.50190255600658817 0.0034684744509489024 0.99991093887874749 -0.012887357976117546 -0.50190255662233585 0.012887333995591738 0.86482815650188505</Rotation>
+<Translation>0.33392916119468685 -0.0040773642697822052 -0.30580923194393739</Translation>
+</Transform>
+</Instance>
+<Instance name="Passive Plus RodEnd-3" uid="Passive Plus RodEnd-3" entityUid="Passive Plus RodEnd">
+<Transform>
+<Rotation>1 5.0346631536475576e-12 -3.8754151533471727e-14 -5.0346631536475576e-12 1 -8.7754161536500617e-12 3.8754151533471727e-14 8.7754161536500617e-12 1</Rotation>
+<Translation>0.29177024739711782 -0.26685856297389904 0.046860358421691964</Translation>
+</Transform>
+<Instance name="145910-DEBearings-1" uid="145910-DEBearings-1" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>-0.42901978724859097 0.7510231996570601 0.50190255600668676 -0.87192404611954732 -0.48947152501772123 -0.012887357966001146 0.23598830468413309 -0.44314983896386323 0.86482815650197864</Rotation>
+<Translation>0.049645084852710797 0.2687742577201066 -0.31691693611478033</Translation>
+</Transform>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524412 0.50565990039034892 0 -0.5056599003903488 -0.86273290486524423 -2.0156777686690818e-16 -1.1449174941446924e-16 -1.6653345369377356e-16 1</Rotation>
+<Translation>0 0.013154928527444931 0</Translation>
+</Transform>
+</Instance>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.13549430253990097 -0.98944939343183802 -0.051295144181427971 0.98679696824268071 0.13940542264813771 -0.082449206202047987 0.088730138319962182 -0.039446495074489302 0.99527430218008672</Rotation>
+<Translation>0.01301613441768773 0.011321059238683651 0.00051891566314071769</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>0.025211502193772141 0.50939177812673275 0.86016533093005965 -0.39639712279295036 0.79499809483482509 -0.45918117366728911 -0.91773291386906464 -0.32939041513966993 0.22196453143579464</Rotation>
+<Translation>-0.15340102102291056 -0.069973907525346157 -0.18506134262458654</Translation>
+</Transform>
+</Instance>
+<Instance name="145910-DEBearings-2" uid="145910-DEBearings-2" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.11206946787480669 -0.86036495554550396 -0.49720476429680416 -0.99092573445332266 -0.13412614981795265 0.0087386917302001658 -0.074206624828252563 0.4917136557023763 -0.86758922171002317</Rotation>
+<Translation>-0.15125204067869694 -0.082519448802998829 -0.1856007736556172</Translation>
+</Transform>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524445 0.5056599003903488 0 -0.50565990039034858 -0.86273290486524445 0 0 -1.1102230246251565e-16 1</Rotation>
+<Translation>0 0.013154928527444848 0</Translation>
+</Transform>
+</Instance>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.69844683395204521 0.70625385454043321 0.11566119958371814 -0.70478616374039149 0.70685863329770615 -0.060227368634209397 -0.12429192871005822 -0.039450798208394207 0.99146111924686897</Rotation>
+<Translation>-0.0092907213640537334 0.0038562492332359644 0.00051897103503924236</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+<Instance name="Passive Plus RodEnd-4" uid="Passive Plus RodEnd-4" entityUid="Passive Plus RodEnd">
+<Transform>
+<Rotation>1 5.0346631536475576e-12 -3.8754151533471727e-14 -5.0346631536475576e-12 1 -8.7754161536500617e-12 3.8754151533471727e-14 8.7754161536500617e-12 1</Rotation>
+<Translation>0.44880572453941797 -0.19783843783438396 -0.027675831390103024</Translation>
+</Transform>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>-0.30516782380107549 0.5085297979964799 0.80515218677351597 -0.19059960743334975 0.79575931799735611 -0.57483814893118879 -0.933029682787621 -0.32888379767030473 -0.14591455947639143</Rotation>
+<Translation>-0.35022838850354099 -0.13828123112846138 -0.17992317700214189</Translation>
+</Transform>
+</Instance>
+<Instance name="145910-DEBearings-2" uid="145910-DEBearings-2" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.57417963848255293 0.65046534505122189 0.49720476429680316 -0.74634875883934171 0.66549768252475416 -0.0087386917302016143 -0.33657283451137099 -0.36607057986346891 0.86758922171002373</Rotation>
+<Translation>-0.36793875549087884 -0.16135947851325186 -0.169187629710944</Translation>
+</Transform>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524423 0.50565990039034892 0 -0.50565990039034892 -0.86273290486524423 -1.676195386395493e-16 0 -1.9428902930940239e-16 1.0000000000000002</Rotation>
+<Translation>0 0.013154928527444876 0</Translation>
+</Transform>
+</Instance>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.9750611169420671 0.1912331717441843 -0.11263077844154129 -0.19442805780373831 -0.98075167501819627 0.017996729915977727 -0.10702125287228897 0.039446495074489912 0.99347391785591621</Rotation>
+<Translation>-0.0025156564182263752 0.026056654706687415 -0.00051891655292207739</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="145910-DEBearings-1" uid="145910-DEBearings-1" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.66938214364636228 -0.54774206524728031 0.50190255600668643 0.63900067236670643 0.76909821006133749 -0.012887357966001284 -0.37895340938207417 0.32934263805206104 0.86482815650197875</Rotation>
+<Translation>-0.13045744146060717 0.1842287326031882 -0.32172907590837074</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.22823131170936908 0.97352314195100387 0.012773427154302529 -0.96706082450017339 0.22515844777970456 0.11873093577698633 0.11271126861350471 -0.039450798208395157 0.99284430020434467</Rotation>
+<Translation>-0.012806621247066996 0.010192975633829149 0.00051897144395079975</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524423 0.50565990039034869 -1.2797647153553822e-16 -0.50565990039034869 -0.86273290486524423 0 0 1.1102230246251564e-16 1</Rotation>
+<Translation>0 0.013154928527444876 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+<Instance name="Platform_Assembly 2.0-1" uid="Platform_Assembly 2.0-1" entityUid="Platform_Assembly 2.0">
+<Transform>
+<Rotation>0.99996521036470765 0.0076999692824865056 -0.0032075743661680277 -0.0077179596331968716 0.99995434111487758 -0.0056346059854549338 0.0031640416188915685 0.0056591658890462262 0.99997898112014039</Rotation>
+<Translation>0.066161921079292835 -0.35060058078565259 -0.14224481578490089</Translation>
+</Transform>
+<Instance name="Bottom_Connecting_Rod_Jig-1" uid="Bottom_Connecting_Rod_Jig-1" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-2.1233015345956119e-15 1 -1.4732282060286551e-15 0.25281978316830694 -8.885553803086882e-16 -0.96751338866122683 -0.96751338866122683 -2.4267838984917824e-15 -0.25281978316830694</Rotation>
+<Translation>0.014500003205999007 2.9696854975114206e-09 0.049735025223307888</Translation>
+</Transform>
+</Instance>
+<Instance name="Platform 1.0-1" uid="Platform 1.0-1" entityUid="Platform 1.0*:*Default">
+<Transform>
+<Rotation>-0.99999999999999978 -2.6857720691539355e-16 7.3812483902813142e-16 3.4970263447162142e-16 -1 -3.1051550219984847e-16 7.1210398688847931e-16 -3.6342456821714109e-16 0.99999999999999989</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-7" uid="Bottom_Connecting_Rod_Jig-7" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.85828745914532656 0.49999999999999922 -0.11551033492229 0.13337984592313595 0 -0.99106499115926827 -0.4955324955796333 -0.86602540378443915 -0.066689922961567935</Rotation>
+<Translation>-0.035821798840660536 -8.7446716534600455e-13 -0.03742488096361124</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-2" uid="Bottom_Connecting_Rod_Jig-2" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.54366520579396271 -0.49999999999999944 -0.6741128570269288 -0.77839847893736969 0 0.62777050582835536 -0.31388525291417729 0.86602540378443893 -0.38919923946868445</Rotation>
+<Translation>-0.050321798840660605 -8.7430063189231078e-13 -0.012310144253862565</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-3" uid="Bottom_Connecting_Rod_Jig-3" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.41488363448079452 -0.50000000000000111 0.76017864337273078 -0.8777786887669019 2.0469737016526324e-16 -0.47906635609971432 0.23953317804985766 -0.86602540378443793 -0.43888934438345206</Rotation>
+<Translation>0.035821796807673958 2.4720203661843243e-10 -0.037424890497780805</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-5" uid="Bottom_Connecting_Rod_Jig-5" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>-0.034190137277327212 0.50000000000000089 -0.86535023806142009 -0.99922038577613592 -3.2445820593228733e-16 0.039479369921390089 0.019739684960694802 0.86602540378443804 0.49961019288806885</Rotation>
+<Translation>0.050321796807673819 2.4720214764073489e-10 -0.012310153788032074</Translation>
+</Transform>
+</Instance>
+<Instance name="Bottom_Connecting_Rod_Jig-6" uid="Bottom_Connecting_Rod_Jig-6" entityUid="Bottom_Connecting_Rod_Jig*:*Default">
+<Transform>
+<Rotation>1.9112315896574472e-15 -1 -1.8148421805371895e-15 -0.37826470481455282 9.5704336886498087e-16 -0.9256974738496152 0.9256974738496152 2.4557129961933833e-15 -0.37826470481455282</Rotation>
+<Translation>-0.014499996794002386 2.6943660080824827e-09 0.049735026745644215</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Passive Plus RodEnd-1" uid="Passive Plus RodEnd-1" entityUid="Passive Plus RodEnd">
+<Transform>
+<Rotation>1.0387364213031709e-12 1.0064130645489404e-11 -1 0.096649846483335106 0.99531844510927647 1.0117408581100732e-11 0.99531844510927647 -0.096649846483335106 6.1176837854784224e-14</Rotation>
+<Translation>0.048272966175819138 -0.11874391642022375 0.43684884547490932</Translation>
+</Transform>
+<Instance name="145910-DEBearings-2" uid="145910-DEBearings-2" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>-0.18255648878261366 0.98319242908169246 0.0024032893716993959 0.98316039825123702 0.18257006613945015 -0.0079876317081991107 -0.0082921477213376282 0.00090462493745543731 -0.99996521036478547</Rotation>
+<Translation>-0.56215513933998817 -0.18260880977546248 -0.057739926735022096</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.75705036968044692 -0.58453857052284408 -0.2918722277603823 -0.56255032027712915 -0.81037071801439176 0.16381830343688164 -0.33228282369511353 0.040174108029287336 -0.94232381171296575</Rotation>
+<Translation>0.0076895652252448876 0.023815293965670392 -0.00052848850866382691</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524434 0.5056599003903488 0 -0.50565990039034869 -0.86273290486524434 -1.0589312042765652e-16 0 0 1</Rotation>
+<Translation>0 0.013154928527444903 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>-0.46915930235951303 0.6899424957017426 -0.55124305132526252 0.40868349971222323 0.72296550535295279 0.55704458989628369 0.78285844574386765 0.036058711771228422 -0.62115410586495778</Rotation>
+<Translation>-0.53680235172506552 -0.16719372806139701 -0.057078969557349271</Translation>
+</Transform>
+</Instance>
+<Instance name="145910-DEBearings-1" uid="145910-DEBearings-1" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.14312828426685187 0.9897032257300663 0.0013487855013801467 -0.98969538535134383 0.14312115085483976 0.0044023166902577657 0.0041639472958195367 -0.0019649828212206255 0.99998940013653637</Rotation>
+<Translation>-0.26142586337091789 0.13312309738683306 -0.041980595138331162</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.7603390434481162 -0.61661519218806915 -0.20413290712492693 -0.60798115767847871 0.78623911396954638 -0.11039459938022086 0.22856826314329004 0.040171637099491307 -0.97269871422573917</Rotation>
+<Translation>0.0081115278418713854 0.0028120108379188491 -0.00052845394975395421</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524423 0.50565990039034869 0 -0.5056599003903488 -0.86273290486524423 -1.2432155584234115e-16 0 -1.2262326570811053e-16 1</Rotation>
+<Translation>0 0.013154928527444876 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+<Instance name="Passive Plus RodEnd-2" uid="Passive Plus RodEnd-2" entityUid="Passive Plus RodEnd">
+<Transform>
+<Rotation>-1.2463269110432585e-13 1.0116825752170172e-11 -1 -0.018364523179200509 0.99983135792412536 1.0117408449618739e-11 0.99983135792412536 0.018364523179200509 6.1179008236802513e-14</Rotation>
+<Translation>-0.04272703381863837 -0.14482697794147481 0.41731447957536105</Translation>
+</Transform>
+<Instance name="PassiveArm 3.0-1" uid="PassiveArm 3.0-1" entityUid="PassiveArm 3.0*:*Default">
+<Transform>
+<Rotation>-0.6484195881591367 0.60305409259600695 -0.46462651570346458 0.46336578731295791 0.79688469090353697 0.38764279504644028 0.60402333137005393 0.036063150261457247 -0.79615027749404299</Rotation>
+<Translation>-0.4952324908119376 -0.20073152302266736 -0.068081683941964843</Translation>
+</Transform>
+</Instance>
+<Instance name="145910-DEBearings-1" uid="145910-DEBearings-1" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.96425763851302171 -0.26496511291344732 0.0008339712555588334 0.26495884723224544 0.96424908875603543 0.004528146035074003 -0.0020039567486932939 -0.0041453313401248627 0.99998940013653648</Rotation>
+<Translation>-0.23967027867004026 0.11968164273059181 -0.052952760452600056</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.59585386350207181 0.7925688953077159 0.12958672594197712 -0.75878165689217303 0.60845754760275406 -0.2324431326781036 -0.26307521835707509 0.040174108029287364 0.96393852009888492</Rotation>
+<Translation>-0.01042618790029104 0.0051507177118329389 -0.0005284874261399751</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.8627329048652439 0.5056599003903488 0 -0.50565990039034869 -0.86273290486524412 0 0 -1.0061396160665481e-16 1</Rotation>
+<Translation>0 0.013154928527444883 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="145910-DEBearings-2" uid="145910-DEBearings-2" entityUid="145910-DEBearings">
+<Transform>
+<Rotation>0.81822595479801707 -0.57488726047156402 0.0033052446767977174 -0.57485282834397278 -0.81822098013140587 -0.0076585519346972358 0.0071072244799408558 0.004366396718311804 -0.99996521036478547</Rotation>
+<Translation>-0.49852487071905893 -0.20431180225386933 -0.068788250502667292</Translation>
+</Transform>
+<Instance name="rod-end-145910-DEBearings-1" uid="rod-end-145910-DEBearings-1" entityUid="rod-end-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>0.9858718078381381 -0.035599401183665724 0.16367486412191032 0.041673752853986716 0.99855842203053458 -0.033828628629515189 -0.16223463512156158 0.040171637099491488 0.98593415740591961</Rotation>
+<Translation>0.00046832084798928419 1.8959347307279106e-05 -0.00052845737247537647</Translation>
+</Transform>
+</Instance>
+<Instance name="joint-145910-DEBearings-1" uid="joint-145910-DEBearings-1" grounded="true" entityUid="joint-145910-DEBearings*:*145910-DEBearings">
+<Transform>
+<Rotation>-0.86273290486524423 0.50565990039034869 0 -0.5056599003903488 -0.86273290486524423 -1.1513824893711835e-16 0 -1.0842021724855043e-16 1</Rotation>
+<Translation>0 0.013154928527444931 0</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+<Instance name="circlip for shafts normal_din-7" uid="circlip for shafts normal_din-7" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.60920694909806794 0.61326896794159347 -0.50276044606798254 -0.70903353958574511 -0.70517401955012171 -0.0010207321071215099 -0.35515958795045066 0.3558521815464637 0.86442518009107583</Rotation>
+<Translation>0.040667450683558114 -0.35009251427934462 -0.19733008378185365</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-9" uid="circlip for shafts normal_din-9" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.63572713815271531 0.59045611875633619 0.49720476429672489 -0.68417129757317519 -0.72926899758847918 -0.0087386917403187124 0.35743620604689214 -0.34572865223972649 0.86758922170996677</Rotation>
+<Translation>0.092009257998113214 -0.35048878206170531 -0.19716763051503136</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-10" uid="circlip for shafts normal_din-10" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.8449990130309516 -0.19688598309010022 0.49720476429672578 0.22203440103021224 -0.97499967180805891 -0.0087386917403187523 0.48649500792492495 0.1030123761342403 0.86758922170996622</Rotation>
+<Translation>0.12696275292817305 -0.35110311209104977 -0.13617610822882076</Translation>
+</Transform>
+</Instance>
+<Instance name="circlip for shafts normal_din-11" uid="circlip for shafts normal_din-11" entityUid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7">
+<Transform>
+<Rotation>-0.006075747652788936 -0.005715185974696186 -0.99996521036470787 -0.93382640724063981 -0.35764322199524329 0.0077179596331978517 -0.35767488929263425 0.93384081213563153 -0.003164041618889162</Rotation>
+<Translation>0.030503627313899814 -0.35060683049903857 -0.092623157717964547</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-2</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0045000000000000005</Position>
+<Axis>0 -1.3704315460216776e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident38">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-2</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688696289 -0.0045000000000000005</Position>
+<Axis>0 1.3704315460216776e-16 -0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric13">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0045000000000000179</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 -1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric16">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 -1.1102230246251565e-16 0.004500000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident52">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.0044999999999999762</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric18">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-11</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident53">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-2</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 0.0044999999999999866</Position>
+<Axis>0 -1.3704315460216776e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-11</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric19">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-12</Uid>
+</InstancePath>
+<Position>0 0 -0.0006999999999999923</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric20">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-9</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident55">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688694624 0.004500000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-9</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric21">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-10</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 -1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident56">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 0.004500000000000004</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-10</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric22">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-13</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident57">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695317 -0.0044999999999999901</Position>
+<Axis>0 -1.1102230246251565e-16 -0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-13</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric23">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-7</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident58">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688696289 0.0044999999999999762</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-7</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric26">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999901</Position>
+<Axis>0 1.1102230246251565e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.029999999999999999 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric27">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999762</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.029999999999999971 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric281">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-17</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-19</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident64">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-1</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695595 0.0044999999999999901</Position>
+<Axis>0 -1.5113778284447932e-16 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-18</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident67">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 0.0045000000000000318</Position>
+<Axis>0 1.1102230246251565e-16 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-17</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident68">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.004500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-19</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident69">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688694624 -0.004500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident70">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.029999999999999999 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695595 0.004500000000000004</Position>
+<Axis>0 1.1102230246251565e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident71">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.029999999999999971 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.0044999999999999762</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric282">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-11</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident72">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0.020999999999999991 0.0028500000000000192</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-11</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric283">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-12</Uid>
+</InstancePath>
+<Position>0 0 -0.0006999999999999923</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident73">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0.021000000000000005 0.0028500000000000192</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-12</Uid>
+</InstancePath>
+<Position>0 0 -0.0006999999999999923</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric285">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-1</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999901</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric286">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-2</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0045000000000000005</Position>
+<Axis>0 -1.3704315460216776e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric287">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 -1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0045000000000000179</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric288">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 -1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-10</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident76">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.0044999999999999762</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric289">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 -1.1102230246251565e-16 0.004500000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident77">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688694624 -0.004500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric290">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.029999999999999971 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999762</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric291">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-9</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident78">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.029999999999999971 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.0044999999999999762</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric292">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-7</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident81">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.020999999999999991 0.0028499999999999637</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-7</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric293">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.029999999999999999 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999901</Position>
+<Axis>0 1.1102230246251565e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident82">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.029999999999999999 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695595 0.004500000000000004</Position>
+<Axis>0 1.1102230246251565e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric294">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-13</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident83">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.021000000000000005 0.0028500000000000192</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-13</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident85">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-1</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695595 0.0044999999999999901</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric301">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-2</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999997</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0.044500000000000012 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident92">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-14</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999999923</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0.035500000000000004 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident93">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-14</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0.035499999999999997 0.0028500000000000192</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident94">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-2</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 0.0044999999999999979</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0.044500000000000012 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident95">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-1</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.004500000000000004</Position>
+<Axis>0 1.5113778284447932e-16 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 -0.044500000000000005 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric302">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-1</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.004500000000000004</Position>
+<Axis>0 -1.5113778284447932e-16 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0.044500000000000012 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric303">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-18</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000000617</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric304">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.004500000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0.044499999999999984 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident96">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695456 0.0044999999999999901</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0.044499999999999984 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident97">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.004500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 -0.044500000000000012 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric305">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-16</Uid>
+</InstancePath>
+<Position>-1.1102230246251565e-16 0 -0.00070000000000000617</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident98">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 0.0045000000000000595</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-16</Uid>
+</InstancePath>
+<Position>-1.1102230246251565e-16 0 -0.00070000000000000617</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric306">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-15</Uid>
+</InstancePath>
+<Position>0 0 -0.00070000000000002005</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident99">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.0044999999999999901</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>circlip for shafts normal_din-15</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric307">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0045000000000000595</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0.044499999999999984 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric308">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-6</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0045000000000000595</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0.044499999999999984 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric309">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.004500000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 0.04450000000000004 0</Position>
+<Axis>-1.6653345369377348e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric311">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0.0044999999999999485</Position>
+<Axis>0 1.1102230246251565e-16 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 0.04450000000000004 0</Position>
+<Axis>-1.6653345369377348e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident100">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-4</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.004500000000000004</Position>
+<Axis>0 -1.1102230246251565e-16 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 0.04450000000000004 0</Position>
+<Axis>1.6653345369377348e-16 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident101">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 0.004500000000000004</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 -0.044499999999999984 0</Position>
+<Axis>-1.6653345369377348e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric312">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>circlip for shafts normal_din-19</Uid>
+</InstancePath>
+<Position>0 0 -0.00069999999999997842</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.6653345369377348e-16 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric313">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 -0.01737916852168344 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-1</Uid>
+</InstancePath>
+<Position>0 0 -0.00039999999999999758</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident102">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>basic external retaining ring_am-1</Uid>
+</InstancePath>
+<Position>0 0 -0.00039999999999999758</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 0.0049999999999999975 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric314">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 -0.01737916852168344 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-2</Uid>
+</InstancePath>
+<Position>0 0 -0.00039999999999999758</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident104">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-2</Uid>
+</InstancePath>
+<Position>0 -0.0049999999999999975 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>basic external retaining ring_am-2</Uid>
+</InstancePath>
+<Position>0 0 -0.00039999999999999758</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric315">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 -0.017379168521683447 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-3</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>1.1102230246251565e-16 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric316">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 -0.017379168521683447 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-4</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>1.6653345369377348e-16 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident105">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 0.0049999999999999767 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>basic external retaining ring_am-3</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>-1.1102230246251565e-16 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident106">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-3</Uid>
+</InstancePath>
+<Position>0 -0.0050000000000000044 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>basic external retaining ring_am-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.6653345369377348e-16 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric317">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-5</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-6</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric318">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 -0.017379168521683447 0</Position>
+<Axis>-1.6653345369377348e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>basic external retaining ring_am-5</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident107">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 -0.0050000000000000044 0</Position>
+<Axis>-1.6653345369377348e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>basic external retaining ring_am-5</Uid>
+</InstancePath>
+<Position>0 0 -0.00040000000000001146</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident108">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod-1</Uid>
+</InstancePath>
+<Position>0 0.0050000000000000044 0</Position>
+<Axis>1.6653345369377348e-16 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>basic external retaining ring_am-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident109">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.029999999999999999 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-5</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695595 0.004500000000000004</Position>
+<Axis>0 1.1102230246251565e-16 0.99999999999999978</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident110">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0-1</Uid>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.029999999999999985 0</Position>
+<Axis>0 1 1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Passive Plus RodEnd-3</Uid>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.0044802343688695734 -0.0044999999999999762</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+<Assembly name="Passive Plus RodEnd" uid="Passive Plus RodEnd" version="122">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Passive Plus RodEnd.SLDASM" type="SolidWorks Assembly"/>
+<Constraints>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 -0.0048450714725551125 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>PassiveArm 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.40000000000000002 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>145910-DEBearings-1</Uid>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0.0022422277716886152 -0.0048450714725551125 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>PassiveArm 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.40000000000000002 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>PassiveArm 3.0-1</Uid>
+</InstancePath>
+<Position>0 0.40000000000000002 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 -0.0048450714725551125 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>PassiveArm 3.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>145910-DEBearings-2</Uid>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0.0022422277716885874 -0.0048450714725551125 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</Assembly>
+<Assembly name="145910-DEBearings" uid="145910-DEBearings" version="433">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="145910-DEBearings.SLDASM" type="SolidWorks Assembly"/>
+<Constraints>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0.01315492852744489 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 -1.1179803586764119e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Angle>
+<Angle name="LimitAngle4">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>joint-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>rod-end-145910-DEBearings-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Angle>
+</Constraints>
+</Assembly>
+<Assembly name="Platform_Assembly 2.0" uid="Platform_Assembly 2.0" version="366">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Platform_Assembly 2.0.SLDASM" type="SolidWorks Assembly"/>
+<Constraints>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform_Assembly 2.0</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric6">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.027500000000000011 0 0.049735026918962595</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0 0.007000000000000001 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.0275 0.0050000000000000001 0.057735026918962602</Position>
+<Axis>-1 0 1.4139431517526195e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-1</Uid>
+</InstancePath>
+<Position>0.0029190000000000049 0.012999999999999999 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.027500000000000021 0 0.049735026918962602</Position>
+<Axis>1 0 -2.5753964549779855e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999993 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-6</Uid>
+</InstancePath>
+<Position>0.002918999999999991 0.013000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.0275 0.0050000000000000001 0.057735026918962595</Position>
+<Axis>1 0 1.4139431517526214e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.056821796769724472 0 -0.0010518148554092381</Position>
+<Axis>0.50000000000000056 0 0.86602540378443837</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0 0.0070000000000000027 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident8">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.063750000000000001 0.0050000000000000001 -0.0050518148554092399</Position>
+<Axis>0.50000000000000022 0 0.8660254037844386</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-2</Uid>
+</InstancePath>
+<Position>0.0029190000000000015 0.013000000000000001 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric9">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.0568217967697245 0 -0.0010518148554092693</Position>
+<Axis>-0.50000000000000067 0 0.86602540378443837</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0 0.007000000000000001 0</Position>
+<Axis>1.0408340855860843e-16 1.0000000000000002 2.2204460492503131e-16</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident9">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.063750000000000001 0.0050000000000000001 -0.0050518148554092295</Position>
+<Axis>-0.49999999999999983 0 0.8660254037844386</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-5</Uid>
+</InstancePath>
+<Position>0.0029190000000000015 0.013000000000000003 0</Position>
+<Axis>-1.0408340855860843e-16 -1.0000000000000002 -2.2204460492503131e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric10">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.029321796769724448 0 -0.048683212063553333</Position>
+<Axis>0.50000000000000089 0 -0.86602540378443804</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999923 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident10">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>-0.015000000000000031 0.0050000000000000001 -0.040414518843273788</Position>
+<Axis>0.50000000000000067 0 -0.86602540378443826</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-3</Uid>
+</InstancePath>
+<Position>0.0029190000000000015 0.012999999999999998 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric11">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.0293217967697245 0 -0.048683212063553361</Position>
+<Axis>-0.5 0 -0.86602540378443871</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0 0.0069999999999999993 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident11">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Platform 1.0-1</Uid>
+</InstancePath>
+<Position>0.036250000000000004 0.0050000000000000001 -0.052683212063553364</Position>
+<Axis>-0.50000000000000011 0 -0.8660254037844386</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bottom_Connecting_Rod_Jig-7</Uid>
+</InstancePath>
+<Position>0.002918999999999998 0.013000000000000001 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</Assembly>
+</Assemblies>
+<Parts>
+<Part name="Bottom_Connecting_Rod" uid="Bottom_Connecting_Rod*:*Default" version="323">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Bottom_Connecting_Rod.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.018792667955346169</Mass>
+<CenterOfMass>0 -0.0007683110536663598 0</CenterOfMass>
+<Inertia>1.1290488262712754e-05 8.8348662028309016e-08 1.1290488262712754e-05 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Bottom_Connecting_Rod_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.54352941176470582" g="0.52980392156862743" b="0.51607843137254905" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Bottom_Connecting_Rod_Jig" uid="Bottom_Connecting_Rod_Jig*:*Default" version="228">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Bottom_Connecting_Rod_Jig.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.004407482331309942</Mass>
+<CenterOfMass>0 0.017617310548953206 0</CenterOfMass>
+<Inertia>1.9654116685602394e-07 2.1692468177645408e-08 1.9654116685602392e-07 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Bottom_Connecting_Rod_Jig_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.54352941176470582" g="0.52980392156862743" b="0.51607843137254905" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="PassiveArm 3.0" uid="PassiveArm 3.0*:*Default" version="324">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="PassiveArm 3.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.088894504595003448</Mass>
+<CenterOfMass>0 0.19999999999999998 0</CenterOfMass>
+<Inertia>0.0011854600739020511 4.0002527067751583e-07 0.0011854600739020511 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="PassiveArm 3.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.38823529411764707" g="0.3784313725490196" b="0.36862745098039218" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Platform 1.0" uid="Platform 1.0*:*Default" version="1137">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Platform 1.0.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.16133395332190492</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>0.00014317810027300069 0.0002837045628368171 0.00014317810027300097 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Platform 1.0_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.91764705882352937" b="0.92941176470588238" a="1"/>
+<Specular r="0.44901960784313727" g="0.45882352941176469" b="0.46470588235294119" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="basic external retaining ring_am" uid="basic external retaining ring_am*:*B27.7M - 3AM1-6" version="1152">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="basic external retaining ring_am.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>5.5215880456588582e-06</Mass>
+<CenterOfMass>0 -6.7250119298289612e-05 -0.00020000000000000001</CenterOfMass>
+<Inertia>3.4013038752525258e-11 2.5250058265475696e-11 5.9115854670116717e-11 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="basic external retaining ring_am_B27.7M - 3AM1-6_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.38823529411764707" g="0.3784313725490196" b="0.36862745098039218" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="circlip for shafts normal_din" uid="circlip for shafts normal_din*:*Circlip DIN 471 - 6 x 0.7" version="1160">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="circlip for shafts normal_din.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>1.787464148496193e-05</Mass>
+<CenterOfMass>0 -0.00042498233210890355 -0.00034999999999999994</CenterOfMass>
+<Inertia>1.6141996353016059e-10 8.5846042418280843e-11 2.4580624356050289e-10 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="circlip for shafts normal_din_Circlip DIN 471 - 6 x 0.7_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.38823529411764707" g="0.3784313725490196" b="0.36862745098039218" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="joint-145910-DEBearings" uid="joint-145910-DEBearings*:*145910-DEBearings" version="111">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="joint-145910-DEBearings.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0054185656423743501</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>8.8212096580643256e-08 8.8212096580643256e-08 1.1936816206102959e-07 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="joint-145910-DEBearings_145910-DEBearings_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.89803921568627454" g="0.89803921568627454" b="0.89803921568627454" a="1"/>
+<Diffuse r="0.89803921568627454" g="0.89803921568627454" b="0.89803921568627454" a="1"/>
+<Specular r="0.62862745098039219" g="0.62862745098039219" b="0.62862745098039219" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="rod-end-145910-DEBearings" uid="rod-end-145910-DEBearings*:*145910-DEBearings" version="177">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="rod-end-145910-DEBearings.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.019971933752691493</Mass>
+<CenterOfMass>-1.7843464209907402e-06 0.0003873653003789444 -6.8316610264776867e-11</CenterOfMass>
+<Inertia>2.5929991009318571e-06 4.5399950797098492e-07 2.807172917685848e-06 -1.2582534752395244e-15 -1.3273941763400653e-11 -9.6744179647569389e-11</Inertia>
+</MassProperties>
+<GeometryFile name="rod-end-145910-DEBearings_145910-DEBearings_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.52941176470588236" g="0.5490196078431373" b="0.5490196078431373" a="1"/>
+<Diffuse r="0.52941176470588236" g="0.5490196078431373" b="0.5490196078431373" a="1"/>
+<Specular r="0.37058823529411761" g="0.3843137254901961" b="0.3843137254901961" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>
