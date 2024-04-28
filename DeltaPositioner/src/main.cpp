@@ -20,24 +20,25 @@ const int theta_max = 70;
 const int theta_min = -70;
 
 // End effector motion cycle
-const int X_cycle[] = {0,      0,    0,    0,    0,    0,    0,    0, 180, 180, 0};
-const int Y_cycle[] = {0,    -180, -180, -180,  180,  180,  180,   0, 0, 0, 0};
-const int Z_cycle[] = {-300, -300, -400, -300, -300, -400, -300, -300, -400, -300, -300};
-const float dur_arr[] = {0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1};
+const int X_cycle[] = {0,    -180,  -180,  -180,  180,    180,    180,    0, 180, 180, 0};
+const int Y_cycle[] = {0,    -180,  -180, -180, -180,    -180,   -180,   0, 0, 0, 0};
+const int Z_cycle[] = {-300, -300,  -400,  -300, -300,    -400,   -300, -300, -400, -300, -300};
+const float dur_arr[] = {0, 0.5,  0.5,  0.5,    1.8,    0.5,   0.5,  0.5, 1, 1, 1};
 int ind = 0;
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
 
-/*
+// MEGA Wiring 
 AccelStepper stepper1(AccelStepper::DRIVER, 50, 51);
 AccelStepper stepper2(AccelStepper::DRIVER, 47, 46);
 AccelStepper stepper3(AccelStepper::DRIVER, 42, 43);
-*/
 
+/* NANO Wiring
 AccelStepper stepper1(AccelStepper::DRIVER, 6, 7);
 AccelStepper stepper2(AccelStepper::DRIVER, 11, 12);
 AccelStepper stepper3(AccelStepper::DRIVER, 3, 4);
+*/
 
 /// Function Prototypes
 void trapezoid_profile_setup()
@@ -212,7 +213,7 @@ void setup()
 }
 void loop()
 {
-  delay(2000);
+  delay(3000);
 
   while (ind < 8) // while en el cycle lessa makhelsetsh
   {
@@ -235,9 +236,9 @@ void loop()
     Serial.print(Y_current);
     Serial.print("   ");
     Serial.println(Z_current);
-    //delay(1);
+    delay(10);
   }
-  ind = 0;
+  // ind = 0;
 
   // move_circular();
 }
