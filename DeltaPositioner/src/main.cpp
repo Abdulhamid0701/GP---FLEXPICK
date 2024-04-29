@@ -220,40 +220,45 @@ void setup()
 void loop()
 {
   delay(3000);
+  bool start_flag = false;
+  
   if (Serial.available() > 0) {
     char key = Serial.read();
     if (key == 's') 
     {
       Serial.println("Key 's' pressed. Starting Motion Cycle.");
-      while (ind < 8) // while en el cycle lessa makhelsetsh
-      {
-        // Next points on the main cycle
-        X_next = X_cycle[ind];
-        Y_next = Y_cycle[ind];
-        Z_next = Z_cycle[ind];
-
-        while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
-        {
-          duration = dur_arr[ind];
-          move_steppers();
-          X_current = X_next;
-          Y_current = Y_next;
-          Z_current = Z_next;
-        }
-
-        ind++;    
-        Serial.print(X_current);
-        Serial.print("   ");
-        Serial.print(Y_current);
-        Serial.print("   ");
-        Serial.println(Z_current);
-        delay(10);
-      }
+      start_flag = true;
     } 
     else 
     {
       Serial.println("Press 's' to start motion cycle.");
+      start_flag = false;
     }
+  }
+
+  while (ind < 8 && start_flag == true) // while en el cycle lessa makhelsetsh
+  {
+    // Next points on the main cycle
+    X_next = X_cycle[ind];
+    Y_next = Y_cycle[ind];
+    Z_next = Z_cycle[ind];
+
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {
+      duration = dur_arr[ind];
+      move_steppers();
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
+
+    ind++;    
+    Serial.print(X_current);
+    Serial.print("   ");
+    Serial.print(Y_current);
+    Serial.print("   ");
+    Serial.println(Z_current);
+    delay(10);
   }
   // ind = 0;
   // move_circular();
