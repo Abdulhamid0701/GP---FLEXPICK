@@ -20,11 +20,13 @@ const int theta_max = 70;
 const int theta_min = -70;
 
 // End effector motion cycle
-const int X_cycle[] = {0,    -180,  -180,  -180,  180,    180,    180,    0, 180, 180, 0};
+const int X_cycle[] = {0,    -180,  -180,  -180,  180,    180,    180,   0, 180, 180, 0};
 const int Y_cycle[] = {0,    -180,  -180, -180, -180,    -180,   -180,   0, 0, 0, 0};
 const int Z_cycle[] = {-300, -300,  -400,  -300, -300,    -400,   -300, -300, -400, -300, -300};
-const float dur_arr[] = {0, 0.5,  0.5,  0.5,    1.8,    0.5,   0.5,  0.5, 1, 1, 1};
+const float dur_arr[] = {0, 0.5,  0.5,  0.5,    0.5,    0.5,   0.5,  0.5, 1, 1, 1};
 int ind = 0;
+
+
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
@@ -144,6 +146,7 @@ void move_steppers()
       steppers[i].current_angle = steppers[i].next_angle;
     }
   }
+  /*
   Serial.print("Mot1. Steps: ");
   Serial.print(steppers[0].targetSteps);
   Serial.print("   ");
@@ -159,8 +162,10 @@ void move_steppers()
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
+  */
 }
 
+/*
 void move_circular()
 {
   float raduis = 150;
@@ -185,6 +190,7 @@ void move_circular()
     // Serial.println(Z_current);
   }
 }
+*/
 
 void setup()
 {
@@ -214,31 +220,41 @@ void setup()
 void loop()
 {
   delay(3000);
-
-  while (ind < 8) // while en el cycle lessa makhelsetsh
-  {
-    // Next points on the main cycle
-    X_next = X_cycle[ind];
-    Y_next = Y_cycle[ind];
-    Z_next = Z_cycle[ind];
-
-    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+  if (Serial.available() > 0) {
+    char key = Serial.read();
+    if (key == 's') 
     {
-      duration = dur_arr[ind];
-      move_steppers();
-      X_current = X_next;
-      Y_current = Y_next;
-      Z_current = Z_next;
+      Serial.println("Key 's' pressed. Starting Motion Cycle.");
+      while (ind < 8) // while en el cycle lessa makhelsetsh
+      {
+        // Next points on the main cycle
+        X_next = X_cycle[ind];
+        Y_next = Y_cycle[ind];
+        Z_next = Z_cycle[ind];
+
+        while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+        {
+          duration = dur_arr[ind];
+          move_steppers();
+          X_current = X_next;
+          Y_current = Y_next;
+          Z_current = Z_next;
+        }
+
+        ind++;    
+        Serial.print(X_current);
+        Serial.print("   ");
+        Serial.print(Y_current);
+        Serial.print("   ");
+        Serial.println(Z_current);
+        delay(10);
+      }
+    } 
+    else 
+    {
+      Serial.println("Press 's' to start motion cycle.");
     }
-    ind++;
-    Serial.print(X_current);
-    Serial.print("   ");
-    Serial.print(Y_current);
-    Serial.print("   ");
-    Serial.println(Z_current);
-    delay(10);
   }
   // ind = 0;
-
   // move_circular();
 }
