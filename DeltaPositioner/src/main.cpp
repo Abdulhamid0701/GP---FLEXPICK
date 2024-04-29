@@ -19,10 +19,12 @@ float Z_next;
 const int theta_max = 70;
 const int theta_min = -70;
 
+bool start_flag = false;
+
 // End effector motion cycle
-const int X_cycle[] = {0,    -180,  -180,  -180,  180,    180,    180,   0, 180, 180, 0};
-const int Y_cycle[] = {0,    -180,  -180, -180, -180,    -180,   -180,   0, 0, 0, 0};
-const int Z_cycle[] = {-300, -300,  -400,  -300, -300,    -400,   -300, -300, -400, -300, -300};
+const int X_cycle[] = {0,      0,     0,    0,    0,       0,      0,    0, 180, 180, 0};
+const int Y_cycle[] = {0,    -180,  -180, -180,  180,     180,   180,   0, 0, 0, 0};
+const int Z_cycle[] = {-300, -300,  -400,  -300, -300,   -400,  -300, -300, -400, -300, -300};
 const float dur_arr[] = {0, 0.5,  0.5,  0.5,    0.5,    0.5,   0.5,  0.5, 1, 1, 1};
 int ind = 0;
 
@@ -220,14 +222,15 @@ void setup()
 void loop()
 {
   delay(3000);
-  bool start_flag = false;
-  
-  if (Serial.available() > 0) {
+   
+  if (Serial.available())
+  {
     char key = Serial.read();
     if (key == 's') 
     {
       Serial.println("Key 's' pressed. Starting Motion Cycle.");
       start_flag = true;
+      ind = 0;
     } 
     else 
     {
@@ -235,6 +238,7 @@ void loop()
       start_flag = false;
     }
   }
+  
 
   while (ind < 8 && start_flag == true) // while en el cycle lessa makhelsetsh
   {
@@ -259,6 +263,7 @@ void loop()
     Serial.print("   ");
     Serial.println(Z_current);
     delay(10);
+    start_flag = true;
   }
   // ind = 0;
   // move_circular();
