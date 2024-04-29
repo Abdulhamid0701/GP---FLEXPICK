@@ -22,10 +22,10 @@ const int theta_min = -70;
 bool start_flag = false;
 
 // End effector motion cycle
-const int X_cycle[] = {0,      0,     0,    0,    0,       0,      0,    0, 180, 180, 0};
-const int Y_cycle[] = {0,    -180,  -180, -180,  180,     180,   180,   0, 0, 0, 0};
-const int Z_cycle[] = {-300, -300,  -400,  -300, -300,   -400,  -300, -300, -400, -300, -300};
-const float dur_arr[] = {0, 0.5,  0.5,  0.5,    0.5,    0.5,   0.5,  0.5, 1, 1, 1};
+const int X_cycle[] = {0,       0,      0,    0,    0,     0,     0,    0,    0,   140,  140,  140,  0,    -140, -140, -140, 0};
+const int Y_cycle[] = {0,     -140,   -140, -140,   0 ,   140,   140,  140,    0,    0,    0,    0,  0,       0,  0,     0,  0};
+const int Z_cycle[] = {-300,  -400,   -450, -400, -300,  -400,  -450, -400, -300, -400, -450, -400, -300, -400, -450, -400, -300};
+const float dur_arr[] = {0,  0.5,  0.8,   0.8,  0.8,  0.5,  0.5,   0.5,   0.9,  0.5,  0.5,   0.5,  0.8,  0.5,  0.5,  0.5,  0.8};
 int ind = 0;
 
 
@@ -90,12 +90,12 @@ void move_steppers()
   float *thetas_next = get_thetas(X_next, Y_next, Z_next);
   float *thetas_current = get_thetas(X_current, Y_current, Z_current);
 
-  steppers[0].current_angle = (thetas_current[0] * 180 / M_PI);
-  steppers[1].current_angle = (thetas_current[2] * 180 / M_PI);
+  steppers[0].current_angle = (thetas_current[2] * 180 / M_PI);
+  steppers[1].current_angle = (thetas_current[0] * 180 / M_PI);
   steppers[2].current_angle = (thetas_current[1] * 180 / M_PI);
 
-  steppers[0].next_angle = (thetas_next[0] * 180 / M_PI);
-  steppers[1].next_angle = (thetas_next[2] * 180 / M_PI);
+  steppers[0].next_angle = (thetas_next[2] * 180 / M_PI);
+  steppers[1].next_angle = (thetas_next[0] * 180 / M_PI);
   steppers[2].next_angle = (thetas_next[1] * 180 / M_PI);
 
   // Checking that the required posionts are not out of the workspace and/or violate any mechanical constraints (collisions)
@@ -161,10 +161,11 @@ void move_steppers()
   Serial.print(steppers[2].targetSteps);
   Serial.print("   ");
   Serial.println(stepper3.currentPosition());
+  */
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
-  */
+  
 }
 
 /*
@@ -240,7 +241,7 @@ void loop()
   }
   
 
-  while (ind < 8 && start_flag == true) // while en el cycle lessa makhelsetsh
+  while (ind < 17 && start_flag == true) // while en el cycle lessa makhelsetsh
   {
     // Next points on the main cycle
     X_next = X_cycle[ind];
@@ -249,7 +250,7 @@ void loop()
 
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
-      duration = dur_arr[ind];
+      duration = 2 * dur_arr[ind];
       move_steppers();
       X_current = X_next;
       Y_current = Y_next;
@@ -262,7 +263,7 @@ void loop()
     Serial.print(Y_current);
     Serial.print("   ");
     Serial.println(Z_current);
-    delay(10);
+    //delay(3000);
     start_flag = true;
   }
   // ind = 0;
