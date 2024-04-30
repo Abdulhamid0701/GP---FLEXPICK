@@ -20,6 +20,9 @@ const int theta_max = 70;
 const int theta_min = -70;
 
 bool start_flag = false;
+bool start_flag_PickPlace = false;
+bool start_flag_HOME = false;
+bool no_motion = false;
 
 // End effector motion cycle
 const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,     0,     0,     0,      0,      0,     0,       0};
@@ -27,6 +30,11 @@ const int Y_cycle[] = {0,     -140,     0,   140,   0 ,    0,    0,      0,     
 const int Z_cycle[] = {-300,  -400,   -300, -400, -300,  -400,  -300,  -400,   -300, -500,  -300,  -500,   -300,  -400,   -450,   -400,   -300};
 const float dur_arr[] = {0,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,     0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
 int ind = 0;
+
+const int X_PP[] =         {   0,      0,     0,    0,    0,    0};
+const int Y_PP[] =         { -140,   -140,  -140,  140,  140,  140};
+const int Z_PP[] =         { -400,   -450,  -400, -400, -450, -400};
+const float dur_arr_PP[]=  {0.5,  0.9,    0.4,   0.7,  0.9,  0.4};
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
@@ -193,10 +201,6 @@ void move_circular()
 }
 */
 
-void delta_motion_demo_selector(int choice)
-{
-
-}
 
 void setup()
 {
@@ -222,30 +226,63 @@ void setup()
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
+  Serial.println("    Press 's' to start corenring cycle demo");
+  Serial.println("    Press 'p' to start pick and place demo");
+  Serial.println("    Press 'h' to home robot");
 }
 void loop()
 {
+
   //delay(3000);
    
   if (Serial.available())
   {
     char key = Serial.read();
+    no_motion = false;
     if (key == 's') 
     {
       Serial.println("Key 's' pressed. Starting Motion Cycle.");
       start_flag = true;
+      start_flag_PickPlace = false;
+      start_flag_HOME = false;
       ind = 0;
     } 
+    else if (key == 'p')
+    {
+      Serial.println("Key 'p' pressed. Pick and Place Demo Selected");
+      start_flag_PickPlace = true;
+      start_flag = false;
+      start_flag_HOME = false;
+      ind = 0;
+    }
+    else if (key == 'h')
+    {
+      Serial.println("Key 'h' pressed. Homing Robot");
+      start_flag_PickPlace = false;
+      start_flag = false;
+      start_flag_HOME = true;
+      ind = 0;
+    }
     else 
     {
-      Serial.println("Press 's' to start motion cycle.");
+      Serial.println("Press 's' to start corenring cycle demo");
+      Serial.println("Press 'p' to start pick and place demo");
+      Serial.println("Press 'h' to home robot");
       start_flag = false;
+      start_flag_PickPlace = false;
+      start_flag_HOME = false;
     }
   }
-  
-
+  else 
+  {
+    no_motion = true;
+  }
+  ////                                                                                             
+  /// Cornring Demo
   while (ind < 13 && start_flag == true) // while en el cycle lessa makhelsetsh
   {
+    
+    /// Uncommment Cornering Demo Motion Cycle 
     // Next points on the main cycle
     X_next = X_cycle[ind];
     Y_next = Y_cycle[ind];
@@ -253,7 +290,7 @@ void loop()
 
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
-      duration = 1.3 * dur_arr[ind];
+      duration = 0.8 * dur_arr[ind];
       move_steppers();
       X_current = X_next;
       Y_current = Y_next;
@@ -269,7 +306,60 @@ void loop()
     //delay(3000);
     start_flag = true;
   }
-  // ind = 0;
-  // move_circular()
+  ////                                                                                
+  // Pick and Place Demo
+  while (ind < 6 && start_flag_PickPlace == true)
+  {
+    
+    /// Uncommment Cornering Demo Motion Cycle 
+    // Next points on the main cycle
+    X_next = X_PP[ind];
+    Y_next = Y_PP[ind];
+    Z_next = Z_PP[ind];
+
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {
+      duration = 0.8 * dur_arr_PP[ind];
+      move_steppers();
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
+
+    ind++;    
+    Serial.print(X_current);
+    Serial.print("   ");
+    Serial.print(Y_current);
+    Serial.print("   ");
+    Serial.println(Z_current);
+    //delay(3000);
+    start_flag_PickPlace = true;
+  }
+  ///////////////////////////////////////////////////////////////////////////
+  // Homing Stepeprs
+  while (start_flag_HOME == true)
+  {
+    X_next = 0;
+    Y_next = 0;
+    Z_next = -300;
+    duration = 0.7;
+     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {
+      move_steppers();
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
+    start_flag_HOME = false;
+  }
+
+  if ( no_motion == true && start_flag == false && start_flag_HOME == false && start_flag_PickPlace == false)
+  {
+    delay(3000);
+    Serial.println("Motion DONE, Select another DEMO to do: ");
+    Serial.println("    Press 's' to start corenring cycle demo");
+    Serial.println("    Press 'p' to start pick and place demo");
+    Serial.println("    Press 'h' to home robot");
+  }
 }
 // RRddddddd
