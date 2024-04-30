@@ -22,10 +22,10 @@ const int theta_min = -70;
 bool start_flag = false;
 
 // End effector motion cycle
-const int X_cycle[] = {0,       0,      0,    0,    0,     0,     0,    0,    0,   140,  140,  140,  0,    -140, -140, -140, 0};
-const int Y_cycle[] = {0,     -140,   -140, -140,   0 ,   140,   140,  140,    0,    0,    0,    0,  0,       0,  0,     0,  0};
-const int Z_cycle[] = {-300,  -400,   -450, -400, -300,  -400,  -450, -400, -300, -400, -450, -400, -300, -400, -450, -400, -300};
-const float dur_arr[] = {0,  0.5,  0.8,   0.8,  0.8,  0.5,  0.5,   0.5,   0.9,  0.5,  0.5,   0.5,  0.8,  0.5,  0.5,  0.5,  0.8};
+const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,    0,    0,  0,    0, 0,  0, 0};
+const int Y_cycle[] = {0,     -140,     0,   140,   0 ,    0,    0,    0,       0,    0,    0,    0,  0,      140,  140,    140,  0};
+const int Z_cycle[] = {-300,  -400,   -300, -400, -300,  -400,  -300, -400,   -300, -500, -300, -500, -300, -400, -450, -400, -300};
+const float dur_arr[] = {0,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,   0.5,   0.4,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,  0.5,  0.4};
 int ind = 0;
 
 
@@ -222,7 +222,7 @@ void setup()
 }
 void loop()
 {
-  delay(3000);
+  //delay(3000);
    
   if (Serial.available())
   {
@@ -241,7 +241,7 @@ void loop()
   }
   
 
-  while (ind < 17 && start_flag == true) // while en el cycle lessa makhelsetsh
+  while (ind < 13 && start_flag == true) // while en el cycle lessa makhelsetsh
   {
     // Next points on the main cycle
     X_next = X_cycle[ind];
@@ -250,7 +250,7 @@ void loop()
 
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
-      duration = 2 * dur_arr[ind];
+      duration = 1.3 * dur_arr[ind];
       move_steppers();
       X_current = X_next;
       Y_current = Y_next;

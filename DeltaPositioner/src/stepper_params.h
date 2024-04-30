@@ -4,7 +4,7 @@
 
 // Define motor parameters
 const float STEPS_PER_REVOLUTION = 200.0; // Number of steps per revolution for the stepper motor
-const float MICROSTEPS = 64.0;            // Microsteps setting for the motor driver
+const float MICROSTEPS = 16.0;            // Microsteps setting for the motor driver
 const float GEAR_RATIO = 1.0;             // Gear ratio of the motor (if any)
 const float STEP_ANGLE_RADS = (2 * M_PI) / (STEPS_PER_REVOLUTION * MICROSTEPS);
 const float STEP_ANGLE_DEGS = 360 / (STEPS_PER_REVOLUTION * MICROSTEPS);

@@ -1,4 +1,9 @@
 {
-	"folders": [],
+	"folders": [
+		{
+			"name": "DeltaPositioner",
+			"path": "DeltaPositioner"
+		}
+	],
 	"settings": {}
 }
