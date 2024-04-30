@@ -234,7 +234,7 @@ void loop()
 {
 
   //delay(3000);
-   
+  /// Motion Demo Selector 
   if (Serial.available())
   {
     char key = Serial.read();
@@ -279,11 +279,8 @@ void loop()
   }
   ////                                                                                             
   /// Cornring Demo
-  while (ind < 13 && start_flag == true) // while en el cycle lessa makhelsetsh
+  while (ind < 13 && start_flag == true) 
   {
-    
-    /// Uncommment Cornering Demo Motion Cycle 
-    // Next points on the main cycle
     X_next = X_cycle[ind];
     Y_next = Y_cycle[ind];
     Z_next = Z_cycle[ind];
@@ -306,13 +303,10 @@ void loop()
     //delay(3000);
     start_flag = true;
   }
-  ////                                                                                
+  ////                                                                              
   // Pick and Place Demo
   while (ind < 6 && start_flag_PickPlace == true)
   {
-    
-    /// Uncommment Cornering Demo Motion Cycle 
-    // Next points on the main cycle
     X_next = X_PP[ind];
     Y_next = Y_PP[ind];
     Z_next = Z_PP[ind];
@@ -335,7 +329,7 @@ void loop()
     //delay(3000);
     start_flag_PickPlace = true;
   }
-  ///////////////////////////////////////////////////////////////////////////
+  ////                                                                            
   // Homing Stepeprs
   while (start_flag_HOME == true)
   {
@@ -352,7 +346,8 @@ void loop()
     }
     start_flag_HOME = false;
   }
-
+  ////                                                                            
+  /// No choice selected
   if ( no_motion == true && start_flag == false && start_flag_HOME == false && start_flag_PickPlace == false)
   {
     delay(3000);
