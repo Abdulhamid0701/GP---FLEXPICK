@@ -22,13 +22,11 @@ const int theta_min = -70;
 bool start_flag = false;
 
 // End effector motion cycle
-const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,    0,    0,  0,    0, 0,  0, 0};
-const int Y_cycle[] = {0,     -140,     0,   140,   0 ,    0,    0,    0,       0,    0,    0,    0,  0,      140,  140,    140,  0};
-const int Z_cycle[] = {-300,  -400,   -300, -400, -300,  -400,  -300, -400,   -300, -500, -300, -500, -300, -400, -450, -400, -300};
-const float dur_arr[] = {0,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,   0.5,   0.4,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,  0.5,  0.4};
+const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,     0,     0,     0,      0,      0,     0,       0};
+const int Y_cycle[] = {0,     -140,     0,   140,   0 ,    0,    0,    0,       0,    0,     0,     0,     0,     140,    140,   140,      0};
+const int Z_cycle[] = {-300,  -400,   -300, -400, -300,  -400,  -300, -400,   -300, -500,  -300,  -500,   -300,  -400,   -450,   -400,   -300};
+const float dur_arr[] = {0,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,   0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
 int ind = 0;
-
-
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
@@ -194,6 +192,11 @@ void move_circular()
   }
 }
 */
+
+void delta_motion_demo_selector(int choice)
+{
+
+}
 
 void setup()
 {
