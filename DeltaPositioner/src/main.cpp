@@ -18,23 +18,26 @@ float Z_next;
 
 const int theta_max = 70;
 const int theta_min = -70;
-
-bool start_flag = false;
-bool start_flag_PickPlace = false;
-bool start_flag_HOME = false;
-bool no_motion = false;
-
-// End effector motion cycle
+////                                                                  
+/// Delta Robot Motion Demo, End Effector Position Arrays
+// Cornering Demo
 const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,     0,     0,     0,      0,      0,     0,       0};
 const int Y_cycle[] = {0,     -140,     0,   140,   0 ,    0,    0,      0,       0,    0,     0,     0,     0,     140,    140,   140,      0};
 const int Z_cycle[] = {-300,  -400,   -300, -400, -300,  -400,  -300,  -400,   -300, -500,  -300,  -500,   -300,  -400,   -450,   -400,   -300};
 const float dur_arr[] = {0,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,     0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
 int ind = 0;
 
+// Pick and Place Demo
 const int X_PP[] =         {   0,      0,     0,    0,    0,    0};
 const int Y_PP[] =         { -140,   -140,  -140,  140,  140,  140};
 const int Z_PP[] =         { -400,   -450,  -400, -400, -450, -400};
 const float dur_arr_PP[]=  {0.5,  0.9,    0.4,   0.7,  0.9,  0.4};
+
+bool start_flag = false;
+bool start_flag_PickPlace = false;
+bool start_flag_HOME = false;
+bool no_motion = false;
+////                                                                    
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
@@ -89,7 +92,6 @@ void trapezoid_profile_setup()
     Serial.println(steppers[2].meshwar / STEP_ANGLE_RADS);
   */
 }
-
 void move_steppers()
 {
   // Convert XYZ distnace to angles through inverse kinematics
@@ -173,35 +175,6 @@ void move_steppers()
   stepper3.setCurrentPosition(0);
   
 }
-
-/*
-void move_circular()
-{
-  float raduis = 150;
-  float z_c = -400;
-
-  for (int i = 0; i < 10; i++)
-  {
-    float phi = 2 * M_PI * i;
-    float x_c = raduis + cos(phi);
-    float y_c = raduis + sin(phi);
-
-    X_next = x_c;
-    Y_next = y_c;
-    Z_next = z_c;
-    duration = 0.2;
-    move_steppers();
-    X_current = X_next;
-    Y_current = Y_next;
-    Z_current = Z_next;
-    // Serial.print(X_current);
-    // Serial.print("   ");
-    // Serial.println(Z_current);
-  }
-}
-*/
-
-
 void setup()
 {
   // Serial Monitor Init.
@@ -357,4 +330,3 @@ void loop()
     Serial.println("    Press 'h' to home robot");
   }
 }
-// RRddddddd
