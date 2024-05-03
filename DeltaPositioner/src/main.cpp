@@ -6,6 +6,11 @@
 #include <math.h>
 #include <AccelStepper.h>
 //#include <avr8-stub.h>
+
+// Computer Vision Message 
+String X_recieved;
+String Y_recieved;
+String Z_recieved;
  
 // End effector position variables
 float X_current;
@@ -30,12 +35,13 @@ int ind = 0;
 // Pick and Place Demo
 const int X_PP[] =         {   0,      0,     0,    0,    0,    0};
 const int Y_PP[] =         { -140,   -140,  -140,  140,  140,  140};
-const int Z_PP[] =         { -400,   -450,  -400, -400, -450, -400};
-const float dur_arr_PP[]=  {0.5,  0.9,    0.4,   0.7,  0.9,  0.4};
+const int Z_PP[] =         { -350,   -500,  -350, -350, -500, -350};
+const float dur_arr_PP[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
 
 bool start_flag = false;
 bool start_flag_PickPlace = false;
 bool start_flag_HOME = false;
+bool start_flag_CV = false;
 bool no_motion = false;
 ////                                                                    
 
@@ -181,6 +187,11 @@ void setup()
   Serial.begin(115200);
   //debug_init();
 
+  // CV 
+  X_recieved = String();
+  Y_recieved = String();
+  Z_recieved = String();
+
   // Set 3 motors' steps counter initially to zero
   steppers[0].currentSteps = 0;
   steppers[1].currentSteps = 0;
@@ -218,6 +229,7 @@ void loop()
       start_flag = true;
       start_flag_PickPlace = false;
       start_flag_HOME = false;
+      start_flag_CV = false;
       ind = 0;
     } 
     else if (key == 'p')
@@ -226,6 +238,7 @@ void loop()
       start_flag_PickPlace = true;
       start_flag = false;
       start_flag_HOME = false;
+      start_flag_CV = false;
       ind = 0;
     }
     else if (key == 'h')
@@ -234,6 +247,16 @@ void loop()
       start_flag_PickPlace = false;
       start_flag = false;
       start_flag_HOME = true;
+      start_flag_CV = false;
+      ind = 0;
+    }
+    else if (key == 'c')
+    {
+      Serial.println("Key 'c' pressed. Taking input from CV");
+      start_flag_PickPlace = false;
+      start_flag = false;
+      start_flag_HOME = false;
+      start_flag_CV = true;
       ind = 0;
     }
     else 
@@ -244,6 +267,7 @@ void loop()
       start_flag = false;
       start_flag_PickPlace = false;
       start_flag_HOME = false;
+      start_flag_CV = false;
     }
   }
   else 
@@ -320,6 +344,24 @@ void loop()
     start_flag_HOME = false;
   }
   ////                                                                            
+  // Taking Input from CV 
+  while (start_flag_CV == true)
+  {
+    X_next = 0;
+    Y_next = 0;
+    Z_next = -300;
+    duration = 0.7;
+     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {
+      move_steppers();
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
+    start_flag_CV = false;
+  }
+  ////                                                                            
+  
   /// No choice selected
   if ( no_motion == true && start_flag == false && start_flag_HOME == false && start_flag_PickPlace == false)
   {
