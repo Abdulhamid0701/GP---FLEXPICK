@@ -4,8 +4,8 @@
 #include <constants.h>
 #include <stepper_params.h>
 #include <math.h>
-#include <AccelStepper.h>
 #include <Conveyor.h>
+#include <AccelStepper.h>
 //#include <avr8-stub.h>
 
 // Computer Vision Message 

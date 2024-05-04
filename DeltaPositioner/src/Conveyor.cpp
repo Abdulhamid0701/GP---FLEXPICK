@@ -1,8 +1,6 @@
-#include <Arduino.h>
-#include <math.h>
 #include <Conveyor.h>
 #include <AccelStepper.h>
-
+#include <math.h>
 // Initalize Conevyor's Stepper Motor Pins
 AccelStepper belt_stepper(AccelStepper::DRIVER, 1, 2);
 
