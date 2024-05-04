@@ -16,3 +16,15 @@ void belt_run_const_speed(int linear_speed)
     // Run belt unless the stop button is pressed 
     belt_stepper.runSpeed();
 }
+
+void start_belt()
+{
+    int SPS = ((belt_speed_linear* 1e-3) / pulley_radius) / Step_Angle_Rads;
+    belt_stepper.setSpeed(SPS);
+    belt_stepper.runSpeed();
+}
+
+void stop_belt()
+{
+    belt_stepper.stop();
+}

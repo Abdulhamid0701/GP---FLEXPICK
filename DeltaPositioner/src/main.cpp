@@ -5,6 +5,7 @@
 #include <stepper_params.h>
 #include <math.h>
 #include <AccelStepper.h>
+#include <Conveyor.h>
 //#include <avr8-stub.h>
 
 // Computer Vision Message 
@@ -219,6 +220,11 @@ void setup()
   Serial.println("    Press 's' to start corenring cycle demo");
   Serial.println("    Press 'p' to start pick and place demo");
   Serial.println("    Press 'h' to home robot");
+
+  // Belt Initialization
+  attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
+  attachInterrupt(digitalPinToInterrupt(stop_button_pin_belt), stop_belt, RISING);
+
 }
 void loop()
 {
