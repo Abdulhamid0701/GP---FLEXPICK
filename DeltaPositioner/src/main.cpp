@@ -38,6 +38,12 @@ const int Y_PP[] =         { -140,   -140,  -140,  140,  140,  140};
 const int Z_PP[] =         { -350,   -500,  -350, -350, -500, -350};
 const float dur_arr_PP[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
 
+// Computer Vision Pick and Place 
+const int X_CV[] =         {   0,      0,     0,    0,    0,    0};
+      int Y_CV[] =         { -140,   -140,  -140,  140,  140,  140};
+const int Z_CV[] =         { -350,   -500,  -350, -350, -500, -350};
+const float dur_arr_CV[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
+
 bool start_flag = false;
 bool start_flag_PickPlace = false;
 bool start_flag_HOME = false;
@@ -252,7 +258,11 @@ void loop()
     }
     else if (key == 'c')
     {
-      Serial.println("Key 'c' pressed. Taking input from CV");
+      Serial.println("Key 'c' pressed. Taking input from CV, Enter Y");
+      int YY = Serial.parseInt();
+      Y_CV[0] = YY;
+      Y_CV[1] = YY;
+      Y_CV[2] = YY;
       start_flag_PickPlace = false;
       start_flag = false;
       start_flag_HOME = false;
@@ -345,20 +355,21 @@ void loop()
   }
   ////                                                                            
   // Taking Input from CV 
-  while (start_flag_CV == true)
+  while (ind < 6 && start_flag_CV == true)
   {
-    X_next = 0;
-    Y_next = 0;
-    Z_next = -300;
-    duration = 0.7;
-     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    X_next = X_CV[ind];
+    Y_next = Y_CV[ind];
+    Z_next = Z_CV[ind];
+    duration = dur_arr_CV[ind];
+
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
       move_steppers();
       X_current = X_next;
       Y_current = Y_next;
       Z_current = Z_next;
     }
-    start_flag_CV = false;
+    start_flag_CV = true;
   }
   ////                                                                            
   
