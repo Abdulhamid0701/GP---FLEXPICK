@@ -15,3 +15,4 @@ const int stop_button_pin_belt = 21;
 void belt_run_const_speed(int linear_speed);
 void start_belt();
 void stop_belt();
+float get_time_to_position(float item_pos);

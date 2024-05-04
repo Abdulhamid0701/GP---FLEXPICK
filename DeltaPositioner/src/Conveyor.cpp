@@ -28,3 +28,10 @@ void stop_belt()
 {
     belt_stepper.stop();
 }
+
+float get_time_to_position(float item_pos)
+{
+    // Get time for a movement on the belt with 200 mm on X-axis
+    float time_to_pos = item_pos / belt_speed_linear; // sec = mm/(mm/sec)
+    return time_to_pos;
+}
