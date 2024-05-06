@@ -7,7 +7,8 @@ import tkinter.messagebox
 from PIL import Image
 import tkinter
 
-
+byte_sent: str
+byte_sent = "none"
 
 def checkbox_event_nonstop():
     print("checkbox toggled, current value:", check_nonstop.get())
@@ -21,6 +22,7 @@ def switch_event_home():
     print("switch toggled, current value:", switch_var_home.get())
     demossw.deselect()
     switch.deselect()
+    byte_sent = "HOME"
 
 def switch_event_demos():
     print("switch toggled, current value:", switch_var_demos.get())
@@ -31,7 +33,22 @@ def switch_event_cv():
     print("switch toggled, current value:", switch_var_cv.get())
     home_switch.deselect()
     demossw.deselect()
+
+def demos_optioN_event(new_scaling: str):
+    out_opt: str
+    if new_scaling == "Cornering Demo":
+        out_opt = "c"
+    elif new_scaling == "Pick & Place Demo":
+        out_opt = "p"
+    elif new_scaling == "Circular Demo":
+        out_opt = "r"
+    elif new_scaling == "Z-Only Demo":
+        out_opt = "z"
     
+    print("Demos Option:", out_opt)
+    
+    
+print("BYTE_SENT:", byte_sent)    
     
 customtkinter.set_appearance_mode("light")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -53,9 +70,9 @@ bottom_frame.place(y = 680, x = 0)
 logo_label = customtkinter.CTkLabel(sidebar_frame, text="FlexPick Project", font=("Poppins Medium", 33), width=1000, corner_radius=400, height=60) #text_color= "#3a7ebf")
 logo_label.grid(row=0, column=0, padx=0, pady=(10, 10))
 
-my_image_delta = customtkinter.CTkImage(dark_image=Image.open("DELTA_BLUE.png"), size=(107/1.5, 107/1.5))
-my_image_soft  = customtkinter.CTkImage(dark_image=Image.open("SOFT _BLUE.png"), size=(107/1.5, 98/1.5))
-my_image_cv    = customtkinter.CTkImage(dark_image=Image.open("CV_BLUE.png"),    size=(130/1.5, 100/1.5))
+my_image_delta = customtkinter.CTkImage(dark_image=Image.open("DELTA_BLUEE.png"), size=(107/1.5, 107/1.5))
+my_image_soft  = customtkinter.CTkImage(dark_image=Image.open("SOFT_BLUEE.png"), size=(107/1.5, 98/1.5))
+my_image_cv    = customtkinter.CTkImage(dark_image=Image.open("CV_BLUEE.png"),    size=(130/1.5, 100/1.5))
 my_image_cu    = customtkinter.CTkImage(dark_image=Image.open("gam3a.png"),      size=(200, 98))
 my_image_sect  = customtkinter.CTkImage(dark_image=Image.open("SECTOR.png"),     size=(198, 50))
 my_image_molto = customtkinter.CTkImage(dark_image=Image.open("ITIDA.png"),      size=(200, 100))
@@ -118,7 +135,7 @@ check_onetime = customtkinter.StringVar(value="on")
 checkbox_onetime = customtkinter.CTkCheckBox(demos_frame, text="One Cycle Only", command=checkbox_event_onetime, variable=check_onetime, onvalue="on", offvalue="off",  font=('Poppins Medium',12))
 checkbox_onetime.grid(row=1, column=0, pady=(12, 5), padx=(170,20), sticky="w")
 
-demos_optionemenu = customtkinter.CTkOptionMenu(demos_frame, values=["Cornering Demo", "Pick & Place Demo", "Z-Only Demo", "Circular Demo"], font=('Poppins Medium',12))
+demos_optionemenu = customtkinter.CTkOptionMenu(demos_frame, values=["Cornering Demo", "Pick & Place Demo", "Z-Only Demo", "Circular Demo"], font=('Poppins Medium',12), command=demos_optioN_event)
 demos_optionemenu.grid(row=1, column=0, padx=(15,8), pady=(12, 5), sticky = "w")
 
 ##################################################################################################################################################################
@@ -126,7 +143,7 @@ demos_optionemenu.grid(row=1, column=0, padx=(15,8), pady=(12, 5), sticky = "w")
 # System Switches 
 sys_frame = customtkinter.CTkFrame(app, height=280, width=400, corner_radius = 20)
 sys_frame.grid(row=1, column=3, padx=(20, 20), pady=(20, 0), sticky="nsew")
-sys_frame.place(x = 590, y =300)
+sys_frame.place(x = 45, y =350)
 label_radio_group = customtkinter.CTkLabel(master=sys_frame, text="System Switches", font=('Poppins',18), width=100, corner_radius=20)
 label_radio_group.grid(row=0, column=0, columnspan=4, padx=0, pady=10, sticky="")
 
@@ -163,5 +180,5 @@ appearance_mode_optionemenu = customtkinter.CTkOptionMenu(sidebar_frame, values=
 appearance_mode_optionemenu.grid(row=0, column=0, padx=(850,0), pady=(10, 10))
 
 
-
+print("BYTE_SENT:", byte_sent)    
 app.mainloop()
