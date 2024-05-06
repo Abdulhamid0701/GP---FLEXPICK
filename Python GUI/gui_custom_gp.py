@@ -88,7 +88,7 @@ navigation_frame_label.grid(row=0, column=3, padx=(10,300), pady=0)
 # Computer Vision or DEMOS choice
 demos_frame = customtkinter.CTkFrame(app, height=500, width=500, corner_radius = 20)
 demos_frame.grid(row=1, column=3, padx=(20, 200), pady=(20, 0), sticky="nsew", columnspan = 4)
-demos_frame.place(x = 45, y = 200)
+demos_frame.place(x =45, y = 200)
 
 cv_frame = customtkinter.CTkFrame(app, height=300, width=350, corner_radius = 20)
 cv_frame.grid(row=1, column=7, padx=(20, 20), pady=(20, 0), sticky="nsew")
@@ -111,15 +111,15 @@ home_switch = customtkinter.CTkSwitch(Home_frame, text="Home Robot", command=swi
 home_switch.grid(row = 0, column = 0, padx=10, pady=(20, 20))
 
 check_nonstop = customtkinter.StringVar(value="on")
-checkbox_nonstop = customtkinter.CTkCheckBox(master = demos_frame, text="NonStop", command=checkbox_event_nonstop, variable=check_nonstop, onvalue="on", offvalue="off")
-checkbox_nonstop.grid(row=1, column=0, pady=(12, 5), padx=(300,2), sticky="w")
+checkbox_nonstop = customtkinter.CTkCheckBox(master = demos_frame, text="NonStop", command=checkbox_event_nonstop, variable=check_nonstop, onvalue="on", offvalue="off",  font=('Poppins Medium',12))
+checkbox_nonstop.grid(row=2, column=0, pady=(12, 5), padx=(170,20), sticky="w")
 
 check_onetime = customtkinter.StringVar(value="on")
-checkbox_onetime = customtkinter.CTkCheckBox(demos_frame, text="One Cycle Only", command=checkbox_event_onetime, variable=check_onetime, onvalue="on", offvalue="off")
-checkbox_onetime.grid(row=1, column=0, pady=(12, 5), padx=(180,20), sticky="w")
+checkbox_onetime = customtkinter.CTkCheckBox(demos_frame, text="One Cycle Only", command=checkbox_event_onetime, variable=check_onetime, onvalue="on", offvalue="off",  font=('Poppins Medium',12))
+checkbox_onetime.grid(row=1, column=0, pady=(12, 5), padx=(170,20), sticky="w")
 
-demos_optionemenu = customtkinter.CTkOptionMenu(demos_frame, values=["Cornering Demo", "Pick & Place Demo", "Z-Only Demo", "Circular Demo"], font=('Poppins Medium',13))
-demos_optionemenu.grid(row=1, column=0, padx=(20,8), pady=(12, 5), sticky = "w")
+demos_optionemenu = customtkinter.CTkOptionMenu(demos_frame, values=["Cornering Demo", "Pick & Place Demo", "Z-Only Demo", "Circular Demo"], font=('Poppins Medium',12))
+demos_optionemenu.grid(row=1, column=0, padx=(15,8), pady=(12, 5), sticky = "w")
 
 ##################################################################################################################################################################
 
