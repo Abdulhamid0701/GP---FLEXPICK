@@ -10,6 +10,9 @@ import tkinter
 byte_sent: str
 byte_sent = "none"
 
+def change_appearance_mode_event(new_appearance_mode: str):
+    customtkinter.set_appearance_mode(new_appearance_mode)
+
 def checkbox_event_nonstop():
     print("checkbox toggled, current value:", check_nonstop.get())
     checkbox_onetime.deselect()
@@ -46,6 +49,13 @@ def demos_optioN_event(new_scaling: str):
         out_opt = "z"
     
     print("Demos Option:", out_opt)
+    
+def switch_event_belt():
+    print("Belt", switch_var_belt.get())
+    
+def switch_event_pnu():
+    print("Pneumatic", switch_var_pnu.get())
+    
     
     
 print("BYTE_SENT:", byte_sent)    
@@ -148,11 +158,11 @@ label_radio_group = customtkinter.CTkLabel(master=sys_frame, text="System Switch
 label_radio_group.grid(row=0, column=0, columnspan=4, padx=0, pady=10, sticky="")
 
 switch_var_belt = customtkinter.StringVar(value="off")
-switch_belt = customtkinter.CTkSwitch(master = sys_frame, text = "Conveyor Belt", font = ('Poppins', 16))
+switch_belt = customtkinter.CTkSwitch(master = sys_frame, text = "Conveyor Belt", font = ('Poppins', 16), command=switch_event_belt, variable=switch_var_belt, onvalue="on", offvalue="off")
 switch_belt.grid(row = 1, column = 0, padx=(35,0), pady=(4, 4))
 
 switch_var_pnu = customtkinter.StringVar(value="off")
-switch_pnu = customtkinter.CTkSwitch(master = sys_frame, text = "Pneumatic Unit", font = ('Poppins', 16))
+switch_pnu = customtkinter.CTkSwitch(master = sys_frame, text = "Pneumatic Unit", font = ('Poppins', 16), command=switch_event_pnu, variable=switch_var_pnu, onvalue="on", offvalue="off")
 switch_pnu.grid(row = 1, column = 1, padx=(20,20), pady=(10, 10))
 
 # System Readings (Sensors & Monitoring)
@@ -169,9 +179,8 @@ checkbox_nonstop.deselect()
 switch_belt.deselect()
 switch_pnu.deselect()
 
-def change_appearance_mode_event(new_appearance_mode: str):
-    customtkinter.set_appearance_mode(new_appearance_mode)
 
+# Computer Vision Controlled : User Selected Package 
 
 #appearance_mode_label = customtkinter.CTkLabel(sidebar_frame, text="Appearance Mode:", anchor="w")
 #appearance_mode_label.grid(row=0, column=1, padx=0, pady=(10, 0))
