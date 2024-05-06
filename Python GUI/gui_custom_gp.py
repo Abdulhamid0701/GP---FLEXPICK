@@ -10,6 +10,18 @@ import tkinter
 byte_sent: str
 byte_sent = "none"
 
+
+##################################################################################################################################################################
+# Serial Monitor Init.
+#ser = serial.Serial('com7', 9600)
+##################################################################################################################################################################
+
+##################################################################################################################################################################
+def send_byte():
+    global byte_sent
+    if byte_sent == "HOME":
+        print("HOMING")
+
 def change_appearance_mode_event(new_appearance_mode: str):
     customtkinter.set_appearance_mode(new_appearance_mode)
 
@@ -22,15 +34,19 @@ def checkbox_event_onetime():
     checkbox_nonstop.deselect()
     
 def switch_event_home():
+    global byte_sent
     print("switch toggled, current value:", switch_var_home.get())
     demossw.deselect()
     switch.deselect()
     byte_sent = "HOME"
+    #ser.write(bytes('H', 'UTF-8'))
+    #send_byte()
 
 def switch_event_demos():
     print("switch toggled, current value:", switch_var_demos.get())
     switch.deselect()
     home_switch.deselect()
+    #ser.write(bytes('DEMOS_ON', 'UTF-8'))
     
 def switch_event_cv():
     print("switch toggled, current value:", switch_var_cv.get())
@@ -40,13 +56,15 @@ def switch_event_cv():
 def demos_optioN_event(new_scaling: str):
     out_opt: str
     if new_scaling == "Cornering Demo":
-        out_opt = "c"
+        out_opt = "corner"
     elif new_scaling == "Pick & Place Demo":
-        out_opt = "p"
+        out_opt = "pp"
     elif new_scaling == "Circular Demo":
-        out_opt = "r"
+        out_opt = "circ"
     elif new_scaling == "Z-Only Demo":
-        out_opt = "z"
+        out_opt = "zonly"
+        
+    #ser.write(bytes(out_opt, 'UTF-8'))
     
     print("Demos Option:", out_opt)
     
@@ -55,7 +73,7 @@ def switch_event_belt():
     
 def switch_event_pnu():
     print("Pneumatic", switch_var_pnu.get())
-    
+##################################################################################################################################################################    
     
     
 print("BYTE_SENT:", byte_sent)    
@@ -80,6 +98,7 @@ bottom_frame.place(y = 680, x = 0)
 logo_label = customtkinter.CTkLabel(sidebar_frame, text="FlexPick Project", font=("Poppins Medium", 33), width=1000, corner_radius=400, height=60) #text_color= "#3a7ebf")
 logo_label.grid(row=0, column=0, padx=0, pady=(10, 10))
 
+##################################################################################################################################################################
 my_image_delta = customtkinter.CTkImage(dark_image=Image.open("DELTA_BLUEE.png"), size=(107/1.5, 107/1.5))
 my_image_soft  = customtkinter.CTkImage(dark_image=Image.open("SOFT_BLUEE.png"), size=(107/1.5, 98/1.5))
 my_image_cv    = customtkinter.CTkImage(dark_image=Image.open("CV_BLUEE.png"),    size=(130/1.5, 100/1.5))
@@ -110,8 +129,9 @@ navigation_frame_label_sect.grid(row=0, column=1, padx=(180,10), pady=0)
 navigation_frame_label = customtkinter.CTkLabel(bottom_frame, image=my_image_molto, width= 100, text = "")
 navigation_frame_label.grid(row=0, column=3, padx=(10,300), pady=0)
 #navigation_frame_label.place(x = 620, y = 675)
+##################################################################################################################################################################
 
-######################################################################################################################################################################
+##################################################################################################################################################################
 # Computer Vision or DEMOS choice
 demos_frame = customtkinter.CTkFrame(app, height=500, width=500, corner_radius = 20)
 demos_frame.grid(row=1, column=3, padx=(20, 200), pady=(20, 0), sticky="nsew", columnspan = 4)
@@ -147,9 +167,9 @@ checkbox_onetime.grid(row=1, column=0, pady=(12, 5), padx=(170,20), sticky="w")
 
 demos_optionemenu = customtkinter.CTkOptionMenu(demos_frame, values=["Cornering Demo", "Pick & Place Demo", "Z-Only Demo", "Circular Demo"], font=('Poppins Medium',12), command=demos_optioN_event)
 demos_optionemenu.grid(row=1, column=0, padx=(15,8), pady=(12, 5), sticky = "w")
-
 ##################################################################################################################################################################
 
+##################################################################################################################################################################
 # System Switches 
 sys_frame = customtkinter.CTkFrame(app, height=280, width=400, corner_radius = 20)
 sys_frame.grid(row=1, column=3, padx=(20, 20), pady=(20, 0), sticky="nsew")
@@ -164,30 +184,35 @@ switch_belt.grid(row = 1, column = 0, padx=(35,0), pady=(4, 4))
 switch_var_pnu = customtkinter.StringVar(value="off")
 switch_pnu = customtkinter.CTkSwitch(master = sys_frame, text = "Pneumatic Unit", font = ('Poppins', 16), command=switch_event_pnu, variable=switch_var_pnu, onvalue="on", offvalue="off")
 switch_pnu.grid(row = 1, column = 1, padx=(20,20), pady=(10, 10))
+##################################################################################################################################################################
+
 
 # System Readings (Sensors & Monitoring)
 #read_frame = customtkinter.CTkFrame(app, height=280, width=400, corner_radius = 20)
 #read_frame.grid(row=1, column=3, padx=(20, 20), pady=(20, 0), sticky="nsew")
 #read_frame.place(x = 590, y =500)
 
+##################################################################################################################################################################
 #Switches Default Startup Values 
 demossw.deselect()
 home_switch.select()
 switch.deselect()
-checkbox_onetime.select()
+checkbox_onetime.deselect()
 checkbox_nonstop.deselect()
 switch_belt.deselect()
 switch_pnu.deselect()
+##################################################################################################################################################################
 
-
+##################################################################################################################################################################
 # Computer Vision Controlled : User Selected Package 
+##################################################################################################################################################################
 
 #appearance_mode_label = customtkinter.CTkLabel(sidebar_frame, text="Appearance Mode:", anchor="w")
 #appearance_mode_label.grid(row=0, column=1, padx=0, pady=(10, 0))
-appearance_mode_optionemenu = customtkinter.CTkOptionMenu(sidebar_frame, values=["Light", "Dark", "System"],
-                                                                       command=change_appearance_mode_event, font=('Poppins Medium',13))
+appearance_mode_optionemenu = customtkinter.CTkOptionMenu(sidebar_frame, values=["Light", "Dark", "System"], command=change_appearance_mode_event, font=('Poppins Medium',13))
 appearance_mode_optionemenu.grid(row=0, column=0, padx=(850,0), pady=(10, 10))
 
 
-print("BYTE_SENT:", byte_sent)    
+  
 app.mainloop()
+print("BYTE_SENT:", byte_sent)  
