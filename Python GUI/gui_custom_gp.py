@@ -20,8 +20,7 @@ byte_sent = "none"
 def send_byte(whats_sent: str):
     global byte_sent
     #ser.write((whats_sent + '\n').encode())
-    if byte_sent == "HOME":
-        print("HOMING")
+    print("sending: ", whats_sent)
 
 def change_appearance_mode_event(new_appearance_mode: str):
     customtkinter.set_appearance_mode(new_appearance_mode)
@@ -61,14 +60,15 @@ def switch_event_cv():
 def demos_optioN_event(new_scaling: str):
     out_opt: str
     if new_scaling == "Cornering Demo":
-        out_opt = "corner"
+        out_opt = "CORNER"
     elif new_scaling == "Pick & Place Demo":
-        out_opt = "pp"
+        out_opt = "PICKPLACE"
     elif new_scaling == "Circular Demo":
         out_opt = "circ"
     elif new_scaling == "Z-Only Demo":
         out_opt = "zonly"
-        
+    
+    send_byte(out_opt)
     #ser.write(bytes(out_opt, 'UTF-8'))
     
     print("Demos Option:", out_opt)
