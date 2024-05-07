@@ -28,10 +28,12 @@ def change_appearance_mode_event(new_appearance_mode: str):
 def checkbox_event_nonstop():
     print("checkbox toggled, current value:", check_nonstop.get())
     checkbox_onetime.deselect()
+    #ser.write(bytes('DEMO_INF', 'UTF-8'))
     
 def checkbox_event_onetime():
     print("checkbox toggled, current value:", check_onetime.get())
     checkbox_nonstop.deselect()
+    #ser.write(bytes('DEMO_ONCE', 'UTF-8'))
     
 def switch_event_home():
     global byte_sent
