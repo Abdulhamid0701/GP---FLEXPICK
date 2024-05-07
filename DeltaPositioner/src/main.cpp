@@ -27,10 +27,10 @@ const int theta_min = -70;
 ////
 /// Delta Robot Motion Demo, End Effector Position Arrays
 // Cornering Demo
-const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,     0,     0,     0,      0,      0,     0,       0};
-const int Y_cycle[] = {0,     -140,     0,   140,   0 ,    0,    0,      0,       0,    0,     0,     0,     0,     140,    140,   140,      0};
-const int Z_cycle[] = {-300,  -400,   -300, -400, -300,  -400,  -300,  -400,   -300, -500,  -300,  -500,   -300,  -400,   -450,   -400,   -300};
-const float dur_arr[] = {0,  0.5,  0.5,   0.5,  0.4,  0.5,  0.5,     0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
+const int X_cycle[]   = {0,       0,      0,     0,     0,    140,   0,    -140,      0,    0,     0,     0,     0,      0,      0,     0,       0};
+const int Y_cycle[]   = {0,     -140,     0,    140,    0 ,    0,    0,      0,       0,    0,     0,     0,     0,     140,    140,   140,      0};
+const int Z_cycle[]   = {-300,  -400,   -300,  -400,  -300,  -400,  -300,  -400,   -300,  -500,  -300,  -500,   -300,  -400,   -450,   -400,   -300};
+const float dur_arr[] = {0,  0.5,   0.5,    0.5,    0.4,   0.5,   0.5,   0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
 int ind = 0;
 
 // Pick and Place Demo
@@ -45,18 +45,19 @@ const int X_CV[] =         {   0,      0,     0,    0,    0,    0};
 const int Z_CV[] =         { -350,   -500,  -350, -350, -500, -350};
 const float dur_arr_CV[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
 
-
-bool start_flag = false;
+////                                                                         
+bool start_flag           = false;
 bool start_flag_PickPlace = false;
-bool start_flag_HOME = false;
-bool start_flag_CV = false;
-bool no_motion = false;
-bool demos_start_flag = false;
-bool demos_once_flag = false;
-bool demos_inf_flag = false;
-bool demos_stopnow_flag = false;
+bool start_flag_HOME      = false;
+bool start_flag_CV        = false;
+bool no_motion            = false;
+bool demos_start_flag     = false;
+bool demos_once_flag      = false;
+bool demos_inf_flag       = false;
+bool demos_stopnow_flag   = false;
 bool start_flag_cornering = false;
-////
+bool prev_is_demo         = false;
+////                                                                         
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
@@ -78,16 +79,21 @@ void fetch_command()
   if (Serial.available())
   {
     String incoming_byte = Serial.readStringUntil('\n');
+    Serial.print(incoming_byte);
     //char key = Serial.read();
     no_motion = false;
+    if (prev_is_demo == true && incoming_byte !="HOME" && incoming_byte != "VISION")
+    {
+      goto sabry; 
+    }
 
     // Check the main choice
     if (incoming_byte == "HOME")
     {
-      Serial.println("Key 'h' pressed. Homing Robot");
+      // Serial.println("Key 'h' pressed. Homing Robot");
       demos_start_flag = false;
-      start_flag_PickPlace = false;
-      start_flag_cornering = false;
+      //start_flag_PickPlace = false;
+      //start_flag_cornering = false;
       start_flag_HOME = true;
       start_flag_CV = false;
       ind = 0;
@@ -97,8 +103,8 @@ void fetch_command()
     {
       demos_start_flag = true;
       start_flag_HOME = false;
-      start_flag_PickPlace = false;
-      start_flag_cornering = false;
+      //start_flag_PickPlace = false;
+      //start_flag_cornering = false;
       start_flag_CV = false;
       ind = 0;
     }
@@ -115,13 +121,15 @@ void fetch_command()
     ////
 
     // if cornering is has been chosen, check which choice
+    // sabry:
     if (demos_start_flag == true)
     {
       // Check which demo will be done 
+      sabry:
       while (start_flag_cornering == false && start_flag_PickPlace == false)
       {
-        String choice = Serial.readStringUntil('\n');
-
+        String choice = Serial.readString();
+        Serial.print(choice);
         if (choice == "CORNER")
         {
           start_flag_cornering = true;
@@ -138,34 +146,37 @@ void fetch_command()
         }
       }
       // Check how many times the demo would be done, once, inifnitely, or stop now 
-      String choii = Serial.readStringUntil('\n');
-      if (choii == "DEMONONSTOP")
+      String choii = Serial.readString();
+      while (demos_inf_flag == false && demos_once_flag == false && demos_stopnow_flag == false)
       {
-        demos_inf_flag = true;
-        demos_once_flag = false;
-        demos_stopnow_flag = false;
+        choii = Serial.readString();
+        if (choii == "DEMONONSTOP")
+        {
+          demos_inf_flag     = true;
+          demos_once_flag    = false;
+          demos_stopnow_flag = false;
+        }
+        else if (choii == "DEMOSTOPNOW")
+        {
+          demos_inf_flag     = false;
+          demos_once_flag    = false;
+          demos_stopnow_flag = true;
+        }
+        else if (choii == "DEMOONETIME")
+        {
+          demos_inf_flag     = false;
+          demos_once_flag    = true;
+          demos_stopnow_flag = false;
+        }
       }
-      else if (choii == "DEMOSTOPNOW")
-      {
-        demos_inf_flag = false;
-        demos_once_flag = false;
-        demos_stopnow_flag = true;
-      }
-      else if (choii == "DEMOONETIME")
-      {
-        demos_inf_flag = false;
-        demos_once_flag = true;
-        demos_stopnow_flag = false;
-      }
-
     }
     else 
     {
       start_flag_cornering = false;
       start_flag_PickPlace = false;
-      demos_inf_flag = false;
-      demos_once_flag = false;
-      demos_stopnow_flag = false;
+      demos_inf_flag       = false;
+      demos_once_flag      = false;
+      demos_stopnow_flag   = false;
     }
     /////
     /*
@@ -350,7 +361,7 @@ void move_steppers()
 void setup()
 {
   // Serial Monitor Init.
-  Serial.begin(115200);
+  Serial.begin(9600);
   // debug_init();
 
   // CV
@@ -376,9 +387,11 @@ void setup()
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
+  /**
   Serial.println("    Press 's' to start corenring cycle demo");
   Serial.println("    Press 'p' to start pick and place demo");
   Serial.println("    Press 'h' to home robot");
+  */
 
   // Belt Initialization
   attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
@@ -480,14 +493,18 @@ void loop()
   ////
 
   /// No choice selected
+  /*
   if (no_motion == true && start_flag == false && start_flag_HOME == false && start_flag_PickPlace == false)
   {
     delay(3000);
+    
     Serial.println("Motion DONE, Select another DEMO to do: ");
     Serial.println("    Press 's' to start corenring cycle demo");
     Serial.println("    Press 'p' to start pick and place demo");
     Serial.println("    Press 'h' to home robot");
+    
   }
+  */
 
   if (demos_inf_flag == true)
   {

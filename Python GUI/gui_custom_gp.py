@@ -6,6 +6,7 @@ import customtkinter
 import tkinter.messagebox
 from PIL import Image
 import tkinter
+import time
 
 byte_sent: str
 byte_sent = "none"
@@ -13,13 +14,14 @@ byte_sent = "none"
 
 ##################################################################################################################################################################
 # Serial Monitor Init.
-#ser = serial.Serial('com7', 9600)
+ser = serial.Serial('COM9', 9600)
 ##################################################################################################################################################################
 
 ##################################################################################################################################################################
 def send_byte(whats_sent: str):
     global byte_sent
-    #ser.write((whats_sent + '\n').encode())
+
+    ser.write((whats_sent).encode())
     print("sending: ", whats_sent)
 
 def change_appearance_mode_event(new_appearance_mode: str):
@@ -76,17 +78,21 @@ def demos_optioN_event(new_scaling: str):
     
     send_byte(out_opt)
     #ser.write(bytes(out_opt, 'UTF-8'))
-    print("Demos Option:", out_opt)
+    #print("Demos Option:", out_opt)
     
 def switch_event_belt():
     print("Belt", switch_var_belt.get())
+    ah = ser.read()
+    print("ah", ah)
     
 def switch_event_pnu():
     print("Pneumatic", switch_var_pnu.get())
 ##################################################################################################################################################################    
-    
-    
-print("BYTE_SENT:", byte_sent)    
+
+time.sleep(3)
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------~#    
+#print("BYTE_SENT:", byte_sent)    
     
 customtkinter.set_appearance_mode("light")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -202,6 +208,28 @@ switch_pnu.grid(row = 1, column = 1, padx=(20,20), pady=(10, 10))
 #read_frame.grid(row=1, column=3, padx=(20, 20), pady=(20, 0), sticky="nsew")
 #read_frame.place(x = 590, y =500)
 
+# COMPUTER VISION CONTROLLED PROGRAM, User side responsible for selecting an order 
+user_frame = customtkinter.CTkFrame(app, height=300, width=350, corner_radius = 20)
+user_frame.grid(row=1, column=3, padx=(20, 20), pady=(20, 0), sticky="nsew", columnspan = 7)
+user_frame.place(x = 580, y =300)
+
+user_label = customtkinter.CTkLabel(master=user_frame, text="User Package Selection", font=('Poppins',19), width=100, corner_radius=20)
+user_label.grid(row=0, column=0, columnspan=4, padx=(50,50), pady=10, sticky="w")
+
+checkbox_apples = customtkinter.CTkCheckBox(master = user_frame, text="Apples",  font=('Poppins Medium',14))
+checkbox_apples.grid(row=2, column=0, pady=(12, 5), padx=(20,20), sticky="w")
+
+apples_optionemenu = customtkinter.CTkOptionMenu(user_frame, values=["1", "2", "3", "4"], font=('Poppins Medium',12))
+apples_optionemenu.grid(row=2, column=1, padx=(50,0), pady=(12, 5), sticky = "w")
+apples_qty_label = customtkinter.CTkLabel(user_frame, text="QTY", anchor="n", font=('Poppins Medium',15))
+apples_qty_label.grid(row=2, column=1, padx=(0,160), pady=(7, 0))
+
+checkbox_oranges = customtkinter.CTkCheckBox(master = user_frame, text="Oranges", offvalue="off",  font=('Poppins Medium',14))
+checkbox_oranges.grid(row=3, column=0, pady=(12, 5), padx=(20,20), sticky="w")
+
+checkbox_bannanas = customtkinter.CTkCheckBox(master = user_frame, text="Bannanas",  font=('Poppins Medium',14))
+checkbox_bannanas.grid(row=4, column=0, pady=(12, 5), padx=(20,20), sticky="w")
+
 ##################################################################################################################################################################
 #Switches Default Startup Values 
 demossw.deselect()
@@ -226,4 +254,4 @@ appearance_mode_optionemenu.grid(row=0, column=0, padx=(850,0), pady=(10, 10))
   
 app.mainloop()
 print("BYTE_SENT:", byte_sent)  
-#ser.close()
+ser.close()
