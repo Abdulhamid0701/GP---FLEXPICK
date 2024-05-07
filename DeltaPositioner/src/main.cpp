@@ -6,13 +6,13 @@
 #include <math.h>
 #include <Conveyor.h>
 #include <AccelStepper.h>
-//#include <avr8-stub.h>
+// #include <avr8-stub.h>
 
-// Computer Vision Message 
+// Computer Vision Message
 String X_recieved;
 String Y_recieved;
 String Z_recieved;
- 
+
 // End effector position variables
 float X_current;
 float Y_current;
@@ -24,7 +24,7 @@ float Z_next;
 
 const int theta_max = 70;
 const int theta_min = -70;
-////                                                                  
+////
 /// Delta Robot Motion Demo, End Effector Position Arrays
 // Cornering Demo
 const int X_cycle[] = {0,       0,      0,    0,    0,    140,   0,    -140,    0,    0,     0,     0,     0,      0,      0,     0,       0};
@@ -45,19 +45,23 @@ const int X_CV[] =         {   0,      0,     0,    0,    0,    0};
 const int Z_CV[] =         { -350,   -500,  -350, -350, -500, -350};
 const float dur_arr_CV[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
 
+
 bool start_flag = false;
 bool start_flag_PickPlace = false;
 bool start_flag_HOME = false;
 bool start_flag_CV = false;
 bool no_motion = false;
 bool demos_start_flag = false;
+bool demos_once_flag = false;
+bool demos_inf_flag = false;
+bool demos_stopnow_flag = false;
 bool start_flag_cornering = false;
-////                                                                    
+////
 
 // Steppers structure to contain 3 motors info
 volatile stepperInfo steppers[3];
 
-// MEGA Wiring 
+// MEGA Wiring
 AccelStepper stepper1(AccelStepper::DRIVER, 50, 51);
 AccelStepper stepper2(AccelStepper::DRIVER, 47, 46);
 AccelStepper stepper3(AccelStepper::DRIVER, 42, 43);
@@ -74,7 +78,7 @@ void fetch_command()
   if (Serial.available())
   {
     String incoming_byte = Serial.readStringUntil('\n');
-    char key = Serial.read();
+    //char key = Serial.read();
     no_motion = false;
 
     // Check the main choice
@@ -108,16 +112,17 @@ void fetch_command()
       start_flag_CV = true;
       ind = 0;
     }
-    ////                                                       
+    ////
 
-    // if cornering is has been chosen, check which choice 
+    // if cornering is has been chosen, check which choice
     if (demos_start_flag == true)
     {
+      // Check which demo will be done 
       while (start_flag_cornering == false && start_flag_PickPlace == false)
       {
         String choice = Serial.readStringUntil('\n');
 
-        if (choice ==  "CORNER")
+        if (choice == "CORNER")
         {
           start_flag_cornering = true;
           start_flag_PickPlace = false;
@@ -132,10 +137,39 @@ void fetch_command()
           Serial.println("Invalid choice. Please choose again.");
         }
       }
+      // Check how many times the demo would be done, once, inifnitely, or stop now 
+      String choii = Serial.readStringUntil('\n');
+      if (choii == "DEMONONSTOP")
+      {
+        demos_inf_flag = true;
+        demos_once_flag = false;
+        demos_stopnow_flag = false;
+      }
+      else if (choii == "DEMOSTOPNOW")
+      {
+        demos_inf_flag = false;
+        demos_once_flag = false;
+        demos_stopnow_flag = true;
+      }
+      else if (choii == "DEMOONETIME")
+      {
+        demos_inf_flag = false;
+        demos_once_flag = true;
+        demos_stopnow_flag = false;
+      }
+
     }
-    /////                                                    
+    else 
+    {
+      start_flag_cornering = false;
+      start_flag_PickPlace = false;
+      demos_inf_flag = false;
+      demos_once_flag = false;
+      demos_stopnow_flag = false;
+    }
+    /////
     /*
-    if (key == 's') 
+    if (key == 's')
     {
       Serial.println("Key 's' pressed. Starting Motion Cycle.");
       start_flag = true;
@@ -143,7 +177,7 @@ void fetch_command()
       start_flag_HOME = false;
       start_flag_CV = false;
       ind = 0;
-    } 
+    }
     else if (key == 'p')
     {
       Serial.println("Key 'p' pressed. Pick and Place Demo Selected");
@@ -175,7 +209,7 @@ void fetch_command()
       start_flag_CV = true;
       ind = 0;
     }
-    else 
+    else
     {
       Serial.println("Press 's' to start corenring cycle demo");
       Serial.println("Press 'p' to start pick and place demo");
@@ -187,7 +221,8 @@ void fetch_command()
     }
   }
   */
-  else 
+  }
+  else
   {
     no_motion = true;
   }
@@ -221,14 +256,14 @@ void trapezoid_profile_setup()
   stepper2.moveTo(-steppers[1].targetSteps);
   stepper3.moveTo(-steppers[2].targetSteps);
 
-    /*
-    Serial.print("Mot1. Steps: ");
-    Serial.println(round(steppers[0].meshwar / STEP_ANGLE_RADS));
-    Serial.print("Mot2. Steps: ");
-    Serial.println(round(steppers[1].meshwar / STEP_ANGLE_RADS));
-    Serial.print("Mot3. Steps: ");
-    Serial.println(steppers[2].meshwar / STEP_ANGLE_RADS);
-  */
+  /*
+  Serial.print("Mot1. Steps: ");
+  Serial.println(round(steppers[0].meshwar / STEP_ANGLE_RADS));
+  Serial.print("Mot2. Steps: ");
+  Serial.println(round(steppers[1].meshwar / STEP_ANGLE_RADS));
+  Serial.print("Mot3. Steps: ");
+  Serial.println(steppers[2].meshwar / STEP_ANGLE_RADS);
+*/
 }
 void move_steppers()
 {
@@ -262,7 +297,7 @@ void move_steppers()
   // Setup the speed profile parameters for the motors
   trapezoid_profile_setup();
 
-  while (stepper1.distanceToGo() != 0 || stepper2.distanceToGo() != 0 || stepper3.distanceToGo() != 0 )
+  while (stepper1.distanceToGo() != 0 || stepper2.distanceToGo() != 0 || stepper3.distanceToGo() != 0)
   {
     stepper1.run();
     stepper2.run();
@@ -311,15 +346,14 @@ void move_steppers()
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
-  
 }
 void setup()
 {
   // Serial Monitor Init.
   Serial.begin(115200);
-  //debug_init();
+  // debug_init();
 
-  // CV 
+  // CV
   X_recieved = String();
   Y_recieved = String();
   Z_recieved = String();
@@ -349,17 +383,16 @@ void setup()
   // Belt Initialization
   attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
   attachInterrupt(digitalPinToInterrupt(stop_button_pin_belt), stop_belt, RISING);
-
 }
 void loop()
 {
 
-  //delay(3000);
-  /// Motion Demo Selector 
+  // delay(3000);
+  /// Motion Demo Selector
   fetch_command();
-  ////                                                                                             
+  ////
   /// Cornring Demo
-  while (ind < 13 && start_flag_cornering == true) 
+  while (ind < 13 && start_flag_cornering == true)
   {
     X_next = X_cycle[ind];
     Y_next = Y_cycle[ind];
@@ -374,16 +407,16 @@ void loop()
       Z_current = Z_next;
     }
 
-    ind++;    
+    ind++;
     Serial.print(X_current);
     Serial.print("   ");
     Serial.print(Y_current);
     Serial.print("   ");
     Serial.println(Z_current);
-    //delay(3000);
+    // delay(3000);
     start_flag = true;
   }
-  ////                                                                              
+  ////
   // Pick and Place Demo
   while (ind < 6 && start_flag_PickPlace == true)
   {
@@ -400,16 +433,16 @@ void loop()
       Z_current = Z_next;
     }
 
-    ind++;    
+    ind++;
     Serial.print(X_current);
     Serial.print("   ");
     Serial.print(Y_current);
     Serial.print("   ");
     Serial.println(Z_current);
-    //delay(3000);
+    // delay(3000);
     start_flag_PickPlace = true;
   }
-  ////                                                                            
+  ////
   // Homing Stepeprs
   while (start_flag_HOME == true)
   {
@@ -417,7 +450,7 @@ void loop()
     Y_next = 0;
     Z_next = -300;
     duration = 0.7;
-     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
       move_steppers();
       X_current = X_next;
@@ -426,8 +459,8 @@ void loop()
     }
     start_flag_HOME = false;
   }
-  ////                                                                            
-  // Taking Input from CV 
+  ////
+  // Taking Input from CV
   while (ind < 6 && start_flag_CV == true)
   {
     X_next = X_CV[ind];
@@ -444,15 +477,20 @@ void loop()
     }
     start_flag_CV = true;
   }
-  ////                                                                            
-  
+  ////
+
   /// No choice selected
-  if ( no_motion == true && start_flag == false && start_flag_HOME == false && start_flag_PickPlace == false)
+  if (no_motion == true && start_flag == false && start_flag_HOME == false && start_flag_PickPlace == false)
   {
     delay(3000);
     Serial.println("Motion DONE, Select another DEMO to do: ");
     Serial.println("    Press 's' to start corenring cycle demo");
     Serial.println("    Press 'p' to start pick and place demo");
     Serial.println("    Press 'h' to home robot");
+  }
+
+  if (demos_inf_flag == true)
+  {
+    ind = 0;
   }
 }

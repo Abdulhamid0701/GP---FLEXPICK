@@ -28,11 +28,17 @@ def change_appearance_mode_event(new_appearance_mode: str):
 def checkbox_event_nonstop():
     print("checkbox toggled, current value:", check_nonstop.get())
     checkbox_onetime.deselect()
+    if check_nonstop.get() == "on":
+        send_byte("DEMONONSTOP")
+    else:
+        send_byte("DEMOSTOPNOW")
     #ser.write(bytes('DEMO_INF', 'UTF-8'))
     
 def checkbox_event_onetime():
     print("checkbox toggled, current value:", check_onetime.get())
     checkbox_nonstop.deselect()
+    if check_onetime.get() == "on":
+        send_byte("DEMOONETIME")
     #ser.write(bytes('DEMO_ONCE', 'UTF-8'))
     
 def switch_event_home():
@@ -70,7 +76,6 @@ def demos_optioN_event(new_scaling: str):
     
     send_byte(out_opt)
     #ser.write(bytes(out_opt, 'UTF-8'))
-    
     print("Demos Option:", out_opt)
     
 def switch_event_belt():
