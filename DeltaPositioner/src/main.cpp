@@ -50,6 +50,8 @@ bool start_flag_PickPlace = false;
 bool start_flag_HOME = false;
 bool start_flag_CV = false;
 bool no_motion = false;
+bool demos_start_flag = false;
+bool start_flag_cornering = false;
 ////                                                                    
 
 // Steppers structure to contain 3 motors info
@@ -67,6 +69,129 @@ AccelStepper stepper3(AccelStepper::DRIVER, 3, 4);
 */
 
 /// Function Prototypes
+void fetch_command()
+{
+  if (Serial.available())
+  {
+    String incoming_byte = Serial.readStringUntil('\n');
+    char key = Serial.read();
+    no_motion = false;
+
+    // Check the main choice
+    if (incoming_byte == "HOME")
+    {
+      Serial.println("Key 'h' pressed. Homing Robot");
+      demos_start_flag = false;
+      start_flag_PickPlace = false;
+      start_flag_cornering = false;
+      start_flag_HOME = true;
+      start_flag_CV = false;
+      ind = 0;
+    }
+
+    else if (incoming_byte == "DEMOS")
+    {
+      demos_start_flag = true;
+      start_flag_HOME = false;
+      start_flag_PickPlace = false;
+      start_flag_cornering = false;
+      start_flag_CV = false;
+      ind = 0;
+    }
+
+    else if (incoming_byte == "VISION")
+    {
+      demos_start_flag = false;
+      start_flag_HOME = false;
+      start_flag_PickPlace = false;
+      start_flag_cornering = false;
+      start_flag_CV = true;
+      ind = 0;
+    }
+    ////                                                       
+
+    // if cornering is has been chosen, check which choice 
+    if (demos_start_flag == true)
+    {
+      while (start_flag_cornering == false && start_flag_PickPlace == false)
+      {
+        String choice = Serial.readStringUntil('\n');
+
+        if (choice ==  "CORNER")
+        {
+          start_flag_cornering = true;
+          start_flag_PickPlace = false;
+        }
+        else if (choice == "PICKPLACE")
+        {
+          start_flag_PickPlace = true;
+          start_flag_cornering = false;
+        }
+        else
+        {
+          Serial.println("Invalid choice. Please choose again.");
+        }
+      }
+    }
+    /////                                                    
+    /*
+    if (key == 's') 
+    {
+      Serial.println("Key 's' pressed. Starting Motion Cycle.");
+      start_flag = true;
+      start_flag_PickPlace = false;
+      start_flag_HOME = false;
+      start_flag_CV = false;
+      ind = 0;
+    } 
+    else if (key == 'p')
+    {
+      Serial.println("Key 'p' pressed. Pick and Place Demo Selected");
+      start_flag_PickPlace = true;
+      start_flag = false;
+      start_flag_HOME = false;
+      start_flag_CV = false;
+      ind = 0;
+    }
+    else if (key == 'h')
+    {
+      Serial.println("Key 'h' pressed. Homing Robot");
+      start_flag_PickPlace = false;
+      start_flag = false;
+      start_flag_HOME = true;
+      start_flag_CV = false;
+      ind = 0;
+    }
+    else if (key == 'c')
+    {
+      Serial.println("Key 'c' pressed. Taking input from CV, Enter Y");
+      int YY = Serial.parseInt();
+      Y_CV[0] = YY;
+      Y_CV[1] = YY;
+      Y_CV[2] = YY;
+      start_flag_PickPlace = false;
+      start_flag = false;
+      start_flag_HOME = false;
+      start_flag_CV = true;
+      ind = 0;
+    }
+    else 
+    {
+      Serial.println("Press 's' to start corenring cycle demo");
+      Serial.println("Press 'p' to start pick and place demo");
+      Serial.println("Press 'h' to home robot");
+      start_flag = false;
+      start_flag_PickPlace = false;
+      start_flag_HOME = false;
+      start_flag_CV = false;
+    }
+  }
+  */
+  else 
+  {
+    no_motion = true;
+  }
+}
 void trapezoid_profile_setup()
 {
   for (int i = 0; i < 3; i++)
@@ -231,68 +356,10 @@ void loop()
 
   //delay(3000);
   /// Motion Demo Selector 
-  if (Serial.available())
-  {
-    char key = Serial.read();
-    no_motion = false;
-    if (key == 's') 
-    {
-      Serial.println("Key 's' pressed. Starting Motion Cycle.");
-      start_flag = true;
-      start_flag_PickPlace = false;
-      start_flag_HOME = false;
-      start_flag_CV = false;
-      ind = 0;
-    } 
-    else if (key == 'p')
-    {
-      Serial.println("Key 'p' pressed. Pick and Place Demo Selected");
-      start_flag_PickPlace = true;
-      start_flag = false;
-      start_flag_HOME = false;
-      start_flag_CV = false;
-      ind = 0;
-    }
-    else if (key == 'h')
-    {
-      Serial.println("Key 'h' pressed. Homing Robot");
-      start_flag_PickPlace = false;
-      start_flag = false;
-      start_flag_HOME = true;
-      start_flag_CV = false;
-      ind = 0;
-    }
-    else if (key == 'c')
-    {
-      Serial.println("Key 'c' pressed. Taking input from CV, Enter Y");
-      int YY = Serial.parseInt();
-      Y_CV[0] = YY;
-      Y_CV[1] = YY;
-      Y_CV[2] = YY;
-      start_flag_PickPlace = false;
-      start_flag = false;
-      start_flag_HOME = false;
-      start_flag_CV = true;
-      ind = 0;
-    }
-    else 
-    {
-      Serial.println("Press 's' to start corenring cycle demo");
-      Serial.println("Press 'p' to start pick and place demo");
-      Serial.println("Press 'h' to home robot");
-      start_flag = false;
-      start_flag_PickPlace = false;
-      start_flag_HOME = false;
-      start_flag_CV = false;
-    }
-  }
-  else 
-  {
-    no_motion = true;
-  }
+  fetch_command();
   ////                                                                                             
   /// Cornring Demo
-  while (ind < 13 && start_flag == true) 
+  while (ind < 13 && start_flag_cornering == true) 
   {
     X_next = X_cycle[ind];
     Y_next = Y_cycle[ind];

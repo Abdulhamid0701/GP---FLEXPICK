@@ -17,8 +17,9 @@ byte_sent = "none"
 ##################################################################################################################################################################
 
 ##################################################################################################################################################################
-def send_byte():
+def send_byte(whats_sent: str):
     global byte_sent
+    #ser.write((whats_sent + '\n').encode())
     if byte_sent == "HOME":
         print("HOMING")
 
@@ -42,18 +43,20 @@ def switch_event_home():
     switch.deselect()
     byte_sent = "HOME"
     #ser.write(bytes('H', 'UTF-8'))
-    #send_byte()
+    send_byte("HOME")
 
 def switch_event_demos():
     print("switch toggled, current value:", switch_var_demos.get())
     switch.deselect()
     home_switch.deselect()
+    send_byte("DEMOS")
     #ser.write(bytes('DEMOS_ON', 'UTF-8'))
     
 def switch_event_cv():
     print("switch toggled, current value:", switch_var_cv.get())
     home_switch.deselect()
     demossw.deselect()
+    send_byte("VISION")
 
 def demos_optioN_event(new_scaling: str):
     out_opt: str
@@ -218,3 +221,4 @@ appearance_mode_optionemenu.grid(row=0, column=0, padx=(850,0), pady=(10, 10))
   
 app.mainloop()
 print("BYTE_SENT:", byte_sent)  
+#ser.close()
