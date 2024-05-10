@@ -427,11 +427,12 @@ void loop()
     Serial.print("   ");
     Serial.println(Z_current);
     // delay(3000);
-    start_flag = true;
+    // start_flag_ = true;
   }
   ////
   // Pick and Place Demo
   while (ind < 6 && start_flag_PickPlace == true)
+  
   {
     X_next = X_PP[ind];
     Y_next = Y_PP[ind];
@@ -453,7 +454,7 @@ void loop()
     Serial.print("   ");
     Serial.println(Z_current);
     // delay(3000);
-    start_flag_PickPlace = true;
+    // start_flag_PickPlace = true;
   }
   ////
   // Homing Stepeprs
