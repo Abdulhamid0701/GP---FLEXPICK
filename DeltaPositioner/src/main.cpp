@@ -6,6 +6,7 @@
 #include <math.h>
 #include <Conveyor.h>
 #include <AccelStepper.h>
+#include <Gripper.h>
 // #include <avr8-stub.h>
 
 // Computer Vision Message
@@ -63,9 +64,9 @@ bool prev_is_demo         = false;
 volatile stepperInfo steppers[3];
 
 // MEGA Wiring
-AccelStepper stepper1(AccelStepper::DRIVER, 50, 51);
-AccelStepper stepper2(AccelStepper::DRIVER, 47, 46);
-AccelStepper stepper3(AccelStepper::DRIVER, 42, 43);
+AccelStepper stepper1(AccelStepper::DRIVER, 43, 16);
+AccelStepper stepper2(AccelStepper::DRIVER, 35, 37);
+AccelStepper stepper3(AccelStepper::DRIVER, 40, 39);
 
 /* NANO Wiring
 AccelStepper stepper1(AccelStepper::DRIVER, 6, 7);
@@ -396,6 +397,10 @@ void setup()
   // Belt Initialization
   attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
   attachInterrupt(digitalPinToInterrupt(stop_button_pin_belt), stop_belt, RISING);
+  pinMode(INTAKE_PUMP, OUTPUT);
+  pinMode(VACUUM_PUMP, OUTPUT);
+  pinMode(INTAKE_VALVE, OUTPUT);
+  pinMode(VACUUM_VALVE, OUTPUT);
 }
 void loop()
 {
