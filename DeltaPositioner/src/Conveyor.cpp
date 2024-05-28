@@ -2,7 +2,7 @@
 #include <AccelStepper.h>
 #include <math.h>
 // Initalize Conevyor's Stepper Motor Pins
-AccelStepper belt_stepper(AccelStepper::DRIVER, 1, 2);
+AccelStepper belt_stepper(AccelStepper::DRIVER, 9, 8);
 
 // Moving With Constant Speed Function 
 void belt_run_const_speed(int linear_speed)

@@ -23,8 +23,8 @@ float X_next;
 float Y_next;
 float Z_next;
 
-const int theta_max = 70;
-const int theta_min = -70;
+const int theta_max = 65;
+const int theta_min = -65;
 ////
 /// Delta Robot Motion Demo, End Effector Position Arrays
 // Cornering Demo
@@ -67,6 +67,9 @@ volatile stepperInfo steppers[3];
 AccelStepper stepper1(AccelStepper::DRIVER, 43, 16);
 AccelStepper stepper2(AccelStepper::DRIVER, 35, 37);
 AccelStepper stepper3(AccelStepper::DRIVER, 40, 39);
+
+
+
 
 /* NANO Wiring
 AccelStepper stepper1(AccelStepper::DRIVER, 6, 7);
@@ -359,6 +362,67 @@ void move_steppers()
   stepper2.setCurrentPosition(0);
   stepper3.setCurrentPosition(0);
 }
+void home_delta()
+{
+  float homing_speed = 0.1; // Rad/s
+  float homing_acc = 0.5; // Rad/s2
+  ////                                                            
+  /// Homing Motor 1
+  int ls1 = 0;
+  stepper1.setSpeed(homing_speed / STEP_ANGLE_RADS);
+  while (ls1 == 0)
+  {
+    ls1 = digitalRead(steppers[0].lim_sw);
+    stepper1.runSpeed();
+  }
+  stepper1.stop();
+  stepper1.moveTo(steps_ls_home);
+  stepper1.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper1.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  while (stepper1.distanceToGo() != 0)
+  {
+    stepper1.run();
+  }
+  ////                                                            
+  /// Homing Motor 2
+  int ls2 = 0;
+  stepper2.setSpeed(homing_speed / STEP_ANGLE_RADS);
+  while (ls2 == 0)
+  {
+    ls2 = digitalRead(steppers[1].lim_sw);
+    stepper2.runSpeed();
+  }
+  stepper2.stop();
+  stepper2.moveTo(steps_ls_home);
+  stepper2.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper2.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  while (stepper2.distanceToGo() != 0)
+  {
+    stepper2.run();
+  }
+  ////                                                            
+  /// Homing Motor 3
+  int ls3 = 0;
+  stepper3.setSpeed(homing_speed / STEP_ANGLE_RADS);
+  while (ls3 == 0)
+  {
+    ls3 = digitalRead(steppers[2].lim_sw);
+    stepper3.runSpeed();
+  }
+  stepper3.stop();
+  stepper3.moveTo(steps_ls_home);
+  stepper3.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper3.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  while (stepper3.distanceToGo() != 0)
+  {
+    stepper3.run();
+  }
+  ////                                                           
+  /// Reset Angular and End-Effector Positions 
+  X_current = 0;
+  Y_current = 0;
+  Z_current = -300;
+}
 void setup()
 {
   // Serial Monitor Init.
@@ -393,6 +457,12 @@ void setup()
   Serial.println("    Press 'p' to start pick and place demo");
   Serial.println("    Press 'h' to home robot");
   */
+  steppers[0].lim_sw = 15;
+  steppers[1].lim_sw = 14;
+  steppers[2].lim_sw = 0;
+  pinMode(steppers[0].lim_sw, INPUT);
+  pinMode(steppers[1].lim_sw, INPUT);
+  pinMode(steppers[2].lim_sw, INPUT);
 
   // Belt Initialization
   attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
@@ -404,6 +474,8 @@ void setup()
 }
 void loop()
 {
+  gripper_off();
+  stop_belt();
 
   // delay(3000);
   /// Motion Demo Selector

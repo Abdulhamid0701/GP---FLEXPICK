@@ -4,7 +4,7 @@
 const float MicroSteps = 8;
 const float Step_Angle_Rads =  (2 * M_PI) / (200 * MicroSteps);
 
-const float pulley_radius = 44.0;
+const float pulley_radius = 16;
 
 const int start_button_pin_belt = 20;
 const int stop_button_pin_belt = 21;
