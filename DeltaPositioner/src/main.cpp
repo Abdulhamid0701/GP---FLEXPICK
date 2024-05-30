@@ -7,6 +7,7 @@
 #include <Conveyor.h>
 #include <AccelStepper.h>
 #include <Gripper.h>
+#include <ezButton.h>
 // #include <avr8-stub.h>
 
 // Computer Vision Message
@@ -58,6 +59,7 @@ bool demos_inf_flag       = false;
 bool demos_stopnow_flag   = false;
 bool start_flag_cornering = false;
 bool prev_is_demo         = false;
+bool bara_elfetch_yakalb  = false; 
 ////                                                                         
 
 // Steppers structure to contain 3 motors info
@@ -65,11 +67,12 @@ volatile stepperInfo steppers[3];
 
 // MEGA Wiring
 AccelStepper stepper1(AccelStepper::DRIVER, 43, 16);
-AccelStepper stepper2(AccelStepper::DRIVER, 35, 37);
+AccelStepper stepper2(AccelStepper::DRIVER, 37, 35);
 AccelStepper stepper3(AccelStepper::DRIVER, 40, 39);
 
-
-
+ezButton ls_mot1(15);  // create ezButton object that attach to pin 6;
+ezButton ls_mot2(14);  // create ezButton object that attach to pin 7;
+ezButton ls_mot3(0);  // create ezButton object that attach to pin 8;
 
 /* NANO Wiring
 AccelStepper stepper1(AccelStepper::DRIVER, 6, 7);
@@ -80,166 +83,175 @@ AccelStepper stepper3(AccelStepper::DRIVER, 3, 4);
 /// Function Prototypes
 void fetch_command()
 {
-  if (Serial.available())
+  while (bara_elfetch_yakalb == false)
   {
-    String incoming_byte = Serial.readStringUntil('\n');
-    Serial.print(incoming_byte);
-    //char key = Serial.read();
-    no_motion = false;
-    if (prev_is_demo == true && incoming_byte !="HOME" && incoming_byte != "VISION")
+    if (Serial.available())
     {
-      goto sabry; 
-    }
-
-    // Check the main choice
-    if (incoming_byte == "HOME")
-    {
-      // Serial.println("Key 'h' pressed. Homing Robot");
-      demos_start_flag = false;
-      //start_flag_PickPlace = false;
-      //start_flag_cornering = false;
-      start_flag_HOME = true;
-      start_flag_CV = false;
-      ind = 0;
-    }
-
-    else if (incoming_byte == "DEMOS")
-    {
-      demos_start_flag = true;
-      start_flag_HOME = false;
-      //start_flag_PickPlace = false;
-      //start_flag_cornering = false;
-      start_flag_CV = false;
-      ind = 0;
-    }
-
-    else if (incoming_byte == "VISION")
-    {
-      demos_start_flag = false;
-      start_flag_HOME = false;
-      start_flag_PickPlace = false;
-      start_flag_cornering = false;
-      start_flag_CV = true;
-      ind = 0;
-    }
-    ////
-
-    // if cornering is has been chosen, check which choice
-    // sabry:
-    if (demos_start_flag == true)
-    {
-      // Check which demo will be done 
-      sabry:
-      while (start_flag_cornering == false && start_flag_PickPlace == false)
+      String incoming_byte = Serial.readStringUntil('\n');
+      Serial.print(incoming_byte);
+      //char key = Serial.read();
+      no_motion = false;
+      if (prev_is_demo == true && incoming_byte !="HOME" && incoming_byte != "VISION")
       {
-        String choice = Serial.readString();
-        Serial.print(choice);
-        if (choice == "CORNER")
-        {
-          start_flag_cornering = true;
-          start_flag_PickPlace = false;
-        }
-        else if (choice == "PICKPLACE")
-        {
-          start_flag_PickPlace = true;
-          start_flag_cornering = false;
-        }
-        else
-        {
-          Serial.println("Invalid choice. Please choose again.");
-        }
+        //goto sabry; 
       }
-      // Check how many times the demo would be done, once, inifnitely, or stop now 
-      String choii = Serial.readString();
-      while (demos_inf_flag == false && demos_once_flag == false && demos_stopnow_flag == false)
+
+      // Check the main choice
+      if (incoming_byte == "HOME")
       {
-        choii = Serial.readString();
-        if (choii == "DEMONONSTOP")
+        // Serial.println("Key 'h' pressed. Homing Robot");
+        demos_start_flag = false;
+        //start_flag_PickPlace = false;
+        //start_flag_cornering = false;
+        start_flag_HOME = true;
+        start_flag_CV = false;
+        ind = 0;
+        bara_elfetch_yakalb = true;
+      }
+
+      else if (incoming_byte == "DEMOS")
+      {
+        demos_start_flag = true;
+        start_flag_HOME = false;
+        //start_flag_PickPlace = false;
+        //start_flag_cornering = false;
+        start_flag_CV = false;
+        ind = 0;
+        bara_elfetch_yakalb = false;
+      }
+
+      else if (incoming_byte == "VISION")
+      {
+        demos_start_flag = false;
+        start_flag_HOME = false;
+        start_flag_PickPlace = false;
+        start_flag_cornering = false;
+        start_flag_CV = true;
+        ind = 0;
+        bara_elfetch_yakalb = false;
+      }
+      ////
+
+      // if cornering is has been chosen, check which choice
+      // sabry:
+      if (demos_start_flag == true)
+      {
+        // Check which demo will be done 
+        //sabry:
+        while (start_flag_cornering == false && start_flag_PickPlace == false)
         {
-          demos_inf_flag     = true;
-          demos_once_flag    = false;
-          demos_stopnow_flag = false;
+          String choice = Serial.readString();
+          Serial.print(choice);
+          if (choice == "CORNER")
+          {
+            start_flag_cornering = true;
+            start_flag_PickPlace = false;
+          }
+          else if (choice == "PICKPLACE")
+          {
+            start_flag_PickPlace = true;
+            start_flag_cornering = false;
+          }
+          else
+          {
+            Serial.println("Invalid choice. Please choose again.");
+          }
         }
-        else if (choii == "DEMOSTOPNOW")
+        // Check how many times the demo would be done, once, inifnitely, or stop now 
+        String choii = Serial.readString();
+        while (demos_inf_flag == false && demos_once_flag == false && demos_stopnow_flag == false)
         {
-          demos_inf_flag     = false;
-          demos_once_flag    = false;
-          demos_stopnow_flag = true;
+          choii = Serial.readString();
+          if (choii == "DEMONONSTOP")
+          {
+            demos_inf_flag     = true;
+            demos_once_flag    = false;
+            demos_stopnow_flag = false;
+          }
+          else if (choii == "DEMOSTOPNOW")
+          {
+            demos_inf_flag     = false;
+            demos_once_flag    = false;
+            demos_stopnow_flag = true;
+          }
+          else if (choii == "DEMOONETIME")
+          {
+            demos_inf_flag     = false;
+            demos_once_flag    = true;
+            demos_stopnow_flag = false;
+          }
         }
-        else if (choii == "DEMOONETIME")
-        {
-          demos_inf_flag     = false;
-          demos_once_flag    = true;
-          demos_stopnow_flag = false;
-        }
+        bara_elfetch_yakalb = true;
+      }
+      else 
+      {
+        start_flag_cornering = false;
+        start_flag_PickPlace = false;
+        demos_inf_flag       = false;
+        demos_once_flag      = false;
+        demos_stopnow_flag   = false;
+        bara_elfetch_yakalb = true;
+      }
+      /////
+      /*
+      if (key == 's')
+      {
+        Serial.println("Key 's' pressed. Starting Motion Cycle.");
+        start_flag = true;
+        start_flag_PickPlace = false;
+        start_flag_HOME = false;
+        start_flag_CV = false;
+        ind = 0;
+      }
+      else if (key == 'p')
+      {
+        Serial.println("Key 'p' pressed. Pick and Place Demo Selected");
+        start_flag_PickPlace = true;
+        start_flag = false;
+        start_flag_HOME = false;
+        start_flag_CV = false;
+        ind = 0;
+      }
+      else if (key == 'h')
+      {
+        Serial.println("Key 'h' pressed. Homing Robot");
+        start_flag_PickPlace = false;
+        start_flag = false;
+        start_flag_HOME = true;
+        start_flag_CV = false;
+        ind = 0;
+      }
+      else if (key == 'c')
+      {
+        Serial.println("Key 'c' pressed. Taking input from CV, Enter Y");
+        int YY = Serial.parseInt();
+        Y_CV[0] = YY;
+        Y_CV[1] = YY;
+        Y_CV[2] = YY;
+        start_flag_PickPlace = false;
+        start_flag = false;
+        start_flag_HOME = false;
+        start_flag_CV = true;
+        ind = 0;
+      }
+      else
+      {
+        Serial.println("Press 's' to start corenring cycle demo");
+        Serial.println("Press 'p' to start pick and place demo");
+        Serial.println("Press 'h' to home robot");
+        start_flag = false;
+        start_flag_PickPlace = false;
+        start_flag_HOME = false;
+        start_flag_CV = false;
       }
     }
-    else 
-    {
-      start_flag_cornering = false;
-      start_flag_PickPlace = false;
-      demos_inf_flag       = false;
-      demos_once_flag      = false;
-      demos_stopnow_flag   = false;
-    }
-    /////
-    /*
-    if (key == 's')
-    {
-      Serial.println("Key 's' pressed. Starting Motion Cycle.");
-      start_flag = true;
-      start_flag_PickPlace = false;
-      start_flag_HOME = false;
-      start_flag_CV = false;
-      ind = 0;
-    }
-    else if (key == 'p')
-    {
-      Serial.println("Key 'p' pressed. Pick and Place Demo Selected");
-      start_flag_PickPlace = true;
-      start_flag = false;
-      start_flag_HOME = false;
-      start_flag_CV = false;
-      ind = 0;
-    }
-    else if (key == 'h')
-    {
-      Serial.println("Key 'h' pressed. Homing Robot");
-      start_flag_PickPlace = false;
-      start_flag = false;
-      start_flag_HOME = true;
-      start_flag_CV = false;
-      ind = 0;
-    }
-    else if (key == 'c')
-    {
-      Serial.println("Key 'c' pressed. Taking input from CV, Enter Y");
-      int YY = Serial.parseInt();
-      Y_CV[0] = YY;
-      Y_CV[1] = YY;
-      Y_CV[2] = YY;
-      start_flag_PickPlace = false;
-      start_flag = false;
-      start_flag_HOME = false;
-      start_flag_CV = true;
-      ind = 0;
+    */
     }
     else
     {
-      Serial.println("Press 's' to start corenring cycle demo");
-      Serial.println("Press 'p' to start pick and place demo");
-      Serial.println("Press 'h' to home robot");
-      start_flag = false;
-      start_flag_PickPlace = false;
-      start_flag_HOME = false;
-      start_flag_CV = false;
+      no_motion = true;
+      // bara_elfetch_yakalb = true;
     }
-  }
-  */
-  }
-  else
-  {
-    no_motion = true;
   }
 }
 void trapezoid_profile_setup()
@@ -364,18 +376,34 @@ void move_steppers()
 }
 void home_delta()
 {
-  float homing_speed = 0.1; // Rad/s
-  float homing_acc = 0.5; // Rad/s2
+  float homing_speed = 0.2; // Rad/s
+  float homing_acc = 0.4; // Rad/s2
   ////                                                            
   /// Homing Motor 1
-  int ls1 = 0;
-  stepper1.setSpeed(homing_speed / STEP_ANGLE_RADS);
-  while (ls1 == 0)
+  int ls1 = 1;
+  stepper1.setCurrentPosition(0);
+  stepper1.moveTo(200 / STEP_ANGLE_DEGS);
+  stepper1.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper1.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  
+  ls_mot1.loop();
+  ls1 = ls_mot1.getState();
+  ls1 = 1;
+
+  while (ls1 == 1)
   {
-    ls1 = digitalRead(steppers[0].lim_sw);
-    stepper1.runSpeed();
+    ls_mot1.loop();
+    //ls1 = ls_mot1.getState();
+    stepper1.run();
+    if (ls_mot1.isPressed())
+    {
+     //stepper1.stop();
+     ls1 = 0;
+    }
   }
   stepper1.stop();
+  delay(1000);
+  stepper1.setCurrentPosition(0);
   stepper1.moveTo(steps_ls_home);
   stepper1.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
   stepper1.setAcceleration(homing_acc / STEP_ANGLE_RADS);
@@ -384,32 +412,31 @@ void home_delta()
     stepper1.run();
   }
   ////                                                            
-  /// Homing Motor 2
-  int ls2 = 0;
-  stepper2.setSpeed(homing_speed / STEP_ANGLE_RADS);
-  while (ls2 == 0)
-  {
-    ls2 = digitalRead(steppers[1].lim_sw);
-    stepper2.runSpeed();
-  }
-  stepper2.stop();
-  stepper2.moveTo(steps_ls_home);
-  stepper2.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
-  stepper2.setAcceleration(homing_acc / STEP_ANGLE_RADS);
-  while (stepper2.distanceToGo() != 0)
-  {
-    stepper2.run();
-  }
-  ////                                                            
   /// Homing Motor 3
-  int ls3 = 0;
-  stepper3.setSpeed(homing_speed / STEP_ANGLE_RADS);
-  while (ls3 == 0)
+  int ls3 = 1;
+  stepper3.setCurrentPosition(0);
+  stepper3.moveTo(200 / STEP_ANGLE_DEGS);
+  stepper3.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper3.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  
+  ls_mot3.loop();
+  ls3 = ls_mot3.getState();
+  ls3 = 1;
+
+  while (ls3 == 1)
   {
-    ls3 = digitalRead(steppers[2].lim_sw);
-    stepper3.runSpeed();
+    ls_mot3.loop();
+    //ls1 = ls_mot1.getState();
+    stepper3.run();
+    if (ls_mot3.isPressed())
+    {
+     //stepper1.stop();
+     ls3 = 0;
+    }
   }
   stepper3.stop();
+  delay(1000);
+  stepper3.setCurrentPosition(0);
   stepper3.moveTo(steps_ls_home);
   stepper3.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
   stepper3.setAcceleration(homing_acc / STEP_ANGLE_RADS);
@@ -418,13 +445,56 @@ void home_delta()
     stepper3.run();
   }
   ////                                                           
+  /// Homing Motor 2
+  int ls2 = 1;
+  stepper2.setCurrentPosition(0);
+  stepper2.moveTo(200 / STEP_ANGLE_DEGS);
+  stepper2.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper2.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  
+  ls_mot2.loop();
+  ls2 = ls_mot2.getState();
+  ls2 = 1;
+
+  while (ls2 == 1)
+  {
+    ls_mot2.loop();
+    //ls1 = ls_mot1.getState();
+    stepper2.run();
+    if (ls_mot2.isPressed())
+    {
+     //stepper1.stop();
+     ls2 = 0;
+    }
+  }
+  stepper2.stop();
+  delay(1000);
+  stepper2.setCurrentPosition(0);
+  stepper2.moveTo(steps_ls_home);
+  stepper2.setMaxSpeed(homing_speed / STEP_ANGLE_RADS);
+  stepper2.setAcceleration(homing_acc / STEP_ANGLE_RADS);
+  while (stepper2.distanceToGo() != 0)
+  {
+    stepper2.run();
+  }
+  stepper1.stop();
+  stepper2.stop();
+  stepper3.stop();
+  
   /// Reset Angular and End-Effector Positions 
   X_current = 0;
   Y_current = 0;
   Z_current = -300;
+  stepper1.setCurrentPosition(0);
+  stepper2.setCurrentPosition(0);
+  stepper3.setCurrentPosition(0);
+  return;
 }
 void setup()
 {
+  ls_mot1.setDebounceTime(50); // set debounce time to 50 milliseconds
+  ls_mot2.setDebounceTime(50); // set debounce time to 50 milliseconds
+  ls_mot3.setDebounceTime(50); // set debounce time to 50 milliseconds
   // Serial Monitor Init.
   Serial.begin(9600);
   // debug_init();
@@ -465,21 +535,24 @@ void setup()
   pinMode(steppers[2].lim_sw, INPUT);
 
   // Belt Initialization
-  attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
-  attachInterrupt(digitalPinToInterrupt(stop_button_pin_belt), stop_belt, RISING);
+  //attachInterrupt(digitalPinToInterrupt(start_button_pin_belt), start_belt, RISING);
+  //attachInterrupt(digitalPinToInterrupt(stop_button_pin_belt), stop_belt, RISING);
   pinMode(INTAKE_PUMP, OUTPUT);
   pinMode(VACUUM_PUMP, OUTPUT);
   pinMode(INTAKE_VALVE, OUTPUT);
   pinMode(VACUUM_VALVE, OUTPUT);
+
+  //home_delta();
 }
 void loop()
 {
-  gripper_off();
-  stop_belt();
-
-  // delay(3000);
+  //gripper_off();
+  // stop_belt();
   /// Motion Demo Selector
+  
   fetch_command();
+  //start_flag_cornering = true;
+  //demos_inf_flag = false;
   ////
   /// Cornring Demo
   while (ind < 13 && start_flag_cornering == true)

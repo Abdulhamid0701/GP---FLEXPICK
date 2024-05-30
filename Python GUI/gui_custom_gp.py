@@ -14,14 +14,13 @@ byte_sent = "none"
 
 ##################################################################################################################################################################
 # Serial Monitor Init.
-#ser = serial.Serial('COM9', 9600)
+ser = serial.Serial('COM9', 9600)
 ##################################################################################################################################################################
 
 ##################################################################################################################################################################
 def send_byte(whats_sent: str):
     global byte_sent
-
-    #ser.write((whats_sent).encode())
+    ser.write((whats_sent).encode())
     print("sending: ", whats_sent)
 
 def change_appearance_mode_event(new_appearance_mode: str):
@@ -82,8 +81,8 @@ def demos_optioN_event(new_scaling: str):
     
 def switch_event_belt():
     print("Belt", switch_var_belt.get())
-    ah = ser.read()
-    print("ah", ah)
+    #ah = ser.read()
+    #print("ah", ah)
     
 def switch_event_pnu():
     print("Pneumatic", switch_var_pnu.get())
@@ -254,4 +253,4 @@ appearance_mode_optionemenu.grid(row=0, column=0, padx=(850,0), pady=(10, 10))
   
 app.mainloop()
 print("BYTE_SENT:", byte_sent)  
-#ser.close()
+ser.close()
