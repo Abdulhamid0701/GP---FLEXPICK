@@ -87,19 +87,19 @@ void fetch_command()
   {
     if (Serial.available())
     {
-      String incoming_byte = Serial.readStringUntil('\n');
+      String incoming_byte = Serial.readString();
       Serial.print(incoming_byte);
       //char key = Serial.read();
       no_motion = false;
       if (prev_is_demo == true && incoming_byte !="HOME" && incoming_byte != "VISION")
       {
-        //goto sabry; 
+        goto sabry; 
       }
 
       // Check the main choice
       if (incoming_byte == "HOME")
       {
-        // Serial.println("Key 'h' pressed. Homing Robot");
+        Serial.println("Key 'h' pressed. Homing Robot");
         demos_start_flag = false;
         //start_flag_PickPlace = false;
         //start_flag_cornering = false;
@@ -112,8 +112,10 @@ void fetch_command()
       else if (incoming_byte == "DEMOS")
       {
         demos_start_flag = true;
+        Serial.print("ANA GOWA DEMOS YA KALB");
+        delay(2000);
         start_flag_HOME = false;
-        //start_flag_PickPlace = false;
+        //start_flag_PickPlace = false;s
         //start_flag_cornering = false;
         start_flag_CV = false;
         ind = 0;
@@ -130,6 +132,11 @@ void fetch_command()
         ind = 0;
         bara_elfetch_yakalb = false;
       }
+      else 
+      {
+        delay(1000);
+        Serial.println("wala wahed gay");
+      }
       ////
 
       // if cornering is has been chosen, check which choice
@@ -137,7 +144,7 @@ void fetch_command()
       if (demos_start_flag == true)
       {
         // Check which demo will be done 
-        //sabry:
+        sabry:
         while (start_flag_cornering == false && start_flag_PickPlace == false)
         {
           String choice = Serial.readString();
