@@ -62,7 +62,10 @@ def switch_event_cv():
     print("switch toggled, current value:", switch_var_cv.get())
     home_switch.deselect()
     demossw.deselect()
-    send_byte("VISION")
+    if switch_var_cv.get() == "on":
+        send_byte("VISION")
+    elif switch_var_cv.get() == "off":
+        send_byte("VISIONEX")
 
 def demos_optioN_event(new_scaling: str):
     out_opt: str
@@ -80,12 +83,17 @@ def demos_optioN_event(new_scaling: str):
     #print("Demos Option:", out_opt)
     
 def switch_event_belt():
-    print("Belt", switch_var_belt.get())
-    #ah = ser.read()
-    #print("ah", ah)
+    if switch_var_belt.get() == "on":
+        send_byte("BELTON")
+    elif switch_var_belt.get() == "off":
+        send_byte("BELTOFF")
     
 def switch_event_pnu():
-    print("Pneumatic", switch_var_pnu.get())
+    if switch_var_pnu.get() == "on":
+        send_byte("PNEUON")
+    elif switch_var_pnu.get() == "off":
+        send_byte("PNEUOFF")
+    #print("Pneumatic", switch_var_pnu.get())
 ##################################################################################################################################################################    
 
 time.sleep(3)

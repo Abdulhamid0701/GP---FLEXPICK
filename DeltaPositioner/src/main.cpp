@@ -59,7 +59,8 @@ bool demos_inf_flag       = false;
 bool demos_stopnow_flag   = false;
 bool start_flag_cornering = false;
 bool prev_is_demo         = false;
-bool bara_elfetch_yakalb  = false; 
+bool bara_elfetch_yakalb  = false;
+bool start_flag_belt      = false; 
 ////                                                                         
 
 // Steppers structure to contain 3 motors info
@@ -87,14 +88,16 @@ void fetch_command()
   {
     if (Serial.available())
     {
-      String incoming_byte = Serial.readString();
+      String incoming_byte = Serial.readStringUntil('\n');
+      incoming_byte.trim();
       Serial.print(incoming_byte);
       //char key = Serial.read();
       no_motion = false;
-      if (prev_is_demo == true && incoming_byte !="HOME" && incoming_byte != "VISION")
-      {
-        goto sabry; 
-      }
+      
+      //if (prev_is_demo == true && incoming_byte !="HOME" && incoming_byte != "VISION")
+      //{
+       // goto sabry; 
+      ///}
 
       // Check the main choice
       if (incoming_byte == "HOME")
@@ -130,12 +133,32 @@ void fetch_command()
         start_flag_cornering = false;
         start_flag_CV = true;
         ind = 0;
-        bara_elfetch_yakalb = false;
+        bara_elfetch_yakalb = true;
+        Serial.println("Im inside vision");
+        delay(1000);
+        break;
+      }
+      else if (incoming_byte == "VISIONEX")
+      {
+        demos_start_flag = false;
+        start_flag_HOME = false;
+        start_flag_PickPlace = false;
+        start_flag_cornering = false;
+        start_flag_CV = false;
+        ind = 0;
+        bara_elfetch_yakalb = true;
+        Serial.println("Im going outside vision");
+        delay(1000);
+        break;
+      }
+      else if (incoming_byte == "BELTON")
+      {
+
       }
       else 
       {
         delay(1000);
-        Serial.println("wala wahed gay");
+        Serial.println("NO CHOICE SELECTED");
       }
       ////
 
@@ -148,6 +171,7 @@ void fetch_command()
         while (start_flag_cornering == false && start_flag_PickPlace == false)
         {
           String choice = Serial.readString();
+          choice.trim();
           Serial.print(choice);
           if (choice == "CORNER")
           {
@@ -169,6 +193,7 @@ void fetch_command()
         while (demos_inf_flag == false && demos_once_flag == false && demos_stopnow_flag == false)
         {
           choii = Serial.readString();
+          choii.trim();
           if (choii == "DEMONONSTOP")
           {
             demos_inf_flag     = true;
@@ -197,7 +222,7 @@ void fetch_command()
         demos_inf_flag       = false;
         demos_once_flag      = false;
         demos_stopnow_flag   = false;
-        bara_elfetch_yakalb = true;
+        bara_elfetch_yakalb  = true;
       }
       /////
       /*
@@ -555,7 +580,7 @@ void loop()
 {
   //gripper_off();
   // stop_belt();
-  /// Motion Demo Selector
+  // Motion Demo Selector
   
   fetch_command();
   //start_flag_cornering = true;
@@ -634,6 +659,18 @@ void loop()
   // Taking Input from CV
   while (ind < 6 && start_flag_CV == true)
   {
+    if (Serial.available())
+    {
+      String break_cond = Serial.readString();
+      break_cond.trim();
+      if (break_cond == "VISIONEX")
+      {
+        // Serial.println("Breaking Vision Loop");
+        start_flag_CV = false;
+        break;
+      }
+    }
+    Serial.println("VISION STARTED");
     X_next = X_CV[ind];
     Y_next = Y_CV[ind];
     Z_next = Z_CV[ind];
@@ -646,7 +683,7 @@ void loop()
       Y_current = Y_next;
       Z_current = Z_next;
     }
-    start_flag_CV = true;
+    //start_flag_CV = true;
   }
   ////
 
