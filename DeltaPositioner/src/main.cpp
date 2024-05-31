@@ -70,6 +70,7 @@ volatile stepperInfo steppers[3];
 AccelStepper stepper1(AccelStepper::DRIVER, 43, 16);
 AccelStepper stepper2(AccelStepper::DRIVER, 37, 35);
 AccelStepper stepper3(AccelStepper::DRIVER, 40, 39);
+AccelStepper belt_stepper(AccelStepper::DRIVER, 9, 8);
 
 ezButton ls_mot1(15);  // create ezButton object that attach to pin 6;
 ezButton ls_mot2(14);  // create ezButton object that attach to pin 7;
@@ -153,7 +154,11 @@ void fetch_command()
       }
       else if (incoming_byte == "BELTON")
       {
-
+        demos_start_flag = true;
+      }
+      else if (incoming_byte == "BELTOFF")
+      {
+        demos_start_flag = false;
       }
       else 
       {
@@ -522,6 +527,23 @@ void home_delta()
   stepper3.setCurrentPosition(0);
   return;
 }
+void belt_init(int linear_speed)
+{
+    // Convert linear speed to rad/s then to STEPS/SEC 
+    int SPS = ((linear_speed * 1e-3) / pulley_radius) / Step_Angle_Rads;
+    belt_stepper.setMaxSpeed(SPS);
+    belt_stepper.setAcceleration(SPS);
+    belt_stepper.moveTo(20000000);
+
+}
+float get_time_to_position(float item_pos)
+{
+    // Get time for a movement on the belt with 200 mm on X-axis
+    float time_to_pos = item_pos / belt_speed_linear; // sec = mm/(mm/sec)
+    return time_to_pos;
+}
+
+
 void setup()
 {
   ls_mot1.setDebounceTime(50); // set debounce time to 50 milliseconds
@@ -704,5 +726,10 @@ void loop()
   if (demos_inf_flag == true)
   {
     ind = 0;
+  }
+
+  if (start_flag_belt == true)
+  {
+    belt_stepper.run();
   }
 }

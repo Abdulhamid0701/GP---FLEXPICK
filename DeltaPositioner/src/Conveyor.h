@@ -10,9 +10,4 @@ const int start_button_pin_belt = 20;
 const int stop_button_pin_belt = 21;
 
 const float belt_speed_linear = 10; // mm/sec
-
-// Functions Prototypes
-void belt_run_const_speed(int linear_speed);
-void start_belt();
-void stop_belt();
-float get_time_to_position(float item_pos);
+int SPS = ((belt_speed_linear* 1e-3) / pulley_radius) / Step_Angle_Rads;
