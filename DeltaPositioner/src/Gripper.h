@@ -1,13 +1,13 @@
 // Valves Relays Pins
-const int INTAKE_VALVE  = 48;
-const int VACUUM_VALVE  = 49;
+const int INTAKE_VALVE  = 46;
+const int VACUUM_VALVE  = 44;
 // Pumps Relays Pins
-const int INTAKE_PUMP = 44;
-const int VACUUM_PUMP = 46;
+const int INTAKE_PUMP = 49;
+const int VACUUM_PUMP = 48;
 // Pressure Sensor Pins 
 
 // Function Prototypes 
 void gripper_inflate();
-void gripper_deflate();
+void gripper_delate();
 void gripper_idle();
 void gripper_off();

@@ -31,7 +31,7 @@ const int theta_min = -65;
 // Cornering Demo
 const int X_cycle[]   = {0,       0,      0,     0,     0,    140,   0,    -140,      0,    0,     0,     0,     0,      0,      0,     0,       0};
 const int Y_cycle[]   = {0,     -140,     0,    140,    0 ,    0,    0,      0,       0,    0,     0,     0,     0,     140,    140,   140,      0};
-const int Z_cycle[]   = {-300,  -400,   -300,  -400,  -300,  -400,  -300,  -400,   -300,  -500,  -300,  -500,   -300,  -400,   -450,   -400,   -300};
+const int Z_cycle[]   = {-300,  -400,   -300,  -400,  -300,  -400,  -300,  -400,   -300,  -460,  -300,  -400,   -300,  -400,   -400,   -400,   -300};
 const float dur_arr[] = {0,  0.5,   0.5,    0.5,    0.4,   0.5,   0.5,   0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
 int ind = 0;
 
@@ -42,10 +42,10 @@ const int Z_PP[] =         { -350,   -500,  -350, -350, -500, -350};
 const float dur_arr_PP[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
 
 // Computer Vision Pick and Place 
-const int X_CV[] =         {   0,      0,     0,    0,    0,    0};
-      int Y_CV[] =         { -140,   -140,  -140,  140,  140,  140};
-const int Z_CV[] =         { -350,   -500,  -350, -350, -500, -350};
-const float dur_arr_CV[]=  {0.8,  0.7,    0.6,   0.8,  0.6,  0.7};
+const int X_CV[] =         {   0,      0,     0,     0,    0,    0,    0,   0};
+      int Y_CV[] =         { -140,   -140,  -140,  -140,  140,  140,  140,  0};
+const int Z_CV[] =         { -350,   -450,  -450,  -350, -350, -450, -350, -300};
+const float dur_arr_CV[]=  {0.8,  0.7,     4,    0.6,   2,  0.6,  0.7,  0.8};
 
 ////                                                                         
 bool start_flag           = false;
@@ -60,7 +60,8 @@ bool demos_stopnow_flag   = false;
 bool start_flag_cornering = false;
 bool prev_is_demo         = false;
 bool bara_elfetch_yakalb  = false;
-bool start_flag_belt      = false; 
+bool start_flag_belt      = true; 
+bool basmag_flag          = false;
 ////                                                                         
 
 // Steppers structure to contain 3 motors info
@@ -70,7 +71,7 @@ volatile stepperInfo steppers[3];
 AccelStepper stepper1(AccelStepper::DRIVER, 43, 16);
 AccelStepper stepper2(AccelStepper::DRIVER, 37, 35);
 AccelStepper stepper3(AccelStepper::DRIVER, 40, 39);
-AccelStepper belt_stepper(AccelStepper::DRIVER, 9, 8);
+AccelStepper belt_stepper(AccelStepper::FULL2WIRE, 42, 47);
 
 ezButton ls_mot1(15);  // create ezButton object that attach to pin 6;
 ezButton ls_mot2(14);  // create ezButton object that attach to pin 7;
@@ -85,8 +86,8 @@ AccelStepper stepper3(AccelStepper::DRIVER, 3, 4);
 /// Function Prototypes
 void fetch_command()
 {
-  while (bara_elfetch_yakalb == false)
-  {
+  //while (bara_elfetch_yakalb == false)
+  //{
     if (Serial.available())
     {
       String incoming_byte = Serial.readStringUntil('\n');
@@ -137,7 +138,7 @@ void fetch_command()
         bara_elfetch_yakalb = true;
         Serial.println("Im inside vision");
         delay(1000);
-        break;
+        return;
       }
       else if (incoming_byte == "VISIONEX")
       {
@@ -150,7 +151,7 @@ void fetch_command()
         bara_elfetch_yakalb = true;
         Serial.println("Im going outside vision");
         delay(1000);
-        break;
+        return;
       }
       else if (incoming_byte == "BELTON")
       {
@@ -289,7 +290,7 @@ void fetch_command()
       no_motion = true;
       // bara_elfetch_yakalb = true;
     }
-  }
+  //}
 }
 void trapezoid_profile_setup()
 {
@@ -414,7 +415,7 @@ void move_steppers()
 void home_delta()
 {
   float homing_speed = 0.2; // Rad/s
-  float homing_acc = 0.4; // Rad/s2
+  float homing_acc = 0.27; // Rad/s2
   ////                                                            
   /// Homing Motor 1
   int ls1 = 1;
@@ -531,9 +532,9 @@ void belt_init(int linear_speed)
 {
     // Convert linear speed to rad/s then to STEPS/SEC 
     int SPS = ((linear_speed * 1e-3) / pulley_radius) / Step_Angle_Rads;
-    belt_stepper.setMaxSpeed(SPS);
-    belt_stepper.setAcceleration(SPS);
-    belt_stepper.moveTo(20000000);
+    belt_stepper.setMaxSpeed(100);
+    belt_stepper.setAcceleration(80);
+    belt_stepper.moveTo(-2000);
 
 }
 float get_time_to_position(float item_pos)
@@ -546,9 +547,9 @@ float get_time_to_position(float item_pos)
 
 void setup()
 {
-  ls_mot1.setDebounceTime(50); // set debounce time to 50 milliseconds
-  ls_mot2.setDebounceTime(50); // set debounce time to 50 milliseconds
-  ls_mot3.setDebounceTime(50); // set debounce time to 50 milliseconds
+  ls_mot1.setDebounceTime(10); // set debounce time to 50 milliseconds
+  ls_mot2.setDebounceTime(10); // set debounce time to 50 milliseconds
+  ls_mot3.setDebounceTime(10); // set debounce time to 50 milliseconds
   // Serial Monitor Init.
   Serial.begin(9600);
   // debug_init();
@@ -597,18 +598,24 @@ void setup()
   pinMode(VACUUM_VALVE, OUTPUT);
 
   //home_delta();
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  //belt_init(belt_speed_linear);
+  // gripper_idle();
 }
 void loop()
 {
-  //gripper_off();
+  gripper_off();
   // stop_belt();
   // Motion Demo Selector
   
-  fetch_command();
+  // fetch_command();
   //start_flag_cornering = true;
   //demos_inf_flag = false;
   ////
   /// Cornring Demo
+  // start_flag_CV = true;
+
   while (ind < 13 && start_flag_cornering == true)
   {
     X_next = X_cycle[ind];
@@ -679,7 +686,7 @@ void loop()
   }
   ////
   // Taking Input from CV
-  while (ind < 6 && start_flag_CV == true)
+  while (ind < 8 && start_flag_CV == true)
   {
     if (Serial.available())
     {
@@ -698,6 +705,12 @@ void loop()
     Z_next = Z_CV[ind];
     duration = dur_arr_CV[ind];
 
+    // Delay a while until the gripper hold the object
+    if (X_next == X_current && Y_next == Y_current && Z_next == Z_current)
+    {
+      delay(4000);
+    }
+
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
       move_steppers();
@@ -705,6 +718,7 @@ void loop()
       Y_current = Y_next;
       Z_current = Z_next;
     }
+    ind++;
     //start_flag_CV = true;
   }
   ////
@@ -725,11 +739,63 @@ void loop()
 
   if (demos_inf_flag == true)
   {
-    ind = 0;
+    // ind = 0;
   }
 
-  if (start_flag_belt == true)
+  gripper_off();
+  //delay(8000);
+  //gripper_delate();
+  //delay(12000);
+  //gripper_inflate();
+
+
+  curr_belt = millis();
+
+  digitalWrite(7,HIGH);
+  
+  if (curr_belt - prev_belt >= 0.07)
   {
-    belt_stepper.run();
+    digitalWrite(6,HIGH);
+    digitalWrite(6,LOW);
+    
+    prev_belt = curr_belt;
   }
+  
+  while (basmag_flag == true)
+  {
+    // Deflate gripper 
+    //gripper_delate();
+
+    // Go to item location and stop
+    X_next = 0;
+    Y_next = -140;
+    Z_next = -400;
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {
+      duration = 1;
+      move_steppers(); 
+    }
+    X_current = X_next;
+    Y_current = Y_next;
+    Z_current = Z_next;
+    delay(400000);
+     X_next = 0;
+    Y_current = 0;
+    Z_current = -300;
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {
+      duration = 1;
+      move_steppers(); 
+    }
+    X_current = X_next;
+    Y_current = Y_next;
+    Z_current = Z_next;
+    delay(500000);
+    // Inflate gripper and hold object
+
+    // Go to Pack location
+
+    // Deflate gripper 
+  }
+
 }
