@@ -60,7 +60,7 @@ bool demos_stopnow_flag   = false;
 bool start_flag_cornering = false;
 bool prev_is_demo         = false;
 bool bara_elfetch_yakalb  = false;
-bool start_flag_belt      = true; 
+bool start_flag_belt      = false; 
 bool basmag_flag          = false;
 ////                                                                         
 
@@ -742,18 +742,41 @@ void loop()
     // ind = 0;
   }
 
-  gripper_off();
+  //gripper_off();
   //delay(8000);
   //gripper_delate();
   //delay(12000);
   //gripper_inflate();
 
 
-  curr_belt = millis();
-
-  digitalWrite(7,HIGH);
   
-  if (curr_belt - prev_belt >= 0.07)
+  
+  if (Serial.available())
+  {
+    String incoming = Serial.readStringUntil('\n');
+    incoming.trim();
+
+    if (incoming == "BELTON")
+    {
+      start_flag_belt = true;
+    } 
+    else if (incoming == "BELTOFF")
+    {
+      start_flag_belt = false;
+    }
+    else if (incoming == "PNEUOFF")
+    {
+      gripper_off();
+    }
+    else if (incoming == "PNEUON")
+    {
+      gripper_idle();
+    }
+  }
+
+  curr_belt = millis();
+  digitalWrite(7,HIGH);
+  if (curr_belt - prev_belt >= 0.1 && start_flag_belt == true)
   {
     digitalWrite(6,HIGH);
     digitalWrite(6,LOW);
