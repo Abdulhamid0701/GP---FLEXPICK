@@ -46,6 +46,13 @@ const int X_CV[] =         {   0,      0,     0,     0,    0,    0,    0,   0};
       int Y_CV[] =         { -140,   -140,  -140,  -140,  140,  140,  140,  0};
 const int Z_CV[] =         { -350,   -450,  -450,  -350, -350, -450, -350, -300};
 const float dur_arr_CV[]=  {0.8,  0.7,     4,    0.6,   2,  0.6,  0.7,  0.8};
+const int X_item = 0;
+const int Y_item = -130;
+const int Z_item = -330;
+const int Z_item_hold = -404;
+const int X_pack = 0;
+const int Y_pack = 140;
+const int Z_pack = -330;
 
 ////                                                                         
 bool start_flag           = false;
@@ -598,11 +605,13 @@ void setup()
   pinMode(INTAKE_VALVE, OUTPUT);
   pinMode(VACUUM_VALVE, OUTPUT);
 
-  //home_delta();
+  //
   pinMode(6,OUTPUT);
   pinMode(7,OUTPUT);
+  digitalWrite(6,LOW);
+  //home_delta();
   //belt_init(belt_speed_linear);
-  // gripper_idle();
+  gripper_idle();
 }
 void loop()
 {
@@ -789,12 +798,14 @@ void loop()
   while (basmag_flag == true)
   {
     // Deflate gripper 
-    //gripper_delate();
+    gripper_delate();
 
-    // Go to item location and stop
-    X_next = 0;
-    Y_next = -140;
-    Z_next = -350;
+    delay(4000);
+
+    // Go to item location and stop (no z)
+    X_next = X_item;
+    Y_next = Y_item;
+    Z_next = Z_item;
     duration = 1;//pppppp
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {  
@@ -803,12 +814,43 @@ void loop()
       Y_current = Y_next;
       Z_current = Z_next;
     }
-    delay(4000);
+
+    // delay until object comes 
+    delay(1000);
+    // move in z only to grip the object
+    X_next = X_item;
+    Y_next = Y_item;
+    Z_next = Z_item_hold;
+    duration = 0.4;//pppppp
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {  
+      move_steppers(); 
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
+    
+    // Grip object ans stay while before moving to the next location 
+    gripper_inflate();
+    delay(2000);
+
+    // move in upwards
+    X_next = X_item;
+    Y_next = Y_item;
+    Z_next = Z_item;
+    duration = 1.5;//pppppp
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {  
+      move_steppers(); 
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
     
     // go to pack location 
-    X_next = 0;
-    Y_next = 140;
-    Z_next = -350;
+    X_next = X_pack;
+    Y_next = Y_pack;
+    Z_next = Z_pack;
     duration = 1;
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
@@ -817,8 +859,13 @@ void loop()
       Y_current = Y_next;
       Z_current = Z_next;
     }
+
+    
+    gripper_delate();
     delay(5000);
 
+    
+    gripper_off();
     // Home
     X_next = 0;
     Y_next = 0;
