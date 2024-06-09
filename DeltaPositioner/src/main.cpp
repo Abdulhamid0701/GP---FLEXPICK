@@ -536,23 +536,28 @@ void home_delta()
   stepper3.setCurrentPosition(0);
   return;
 }
-void belt_init(int linear_speed)
-{
-    // Convert linear speed to rad/s then to STEPS/SEC 
-    int SPS = ((linear_speed * 1e-3) / pulley_radius) / Step_Angle_Rads;
-    belt_stepper.setMaxSpeed(100);
-    belt_stepper.setAcceleration(80);
-    belt_stepper.moveTo(-2000);
-
-}
 float get_time_to_position(float item_pos)
 {
     // Get time for a movement on the belt with 200 mm on X-axis
     float time_to_pos = item_pos / belt_speed_linear; // sec = mm/(mm/sec)
     return time_to_pos;
 }
+void yalla_ya_belt_sama3_3amo()
+{
+  curr_belt = millis();
+  digitalWrite(7,HIGH);
+  if (curr_belt - prev_belt >= 0.1 && start_flag_belt == true)
+  {
+    digitalWrite(6,HIGH);
+    digitalWrite(6,LOW);
+    
+    prev_belt = curr_belt;
+  }
+}
+void check_switches()
+{
 
-
+}
 void setup()
 {
   ls_mot1.setDebounceTime(10); // set debounce time to 50 milliseconds
@@ -783,16 +788,6 @@ void loop()
       gripper_idle();
     }
   }
-
-  curr_belt = millis();
-  digitalWrite(7,HIGH);
-  if (curr_belt - prev_belt >= 0.1 && start_flag_belt == true)
-  {
-    digitalWrite(6,HIGH);
-    digitalWrite(6,LOW);
-    
-    prev_belt = curr_belt;
-  }
   
   basmag_flag = true;
   while (basmag_flag == true)
@@ -800,8 +795,8 @@ void loop()
     // Deflate gripper 
     gripper_delate();
 
-    delay(4000);
-
+    delay(4000); 
+ 
     // Go to item location and stop (no z)
     X_next = X_item;
     Y_next = Y_item;
@@ -860,7 +855,7 @@ void loop()
       Z_current = Z_next;
     }
 
-    
+
     gripper_delate();
     delay(5000);
 

@@ -12,3 +12,8 @@ void gripper_delate();
 void gripper_idle();
 void gripper_off();
 void gripper_hold();
+
+// Timers 
+float current_millis_gripper;
+float previous_millis_gripper = 0;
+float offset_millis_gripper = 0;
