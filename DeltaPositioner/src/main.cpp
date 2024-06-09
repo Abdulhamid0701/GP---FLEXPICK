@@ -795,7 +795,7 @@ void loop()
     Z_next = -400;
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
-      duration = 1;
+      duration = 1;//pppppp
       move_steppers(); 
     }
     X_current = X_next;

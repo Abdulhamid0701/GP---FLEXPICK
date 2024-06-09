@@ -2,6 +2,7 @@
 
 // Belt's Stepper Motor Parameters 
 const float MicroSteps = 16;
+const int git = 1;
 const float Step_Angle_Rads =  (2 * M_PI) / (200 * MicroSteps);
 
 const float pulley_radius = 16;
