@@ -62,6 +62,7 @@ bool prev_is_demo         = false;
 bool bara_elfetch_yakalb  = false;
 bool start_flag_belt      = false; 
 bool basmag_flag          = false;
+bool gripper_test_flag    = false;
 ////                                                                         
 
 // Steppers structure to contain 3 motors info
@@ -605,7 +606,7 @@ void setup()
 }
 void loop()
 {
-  gripper_off();
+  // gripper_off();
   // stop_belt();
   // Motion Demo Selector
   
@@ -748,8 +749,8 @@ void loop()
   //delay(12000);
   //gripper_inflate();
 
-
   
+     
   
   if (Serial.available())
   {
@@ -784,6 +785,7 @@ void loop()
     prev_belt = curr_belt;
   }
   
+  basmag_flag = true;
   while (basmag_flag == true)
   {
     // Deflate gripper 
@@ -792,28 +794,46 @@ void loop()
     // Go to item location and stop
     X_next = 0;
     Y_next = -140;
-    Z_next = -400;
+    Z_next = -350;
+    duration = 1;//pppppp
+    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    {  
+      move_steppers(); 
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
+    }
+    delay(4000);
+    
+    // go to pack location 
+    X_next = 0;
+    Y_next = 140;
+    Z_next = -350;
+    duration = 1;
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
-      duration = 1;//pppppp
       move_steppers(); 
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
     }
-    X_current = X_next;
-    Y_current = Y_next;
-    Z_current = Z_next;
-    delay(400000);
-     X_next = 0;
-    Y_current = 0;
-    Z_current = -300;
+    delay(5000);
+
+    // Home
+    X_next = 0;
+    Y_next = 0;
+    Z_next = -300;
+    duration = 1;
     while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
     {
-      duration = 1;
       move_steppers(); 
+      X_current = X_next;
+      Y_current = Y_next;
+      Z_current = Z_next;
     }
-    X_current = X_next;
-    Y_current = Y_next;
-    Z_current = Z_next;
-    delay(500000);
+    delay(50000000);
+
+    
     // Inflate gripper and hold object
 
     // Go to Pack location
@@ -821,4 +841,19 @@ void loop()
     // Deflate gripper 
   }
 
-}
+
+  gripper_test_flag = false;
+
+
+  // gripper_idle(); 
+  // gripper testing and calibration
+  while (gripper_test_flag == true)
+  {
+    gripper_inflate();
+    delay(4000);
+    //delay(10000);
+    gripper_delate();
+    delay(7000);
+  }
+
+} 
