@@ -32,7 +32,7 @@ const int theta_min = -65;
 // Cornering Demo
 const int X_cycle[]   = {0,       0,      0,     0,     0,    140,   0,    -140,      0,    0,     0,     0,     0,      0,      0,     0,       0};
 const int Y_cycle[]   = {0,     -140,     0,    140,    0 ,    0,    0,      0,       0,    0,     0,     0,     0,     140,    140,   140,      0};
-const int Z_cycle[]   = {-300,  -400,   -300,  -400,  -300,  -400,  -300,  -400,   -300,  -460,  -300,  -400,   -300,  -400,   -400,   -400,   -300};
+const int Z_cycle[]   = {-300,  -400,   -300,  -400,  -300,  -400,  -300,  -400,   -300,  -420,  -300,  -400,   -300,  -400,   -400,   -400,   -300};
 const float dur_arr[] = {0,  0.5,   0.5,    0.5,    0.4,   0.5,   0.5,   0.5,   0.4,    0.5,   0.5,   0.5,   0.4,    0.5,    0.5,   0.5,    0.4};
 int ind = 0;
 
@@ -48,9 +48,9 @@ const int X_CV[] =         {   0,      0,     0,     0,    0,    0,    0,   0};
 const int Z_CV[] =         { -350,   -450,  -450,  -350, -350, -450, -350, -300};
 const float dur_arr_CV[]=  {0.8,  0.7,     4,    0.6,   2,  0.6,  0.7,  0.8};
 const int X_item = 0;
-const int Y_item = -130;
+int Y_item = -130;
 const int Z_item = -330;
-const int Z_item_hold = -404;
+const int Z_item_hold = -415;
 const int X_pack = 0;
 const int Y_pack = 140;
 const int Z_pack = -330;
@@ -85,6 +85,9 @@ bool go_up_flag           = false;
 bool go_pack_yalla        = false;
 bool packed               = false;
 bool detected_obj_flag    = false;
+float delay_to_pick       = 0;
+float delay_to_go         = 0;
+float delay_to_down       = 0;
 
 
 
@@ -334,6 +337,7 @@ void yalla_ya_belt_sama3_3amo()
     prev_belt = curr_belt;
   }
 
+  /*
   if (Serial.available())
   {
     String incoming_belt = Serial.readStringUntil('\n');
@@ -348,6 +352,7 @@ void yalla_ya_belt_sama3_3amo()
       start_flag_belt = false;
     }
   }
+  */
 }
 void trapezoid_profile_setup()
 {
@@ -656,6 +661,7 @@ void setup()
   //home_delta();
   //belt_init(belt_speed_linear);
   gripper_idle();
+  // start_flag_cornering = true;
 }
 void loop()
 {
@@ -832,10 +838,12 @@ void loop()
       //Serial.println("HI BRO");
         while (detected_obj_flag == false)
         {
+          start_flag_belt = true;
+          yalla_ya_belt_sama3_3amo();
           if (Serial.available()) {
             // Read the incoming string
             String receivedString = Serial.readStringUntil('\n');
-            Serial.println("Received: " + receivedString);
+            //Serial.println("Received: " + receivedString);
 
             // Parse the received string
             int firstComma = receivedString.indexOf(',');
@@ -845,8 +853,8 @@ void loop()
             {
               // Extract the fruit letter
               fruitLetter = receivedString.charAt(0);
-              Serial.print("Fruit Letter: ");
-              Serial.println(fruitLetter);
+              //Serial.print("Fruit Letter: ");
+              //Serial.println(fruitLetter);
 
               // Extract the X coordinate
               String xSubString = receivedString.substring(firstComma + 1, secondComma);
@@ -855,12 +863,12 @@ void loop()
 
               // Extract the Y coordinate
               String ySubString = receivedString.substring(secondComma +1 );
-              yCoord = ySubString.toFloat(); // Convert the Y coordinate to an integer
+              yCoord =- ySubString.toFloat(); // Convert the Y coordinate to an integer
               detected_obj_flag = true;
-              Serial.print("Y coordinate: ");
-              Serial.println(yCoord);
-              Serial.print("X coordinate: ");
-              Serial.println(xCoord);
+              //Serial.print("Y coordinate: ");
+              //Serial.println(yCoord);
+              //Serial.print("X coordinate: ");
+              //Serial.println(xCoord);
             }
           }
         }
@@ -874,15 +882,37 @@ void loop()
 
   if (detected_obj_flag == true)
   {
+    // gripper_idle();
     gripper_delate();
-    Serial.println("ana geit");
-    delay(4000);
-    detected_obj_flag = false;
+    //Serial.println("ana geit");
+    //delay(4000);
+    //detected_obj_flag = false;
+    
+    // Get object picked Y-coordinate 
+    Y_item = yCoord;
+
+    // Choose the pack location based on object type 
+
+    // Calculated time to be above item and pick the object 
+
+    // Go to loop 
+    //start_flag_belt = true;
+    basmag_flag = true; 
+
+    delay_to_pick = 1000 * abs(xCoord/belt_mmsec);
+    delay_to_go = 4000;
+    delay_to_down = abs(delay_to_pick - delay_to_go) + 100;
+    
   }
 
 
   //basmag_flag = true;
-  //start_flag_belt = true;
+  //gripper_idle();
+  //delay(2000);
+  //gripper_delate();
+  //delay(25000);
+  //gripper_off();
+  
   while (basmag_flag == true)
   {
     // Deflate gripper by default initially  
@@ -890,7 +920,7 @@ void loop()
 
     current_millis_gripper = millis();
     
-    if (current_millis_gripper - previous_millis_gripper > 4000 && start_cycle_again == true)
+    if (current_millis_gripper - previous_millis_gripper > delay_to_go && start_cycle_again == true)
     {
       end_deflation_flag = true;
     }
@@ -929,7 +959,7 @@ void loop()
       current_millis_gripper = millis();
       //gripper_off();
 
-      if (current_millis_gripper - offset_millis_gripper > 2000 && go_up_flag == false) // delay removed, currently 2 seconds for object to come under the gripper 
+      if (current_millis_gripper - offset_millis_gripper > delay_to_down && go_up_flag == false) // delay removed, currently 2 seconds for object to come under the gripper 
       {
         // move in z only to grip the object
         X_next = X_item;
@@ -985,6 +1015,7 @@ void loop()
         Z_current = Z_next;
       }
       gripper_delate();
+      delay(4000);
       end_deflation_flag = false;
       go_downpick_flag = false;
       go_up_flag = false;
@@ -1001,6 +1032,8 @@ void loop()
     // Home Delta 
     if (start_cycle_again == false && packed == true && current_millis_gripper - offset_millis_gripper > 1000)
     {
+      gripper_delate();
+      delay(2000);
       gripper_off();
       X_next = 0;
       Y_next = 0;
@@ -1031,5 +1064,7 @@ void loop()
     gripper_delate();
     delay(7000);
   }
+
+  //yalla_ya_belt_sama3_3amo();
 
 } 

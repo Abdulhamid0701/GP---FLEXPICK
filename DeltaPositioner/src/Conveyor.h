@@ -18,5 +18,5 @@ float rpm_belt = ((60) / (2 * M_PI)) * (belt_speed_linear / pulley_radius);
 int SPS = ((belt_speed_linear* 1e-3) / pulley_radius) / Step_Angle_Rads;
 
 float delay_belt = 0.1;// 60 * (1 / rpm_belt) * (1 / 200) * (1e6) * (1 / MicroSteps);
-float belt_rads = Step_Angle_Rads / (delay_belt * 1000);
+float belt_rads = Step_Angle_Rads / (0.1 / 100);
 float belt_mmsec = belt_rads * pulley_radius;
