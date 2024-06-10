@@ -338,7 +338,7 @@ void trapezoid_profile_setup()
   Serial.println(steppers[2].meshwar / STEP_ANGLE_RADS);
 */
 }
-void move_steppers()
+void move_steppers() 
 {
   // Convert XYZ distnace to angles through inverse kinematics
   float *thetas_next = get_thetas(X_next, Y_next, Z_next);
@@ -390,6 +390,8 @@ void move_steppers()
     {
       remaining_motors_byte &= ~(1 << 2);
     }
+
+    yalla_ya_belt_sama3_3amo();
   }
 
   // Reset all steppers and update their current position
@@ -553,6 +555,22 @@ void yalla_ya_belt_sama3_3amo()
     
     prev_belt = curr_belt;
   }
+
+  if (Serial.available())
+  {
+    String incoming_belt = Serial.readStringUntil('\n');
+    incoming_belt.trim();
+
+    if (incoming_belt == "BELTON")
+    {
+      start_flag_belt = true;
+    } 
+    else if (incoming_belt == "BELTOFF")
+    {
+      start_flag_belt = false;
+    }
+  }
+
 }
 void check_switches()
 {
