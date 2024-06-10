@@ -4,9 +4,9 @@
 #include <constants.h>
 #include <stepper_params.h>
 #include <math.h>
+#include <Gripper.h>
 #include <Conveyor.h>
 #include <AccelStepper.h>
-#include <Gripper.h>
 #include <ezButton.h>
 // #include <avr8-stub.h>
 
@@ -70,6 +70,19 @@ bool bara_elfetch_yakalb  = false;
 bool start_flag_belt      = false; 
 bool basmag_flag          = false;
 bool gripper_test_flag    = false;
+
+// Timers 
+float current_millis_gripper;
+float previous_millis_gripper = 0;
+float offset_millis_gripper = 0;
+
+// Flags 
+bool start_cycle_again    = true;
+bool end_deflation_flag   = false;
+bool go_downpick_flag     = false;
+bool go_up_flag           = false;
+bool go_pack_yalla        = false;
+bool packed               = false;
 ////                                                                         
 
 // Steppers structure to contain 3 motors info
@@ -181,7 +194,7 @@ void fetch_command()
       if (demos_start_flag == true)
       {
         // Check which demo will be done 
-        sabry:
+        //sabry:
         while (start_flag_cornering == false && start_flag_PickPlace == false)
         {
           String choice = Serial.readString();
@@ -299,6 +312,33 @@ void fetch_command()
       // bara_elfetch_yakalb = true;
     }
   //}
+}
+void yalla_ya_belt_sama3_3amo()
+{
+  curr_belt = millis();
+  digitalWrite(7,HIGH);
+  if (curr_belt - prev_belt >= 0.1 && start_flag_belt == true)
+  {
+    digitalWrite(6,HIGH);
+    digitalWrite(6,LOW);
+    
+    prev_belt = curr_belt;
+  }
+
+  if (Serial.available())
+  {
+    String incoming_belt = Serial.readStringUntil('\n');
+    incoming_belt.trim();
+
+    if (incoming_belt == "BELTON")
+    {
+      start_flag_belt = true;
+    } 
+    else if (incoming_belt == "BELTOFF")
+    {
+      start_flag_belt = false;
+    }
+  }
 }
 void trapezoid_profile_setup()
 {
@@ -544,34 +584,6 @@ float get_time_to_position(float item_pos)
     float time_to_pos = item_pos / belt_speed_linear; // sec = mm/(mm/sec)
     return time_to_pos;
 }
-void yalla_ya_belt_sama3_3amo()
-{
-  curr_belt = millis();
-  digitalWrite(7,HIGH);
-  if (curr_belt - prev_belt >= 0.1 && start_flag_belt == true)
-  {
-    digitalWrite(6,HIGH);
-    digitalWrite(6,LOW);
-    
-    prev_belt = curr_belt;
-  }
-
-  if (Serial.available())
-  {
-    String incoming_belt = Serial.readStringUntil('\n');
-    incoming_belt.trim();
-
-    if (incoming_belt == "BELTON")
-    {
-      start_flag_belt = true;
-    } 
-    else if (incoming_belt == "BELTOFF")
-    {
-      start_flag_belt = false;
-    }
-  }
-
-}
 void check_switches()
 {
 
@@ -808,97 +820,139 @@ void loop()
   }
   
   basmag_flag = true;
+  start_flag_belt = true;
   while (basmag_flag == true)
   {
-    // Deflate gripper 
+    // Deflate gripper by default initially  
     gripper_delate();
 
-    delay(4000); 
- 
-    // Go to item location and stop (no z)
-    X_next = X_item;
-    Y_next = Y_item;
-    Z_next = Z_item;
-    duration = 1;//pppppp
-    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
-    {  
-      move_steppers(); 
-      X_current = X_next;
-      Y_current = Y_next;
-      Z_current = Z_next;
-    }
-
-    // delay until object comes 
-    delay(1000);
-    // move in z only to grip the object
-    X_next = X_item;
-    Y_next = Y_item;
-    Z_next = Z_item_hold;
-    duration = 0.4;//pppppp
-    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
-    {  
-      move_steppers(); 
-      X_current = X_next;
-      Y_current = Y_next;
-      Z_current = Z_next;
+    current_millis_gripper = millis();
+    
+    if (current_millis_gripper - previous_millis_gripper > 4000 && start_cycle_again == true)
+    {
+      end_deflation_flag = true;
     }
     
-    // Grip object ans stay while before moving to the next location 
-    gripper_inflate();
-    delay(2000);
+    //delay(4000); 
+ 
+    // Move Belt Regardless of which gripper action is took now 
+    yalla_ya_belt_sama3_3amo();
 
-    // move in upwards
-    X_next = X_item;
-    Y_next = Y_item;
-    Z_next = Z_item;
-    duration = 1.5;//pppppp
-    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
-    {  
-      move_steppers(); 
-      X_current = X_next;
-      Y_current = Y_next;
-      Z_current = Z_next;
+
+    // Go to item location and stop (no z)
+    if (end_deflation_flag == true)
+    {
+      X_next = X_item;
+      Y_next = Y_item;
+      Z_next = Z_item;
+      duration = 1;//ppppppc  
+      while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+      {  
+        move_steppers(); 
+        X_current = X_next;
+        Y_current = Y_next;
+        Z_current = Z_next;
+      }
+      offset_millis_gripper = millis();
+      go_downpick_flag = true;
+    }
+
+    // delay until object comes, then go down and grip object,then go up again   
+    while (go_downpick_flag == true)
+    {
+      // belt
+      yalla_ya_belt_sama3_3amo();
+      
+      // remove this delay, responsible for waiting till object comes, function in belt speed, delay(1000);
+      current_millis_gripper = millis();
+      //gripper_off();
+
+      if (current_millis_gripper - offset_millis_gripper > 2000 && go_up_flag == false) // delay removed, currently 2 seconds for object to come under the gripper 
+      {
+        // move in z only to grip the object
+        X_next = X_item;
+        Y_next = Y_item;
+        Z_next = Z_item_hold;
+        duration = 0.4;//pppppp
+        while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+        {  
+          move_steppers(); 
+          X_current = X_next;
+          Y_current = Y_next;
+          Z_current = Z_next;
+        }
+        gripper_inflate();
+        go_up_flag = true;
+        //go_downpick_flag = false;
+        offset_millis_gripper = millis();
+      }
+
+      if (current_millis_gripper - offset_millis_gripper > 1000 && go_up_flag == true)
+      {
+        // move in upwards
+        X_next = X_item;
+        Y_next = Y_item;
+        Z_next = Z_item;
+        duration = 1.5;//pppppp
+        while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+        {  
+          move_steppers(); 
+          X_current = X_next;
+          Y_current = Y_next;
+          Z_current = Z_next;
+        }
+        go_pack_yalla = true;
+        go_downpick_flag = false;
+        start_cycle_again = false;
+        offset_millis_gripper = millis();
+      }
     }
     
     // go to pack location 
-    X_next = X_pack;
-    Y_next = Y_pack;
-    Z_next = Z_pack;
-    duration = 1;
-    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+    if (go_pack_yalla == true)
     {
-      move_steppers(); 
-      X_current = X_next;
-      Y_current = Y_next;
-      Z_current = Z_next;
+      X_next = X_pack;
+      Y_next = Y_pack;
+      Z_next = Z_pack;
+      duration = 1;
+      while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+      {
+        move_steppers(); 
+        X_current = X_next;
+        Y_current = Y_next;
+        Z_current = Z_next;
+      }
+      gripper_delate();
+      end_deflation_flag = false;
+      go_downpick_flag = false;
+      go_up_flag = false;
+      go_pack_yalla = false;
+      start_cycle_again = false;
+      packed = true;
+      offset_millis_gripper = millis();
     }
-
-
-    gripper_delate();
-    delay(5000);
+    
+    //delay(5000);
 
     
-    gripper_off();
-    // Home
-    X_next = 0;
-    Y_next = 0;
-    Z_next = -300;
-    duration = 1;
-    while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
-    {
-      move_steppers(); 
-      X_current = X_next;
-      Y_current = Y_next;
-      Z_current = Z_next;
-    }
-    delay(50000000);
-
     
-    // Inflate gripper and hold object
-
-    // Go to Pack location
-
-    // Deflate gripper 
+    // Home Delta 
+    if (start_cycle_again == false && packed == true && current_millis_gripper - offset_millis_gripper > 1000)
+    {
+      gripper_off();
+      X_next = 0;
+      Y_next = 0;
+      Z_next = -300;
+      duration = 1;
+      while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+      {
+        move_steppers(); 
+        X_current = X_next;
+        Y_current = Y_next;
+        Z_current = Z_next;
+      }
+    }
+    //delay(50000000);
   }
 
 
