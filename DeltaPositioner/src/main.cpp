@@ -8,6 +8,7 @@
 #include <Conveyor.h>
 #include <AccelStepper.h>
 #include <ezButton.h>
+#include <SoftwareSerial.h>
 // #include <avr8-stub.h>
 
 // Computer Vision Message
@@ -83,6 +84,14 @@ bool go_downpick_flag     = false;
 bool go_up_flag           = false;
 bool go_pack_yalla        = false;
 bool packed               = false;
+bool detected_obj_flag    = false;
+
+
+
+char fruitLetter;
+float xCoord;
+float yCoord;
+//SoftwareSerial mySerial(10, 11); // RX, TX
 ////                                                                         
 
 // Steppers structure to contain 3 motors info
@@ -794,7 +803,7 @@ void loop()
   //gripper_inflate();
 
   
-     
+  
   
   if (Serial.available())
   {
@@ -817,10 +826,63 @@ void loop()
     {
       gripper_idle();
     }
+
+    else if (incoming == "VISION")
+    {
+      //Serial.println("HI BRO");
+        while (detected_obj_flag == false)
+        {
+          if (Serial.available()) {
+            // Read the incoming string
+            String receivedString = Serial.readStringUntil('\n');
+            Serial.println("Received: " + receivedString);
+
+            // Parse the received string
+            int firstComma = receivedString.indexOf(',');
+            int secondComma = receivedString.indexOf(',', firstComma + 1);
+
+            if (firstComma != -1 && secondComma != -1) 
+            {
+              // Extract the fruit letter
+              fruitLetter = receivedString.charAt(0);
+              Serial.print("Fruit Letter: ");
+              Serial.println(fruitLetter);
+
+              // Extract the X coordinate
+              String xSubString = receivedString.substring(firstComma + 1, secondComma);
+              xCoord = xSubString.toFloat(); // Convert the X coordinate to an integer
+
+
+              // Extract the Y coordinate
+              String ySubString = receivedString.substring(secondComma +1 );
+              yCoord = ySubString.toFloat(); // Convert the Y coordinate to an integer
+              detected_obj_flag = true;
+              Serial.print("Y coordinate: ");
+              Serial.println(yCoord);
+              Serial.print("X coordinate: ");
+              Serial.println(xCoord);
+            }
+          }
+        }
+      }
+    else if (incoming == "VISIONEX")
+      {
+
+      }
   }
   
-  basmag_flag = true;
-  start_flag_belt = true;
+
+  if (detected_obj_flag == true)
+  {
+    gripper_delate();
+    Serial.println("ana geit");
+    delay(4000);
+    detected_obj_flag = false;
+  }
+
+
+  //basmag_flag = true;
+  //start_flag_belt = true;
   while (basmag_flag == true)
   {
     // Deflate gripper by default initially  
