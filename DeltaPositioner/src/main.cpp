@@ -71,6 +71,7 @@ bool bara_elfetch_yakalb  = false;
 bool start_flag_belt      = false; 
 bool basmag_flag          = false;
 bool gripper_test_flag    = false;
+bool basmag_flag_w_stop   = false;
 
 // Timers 
 float current_millis_gripper;
@@ -889,7 +890,7 @@ void loop()
     //detected_obj_flag = false;
     
     // Get object picked Y-coordinate 
-    Y_item = yCoord;
+    Y_item = yCoord - 25;
 
     // Choose the pack location based on object type 
 
@@ -901,7 +902,7 @@ void loop()
 
     delay_to_pick = 1000 * abs(xCoord/belt_mmsec);
     delay_to_go = 4000;
-    delay_to_down = abs(delay_to_pick - delay_to_go) + 100;
+    delay_to_down = 0.9*abs(delay_to_pick - delay_to_go);
     
   }
 
@@ -1050,6 +1051,142 @@ void loop()
     //delay(50000000);
   }
 
+
+  while (basmag_flag_w_stop == true)
+  {
+    // Deflate gripper by default initially  
+    gripper_delate();
+    current_millis_gripper = millis();
+    
+    if (current_millis_gripper - previous_millis_gripper > delay_to_go && start_cycle_again == true)
+    {
+      end_deflation_flag = true;
+    }
+    
+    //delay(4000); 
+ 
+    // Move Belt Regardless of which gripper action is took now 
+    yalla_ya_belt_sama3_3amo();
+
+
+    // Go to item location and stop (no z)
+    if (end_deflation_flag == true)
+    {
+      X_next = X_item;
+      Y_next = Y_item;
+      Z_next = Z_item;
+      duration = 1;//ppppppc  
+      while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+      {  
+        move_steppers(); 
+        X_current = X_next;
+        Y_current = Y_next;
+        Z_current = Z_next;
+      }
+      offset_millis_gripper = millis();
+      go_downpick_flag = true;
+    }
+
+    // delay until object comes, then go down and grip object,then go up again   
+    while (go_downpick_flag == true)
+    {
+      // belt
+      yalla_ya_belt_sama3_3amo();
+      
+      // remove this delay, responsible for waiting till object comes, function in belt speed, delay(1000);
+      current_millis_gripper = millis();
+      //gripper_off();
+
+      if (current_millis_gripper - offset_millis_gripper > delay_to_down && go_up_flag == false) // delay removed, currently 2 seconds for object to come under the gripper 
+      {
+        // move in z only to grip the object
+        X_next = X_item;
+        Y_next = Y_item;
+        Z_next = Z_item_hold;
+        duration = 0.4;//pppppp
+        while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+        {  
+          move_steppers(); 
+          X_current = X_next;
+          Y_current = Y_next;
+          Z_current = Z_next;
+        }
+        gripper_inflate();
+        go_up_flag = true;
+        //go_downpick_flag = false;
+        offset_millis_gripper = millis();
+      }
+
+      if (current_millis_gripper - offset_millis_gripper > 1000 && go_up_flag == true)
+      {
+        // move in upwards
+        X_next = X_item;
+        Y_next = Y_item;
+        Z_next = Z_item;
+        duration = 1.5;//pppppp
+        while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+        {  
+          move_steppers(); 
+          X_current = X_next;
+          Y_current = Y_next;
+          Z_current = Z_next;
+        }
+        go_pack_yalla = true;
+        go_downpick_flag = false;
+        start_cycle_again = false;
+        offset_millis_gripper = millis();
+      }
+    }
+    
+    // go to pack location 
+    if (go_pack_yalla == true)
+    {
+      X_next = X_pack;
+      Y_next = Y_pack;
+      Z_next = Z_pack;
+      duration = 1;
+      while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+      {
+        move_steppers(); 
+        X_current = X_next;
+        Y_current = Y_next;
+        Z_current = Z_next;
+      }
+      gripper_delate();
+      delay(4000);
+      end_deflation_flag = false;
+      go_downpick_flag = false;
+      go_up_flag = false;
+      go_pack_yalla = false;
+      start_cycle_again = false;
+      packed = true;
+      offset_millis_gripper = millis();
+    }
+    
+    //delay(5000);
+
+    
+    
+    // Home Delta 
+    if (start_cycle_again == false && packed == true && current_millis_gripper - offset_millis_gripper > 1000)
+    {
+      gripper_delate();
+      delay(2000);
+      gripper_off();
+      X_next = 0;
+      Y_next = 0;
+      Z_next = -300;
+      duration = 1;
+      while (X_current != X_next || Y_next != Y_current || Z_current != Z_next)
+      {
+        move_steppers(); 
+        X_current = X_next;
+        Y_current = Y_next;
+        Z_current = Z_next;
+      }
+    }
+    //delay(50000000);
+  }
 
   gripper_test_flag = false;
 
