@@ -4,6 +4,7 @@ Contents:
 - "DeltaPositioner" Folder:
 - "Python GUI" Folder:
 - "CV" Folder:
+- "Simulation Sample Videos" Folder:
 - "Pick&Place_Thesis":
 - "Images" Folder:
 - "CAD Renderings" Folder:
