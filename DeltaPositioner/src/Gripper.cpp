@@ -29,3 +29,11 @@ void gripper_off()
     digitalWrite(VACUUM_VALVE, LOW);
     digitalWrite(INTAKE_PUMP,  LOW);
 }
+
+void gripper_hold()
+{
+    digitalWrite(VACUUM_PUMP,  HIGH);
+    digitalWrite(INTAKE_VALVE, LOW);
+    digitalWrite(VACUUM_VALVE, LOW);
+    digitalWrite(INTAKE_PUMP,  HIGH);
+}
