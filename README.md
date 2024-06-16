@@ -7,4 +7,5 @@ Contents:
 - "Simulation Sample Videos" Folder:
 - "Pick&Place_Thesis":
 - "Images" Folder:
+- "Demo Videos" Folder": 
 - "CAD Renderings" Folder:
